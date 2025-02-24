@@ -1,4 +1,5 @@
-using SuperTiled2Unity;
+using FMOD.Studio;
+using FMODUnity;
 using System.Collections;
 using UnityEngine;
 
@@ -13,6 +14,11 @@ public class PlayerController : MonoBehaviour
     public float MoveSpeed = 5f;
     public Transform MovePoint;
     public LayerMask CollisionLayer;
+    public Animator Animator;
+
+    [Header("Sound")]
+    public string MoveEvent = "event:/PlayerMove";
+    private EventInstance moveInstance;
 
     private bool isTurnProcessing = false;
 
@@ -23,6 +29,7 @@ public class PlayerController : MonoBehaviour
     {
         MovePoint.parent = null;
         CurrentOxygen = InitialOxygen;
+        moveInstance = RuntimeManager.CreateInstance(MoveEvent);
     }
 
     void Update()
@@ -47,11 +54,72 @@ public class PlayerController : MonoBehaviour
 
     void TryMove(Vector3 direction)
     {
-        if (!Physics2D.OverlapCircle(MovePoint.position + direction, .2f, CollisionLayer))
+        if (!Physics2D.OverlapCircle(MovePoint.position + direction, 0.2f, CollisionLayer))
         {
-            MovePoint.position += direction;
-            StartCoroutine(HandleTurn());
+            if (IsBoxAtTile(MovePoint.position + direction))
+            {
+                Vector3 nextTile = MovePoint.position + (direction * 2);
+
+                if (!Physics2D.OverlapCircle(nextTile, 0.2f, CollisionLayer))
+                {
+                    PushBox(MovePoint.position + direction, direction);
+                }
+                else
+                {
+                    Debug.Log("Cannot push box");
+                }
+            }
+            else
+            {
+                MovePoint.position += direction;
+                PlayMoveSound();
+                StartCoroutine(HandleTurn());
+            }
         }
+    }
+
+    bool IsBoxAtTile(Vector3 position)
+    {
+        return Physics2D.OverlapCircle(position, 0.2f, LayerMask.GetMask("Box"));
+    }
+
+    void PushBox(Vector3 boxTile, Vector3 direction)
+    {
+        GameObject boxObject = GetBoxAtTile(boxTile);
+        if (boxObject != null)
+        {
+            Vector3 nextTile = boxTile + direction;
+
+            if (IsTileFree(nextTile))
+            {
+                PushBox(nextTile, direction);
+                boxObject.transform.position += direction;
+
+                // Play sound and animation for moving the box
+                //PlayBoxMoveSound(boxObject);
+                //PlayBoxMoveAnimation(boxObject);
+            }
+            else
+            {
+                Debug.Log("Cannot push box further.");
+            }
+        }
+    }
+
+    bool IsTileFree(Vector3 position)
+    {
+        return !Physics2D.OverlapCircle(position, 0.2f, CollisionLayer);
+    }
+
+    GameObject GetBoxAtTile(Vector3 position)
+    {
+        Collider2D boxCollider = Physics2D.OverlapCircle(position, 0.2f, LayerMask.GetMask("Box"));
+        return boxCollider ? boxCollider.gameObject : null;
+    }
+
+    void PlayMoveSound()
+    {
+        moveInstance.start();
     }
 
     IEnumerator HandleTurn()
