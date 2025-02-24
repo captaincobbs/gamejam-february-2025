@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Analytics;
@@ -35,28 +36,28 @@ public class TurnManager : MonoBehaviour
 
         if (direction.x == -1)
         {
-            turnPassed = MoveEntity(player, Vector2.left);
+            turnPassed = MoveEntity(player, Vector3.left);
         }
         else if (direction.x == 1)
         {
-            turnPassed = MoveEntity(player, Vector2.right);
+            turnPassed = MoveEntity(player, Vector3.right);
         }
         else if (direction.y == 1)
         {
-            turnPassed = MoveEntity(player, Vector2.up);
+            turnPassed = MoveEntity(player, Vector3.up);
         }
         else if (direction.y == -1)
         {
-            turnPassed = MoveEntity(player, Vector2.down);
+            turnPassed = MoveEntity(player, Vector3.down);
         }
 
         if (turnPassed)
         {
-            EndTurn();
+            StartCoroutine(ProcessEndTurn());
         }
     }
 
-    public bool MoveEntity(Entity entity, Vector2 direction)
+    public bool MoveEntity(Entity entity, Vector3 direction)
     {
         if (IsBlocked(entity, direction))
         {
@@ -73,22 +74,22 @@ public class TurnManager : MonoBehaviour
             }
         }
 
-        entity.transform.position += (Vector3)direction;
+        entity.transform.position += direction;
         return true;
     }
 
-    bool IsBlocked(Entity entity, Vector2 direction)
+    bool IsBlocked(Entity entity, Vector3 direction)
     {
-        Vector3 targetPosition = entity.transform.position + (Vector3)direction;
+        Vector3 targetPosition = entity.transform.position + direction;
 
-        Collider2D hit = Physics2D.OverlapBox(targetPosition, Vector2.one, 0f, LayerMask.GetMask("Static"));
+        Collider2D hit = Physics2D.OverlapPoint(targetPosition, LayerMask.GetMask("Static"));
         return hit != null;
     }
 
-    Entity GetEntityInFront(Entity entity, Vector2 direction)
+    Entity GetEntityInFront(Entity entity, Vector3 direction)
     {
-        Vector3 targetPosition = entity.transform.position + (Vector3)direction;
-        Collider2D hit = Physics2D.OverlapBox(targetPosition, Vector2.one, 0f, LayerMask.GetMask("Entity"));
+        Vector3 targetPosition = entity.transform.position + direction;
+        Collider2D hit = Physics2D.OverlapPoint(targetPosition, LayerMask.GetMask("Entity"));
 
         if (hit != null)
         {
@@ -98,8 +99,9 @@ public class TurnManager : MonoBehaviour
         return null;
     }
 
-    void EndTurn()
+    IEnumerator ProcessEndTurn()
     {
+        isTurnProcessing = true;
         if (UseOxygen)
         {
             CurrentOxygen--;
@@ -107,7 +109,6 @@ public class TurnManager : MonoBehaviour
             if (CurrentOxygen <= 0)
             {
                 GameOver();
-                return;
             }
             else
             {
@@ -116,6 +117,8 @@ public class TurnManager : MonoBehaviour
         }
 
         Debug.Log("Turn End");
+        yield return new WaitForSeconds(0.2f);
+        isTurnProcessing = false;
     }
 
     void GameOver()
