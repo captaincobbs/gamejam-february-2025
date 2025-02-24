@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
 
     [Header("Kinetics")]
     public float MoveSpeed = 5f;
-    public Transform MovePoint;
     public LayerMask CollisionLayer;
     public Animator Animator;
 
@@ -20,6 +19,7 @@ public class PlayerController : MonoBehaviour
     public string MoveEvent = "event:/PlayerMove";
     private EventInstance moveInstance;
 
+    private Vector3 targetPosition;
     private bool isTurnProcessing = false;
 
     public delegate void TurnHandler();
@@ -27,16 +27,16 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        MovePoint.parent = null;
+        targetPosition = transform.position;
         CurrentOxygen = InitialOxygen;
         moveInstance = RuntimeManager.CreateInstance(MoveEvent);
     }
 
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, MovePoint.position, MoveSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, MoveSpeed * Time.deltaTime);
 
-        if (!isTurnProcessing && Vector3.Distance(transform.position, MovePoint.position) <= 0.05f)
+        if (!isTurnProcessing && Vector3.Distance(transform.position, targetPosition) <= 0.05f)
         {
             float horizontalDelta = Input.GetAxisRaw("Horizontal");
             float verticalDelta = Input.GetAxisRaw("Vertical");
@@ -54,15 +54,15 @@ public class PlayerController : MonoBehaviour
 
     void TryMove(Vector3 direction)
     {
-        if (!Physics2D.OverlapCircle(MovePoint.position + direction, 0.2f, CollisionLayer))
+        if (!Physics2D.OverlapCircle(targetPosition + direction, 0.2f, CollisionLayer))
         {
-            if (IsBoxAtTile(MovePoint.position + direction))
+            if (IsBoxAtTile(targetPosition + direction))
             {
-                Vector3 nextTile = MovePoint.position + (direction * 2);
+                Vector3 nextTile = targetPosition + (direction * 2);
 
                 if (!Physics2D.OverlapCircle(nextTile, 0.2f, CollisionLayer))
                 {
-                    PushBox(MovePoint.position + direction, direction);
+                    PushBox(targetPosition + direction, direction);
                 }
                 else
                 {
@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                MovePoint.position += direction;
+                targetPosition += direction;
                 PlayMoveSound();
                 StartCoroutine(HandleTurn());
             }
