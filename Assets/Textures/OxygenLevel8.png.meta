@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9035a0fc139afae408269035b9cf01ed
+guid: b12935c6017025f439bb2f4f61723e92
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4434256702344709268
-    second: ox-2_0
+      213: -996981442906448464
+    second: ox-8_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: OxygenLevel2
+      name: OxygenLevel8
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 494c6222af4a98d30800000000000000
-      internalID: 4434256702344709268
+      spriteID: 0bd97efe8a20a22f0800000000000000
+      internalID: -996981442906448464
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5f9062d2867d40744b31e270a6d32ec1
+    spriteID: fd77cadffc4bf8148a007fa7bcdba570
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      OxygenLevel2: 4434256702344709268
+      OxygenLevel8: -996981442906448464
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
