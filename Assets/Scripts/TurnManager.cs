@@ -46,8 +46,15 @@ public class TurnManager : MonoBehaviour
     private int turnNumber = 0;
     void Start()
     {
-        CurrentOxygen = InitialOxygen;
-        OxygenDisplay?.SetOxygenDisplayLevel(CurrentOxygen);
+        if (UseOxygen)
+        {
+            CurrentOxygen = InitialOxygen;
+            OxygenDisplay?.SetDisplayLevel(CurrentOxygen);
+        }
+        else
+        {
+            OxygenDisplay?.SetDisplay(false);
+        }
     }
 
     void Update()
@@ -168,7 +175,7 @@ public class TurnManager : MonoBehaviour
             if (CurrentOxygen > 0)
             {
                 CurrentOxygen--;
-                OxygenDisplay?.SetOxygenDisplayLevel(CurrentOxygen);
+                OxygenDisplay?.SetDisplayLevel(CurrentOxygen);
             }
             else
             {

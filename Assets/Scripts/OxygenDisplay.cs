@@ -12,7 +12,7 @@ public class OxygenDisplay : MonoBehaviour
 
     private Image imageComponent;
 
-    public void SetOxygenDisplayLevel(uint level)
+    public void SetDisplayLevel(uint level)
     {
         if (imageComponent == null)
         {
@@ -35,5 +35,15 @@ public class OxygenDisplay : MonoBehaviour
         {
             Debug.Log("No Oxygen Level Sprites provided");
         }
+    }
+
+    public void SetDisplay(bool enabled)
+    {
+        if (imageComponent == null)
+        {
+            imageComponent = GetComponent<Image>();
+        }
+
+        imageComponent.enabled = enabled;
     }
 }
