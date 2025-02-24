@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: a1c2d8c2de99f3443856e7d28bccba65
+guid: 50c6c76b0ada6f54896e5ce51f6b6d0a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2139623146034738766
-    second: ox-5_0
+      213: 3970736455187430956
+    second: ox-4_0
   - first:
-      213: 5008524495787620654
-    second: ox-5_1
+      213: -127769073723314940
+    second: ox-4_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -116,45 +116,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ox-5_0
+      name: OxygenLevel4
       rect:
         serializedVersion: 2
-        x: 1
-        y: 67
-        width: 30
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2b9456bb5188e42e0800000000000000
-      internalID: -2139623146034738766
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ox-5_1
-      rect:
-        serializedVersion: 2
-        x: 1
+        x: 0
         y: 0
-        width: 30
-        height: 65
+        width: 32
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e29734c1e7ad18540800000000000000
-      internalID: 5008524495787620654
+      spriteID: 40de07354b21a3ef0800000000000000
+      internalID: -127769073723314940
       vertices: []
       indices: 
       edges: []
@@ -163,7 +141,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 86dd9fed6a8ab584d85f53a3a3dd7ae5
     internalID: 0
     vertices: []
     indices: 
@@ -172,7 +150,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      OxygenLevel4: -127769073723314940
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

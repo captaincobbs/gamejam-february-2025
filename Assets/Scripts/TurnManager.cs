@@ -7,11 +7,17 @@ public class TurnManager : MonoBehaviour
 {
     [Header("Oxygen")]
     public bool UseOxygen = true;
-    public int InitialOxygen = 5;
-    [HideInNormalInspector] public int CurrentOxygen;
+    public uint InitialOxygen = 5;
+    [HideInNormalInspector] public uint CurrentOxygen;
+
+    [Header("Kinematics")]
+    public float DelayBetweenMovement = 0.15f;
 
     [Header("Associations")]
     public Player player;
+
+    [Header("UI")]
+    public OxygenDisplay OxygenDisplay;
 
     private bool isTurnProcessing = false;
     private bool canPlayerMove = true;
@@ -19,6 +25,7 @@ public class TurnManager : MonoBehaviour
     void Start()
     {
         CurrentOxygen = InitialOxygen;
+        OxygenDisplay?.SetOxygenDisplayLevel(CurrentOxygen);
     }
 
     void Update()
@@ -82,7 +89,7 @@ public class TurnManager : MonoBehaviour
     {
         Vector3 targetPosition = entity.transform.position + direction;
 
-        Collider2D hit = Physics2D.OverlapPoint(targetPosition, LayerMask.GetMask("Static"));
+        Collider2D hit = Physics2D.OverlapBox(targetPosition, Vector2.one, 0f, LayerMask.GetMask("Static"));
         return hit != null;
     }
 
@@ -104,25 +111,23 @@ public class TurnManager : MonoBehaviour
         isTurnProcessing = true;
         if (UseOxygen)
         {
-            CurrentOxygen--;
-
-            if (CurrentOxygen <= 0)
+            if (CurrentOxygen > 0)
             {
-                GameOver();
+                CurrentOxygen--;
+                OxygenDisplay?.SetOxygenDisplayLevel(CurrentOxygen);
             }
             else
             {
-                Debug.Log($"Oxygen Remaining: {CurrentOxygen}");
+                GameOver();
             }
         }
 
         Debug.Log("Turn End");
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(DelayBetweenMovement);
         isTurnProcessing = false;
     }
 
     void GameOver()
     {
-        Debug.Log("Game Over: Out of oxygen");
     }
 }
