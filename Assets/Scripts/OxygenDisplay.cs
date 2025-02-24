@@ -11,16 +11,17 @@ public class OxygenDisplay : MonoBehaviour
     public Sprite OxygenLevelDefault;
 
     private Image imageComponent;
-    void Start()
-    {
-        imageComponent = GetComponent<Image>();
-    }
 
     public void SetOxygenDisplayLevel(uint level)
     {
+        if (imageComponent == null)
+        {
+            imageComponent = GetComponent<Image>();
+        }
+
         if (OxygenLevels != null && OxygenLevels.Length > 0)
         {
-            if (level < OxygenLevels.Length - 1)
+            if (level < OxygenLevels.Length)
             {
                 imageComponent.sprite = OxygenLevels[level];
             }

@@ -1,10 +1,27 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Analytics;
+using UnityEngine.Rendering;
 
 public class TurnManager : MonoBehaviour
 {
+    private static TurnManager instance;
+    public static TurnManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                Debug.LogError("This Scene does not have a TurnManager");
+            }
+
+            return instance;
+        }
+    }
+
     [Header("Oxygen")]
     public bool UseOxygen = true;
     public uint InitialOxygen = 5;
@@ -19,9 +36,14 @@ public class TurnManager : MonoBehaviour
     [Header("UI")]
     public OxygenDisplay OxygenDisplay;
 
+    // Events
+    public event Action OnTurnEnd;
+    public Dictionary<int, Action> OnTrigger = new();
+
+    // Turn Processing
     private bool isTurnProcessing = false;
     private bool canPlayerMove = true;
-
+    private int turnNumber = 0;
     void Start()
     {
         CurrentOxygen = InitialOxygen;
@@ -64,7 +86,7 @@ public class TurnManager : MonoBehaviour
         }
     }
 
-    public bool MoveEntity(Entity entity, Vector3 direction)
+    public bool MoveEntity(Entity entity, Vector3 direction, bool pushed = false)
     {
         if (IsBlocked(entity, direction))
         {
@@ -82,6 +104,16 @@ public class TurnManager : MonoBehaviour
         }
 
         entity.transform.position += direction;
+
+        ConveyorBelt conveyorBelt = HitsConveyorBelt(entity);
+        if (conveyorBelt != null && !entity.beenForciblyMoved)
+        {
+            entity.beenForciblyMoved = true;
+            bool output = MoveEntity(entity, conveyorBelt.GetDirectionalValue(), true);
+            entity.beenForciblyMoved = false;
+            return output;
+        }
+
         return true;
     }
 
@@ -93,6 +125,18 @@ public class TurnManager : MonoBehaviour
         return hit != null;
     }
 
+    ConveyorBelt HitsConveyorBelt(Entity entity)
+    {
+        Collider2D hit = Physics2D.OverlapPoint(entity.transform.position, LayerMask.GetMask("Conveyor"));
+
+        if (hit != null)
+        {
+            return hit.GetComponent<ConveyorBelt>();
+        }
+
+        return null;
+    }
+
     Entity GetEntityInFront(Entity entity, Vector3 direction)
     {
         Vector3 targetPosition = entity.transform.position + direction;
@@ -100,7 +144,14 @@ public class TurnManager : MonoBehaviour
 
         if (hit != null)
         {
-            return hit.GetComponent<Entity>();
+            Entity hitEntity = hit.GetComponent<Entity>();
+
+            if (hitEntity == entity)
+            {
+                return null; // Prevent stack overflow
+            }
+
+            return hitEntity;
         }
 
         return null;
@@ -109,6 +160,9 @@ public class TurnManager : MonoBehaviour
     IEnumerator ProcessEndTurn()
     {
         isTurnProcessing = true;
+
+        OnTurnEnd?.Invoke();
+
         if (UseOxygen)
         {
             if (CurrentOxygen > 0)
@@ -122,12 +176,35 @@ public class TurnManager : MonoBehaviour
             }
         }
 
-        Debug.Log("Turn End");
+        turnNumber++;
+        Debug.Log($"Turn {turnNumber}");
         yield return new WaitForSeconds(DelayBetweenMovement);
         isTurnProcessing = false;
     }
 
     void GameOver()
     {
+    }
+
+    // Prevent duplicate instances
+    void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
+
+    // Destroy static instance when scene is unloaded
+    private void OnDestroy()
+    {
+        if (instance == this)
+        {
+            instance = null;
+        }
     }
 }
