@@ -4,16 +4,23 @@ using UnityEngine;
 public class ConveyorBelt : MonoBehaviour
 {
     [Header("Direction")]
+    [Tooltip("Don't make a vertical-looking conveyor belt go horizontally (or vice versa) or the animation will break")]
     public ConveyorDirection Direction = ConveyorDirection.Left;
+    [Tooltip("Whether this conveyor belt can be flipped via a trigger")]
     public bool FlippedByTrigger = false;
+    [Tooltip("The ID of the trigger that will flip this conveyor belt")]
     public int FlipTriggerID = 0;
 
     [Header("State")]
+    [Tooltip("Whether the conveyor belt will push or not")]
     public bool Enabled = true;
+    [Tooltip("Whether this conveyor belt can be toggled on/off via a trigger")]
     public bool ToggledByTrigger = false;
+    [Tooltip("The ID of the trigger that will toggle this conveyor belt")]
     public int ToggleTriggerID = 0;
 
     [Header("Sprite")]
+    [Tooltip("An order list of sprites that the conveyor belt will cycle through during turns")]
     public List<Sprite> Sprites = new();
     int currentFrame;
     SpriteRenderer spriteRenderer;
@@ -108,7 +115,7 @@ public class ConveyorBelt : MonoBehaviour
     void ProgressAnimation()
     {
         // If going positively, increment normally
-        if (Direction == ConveyorDirection.Right || Direction == ConveyorDirection.Up)
+        if (Direction == ConveyorDirection.Right || Direction == ConveyorDirection.Down)
         {
             currentFrame = (currentFrame + 1) % (Sprites.Count);
         }

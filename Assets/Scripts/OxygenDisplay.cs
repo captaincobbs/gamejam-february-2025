@@ -4,10 +4,11 @@ using UnityEngine.UI;
 public class OxygenDisplay : MonoBehaviour
 {
     [Header("Oxygen Levels")]
+    [Tooltip("The sprites displayed for corresponding oxygen values, the index of the array is the associated level of oxygen that the sprite will display for.")]
     public Sprite[] OxygenLevels;
 
     [Header("Graphics")]
-    [Tooltip("This is the default Oxygen sprite used")]
+    [Tooltip("The default oxygen sprite used if the oxygen value is invalid")]
     public Sprite OxygenLevelDefault;
 
     private Image imageComponent;

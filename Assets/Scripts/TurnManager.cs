@@ -23,17 +23,23 @@ public class TurnManager : MonoBehaviour
     }
 
     [Header("Oxygen")]
+    [Tooltip("Whether oxygen will be used in this level, also toggles the visibility of the oxygen display")]
     public bool UseOxygen = true;
+    [Tooltip("The starting oxygen value when the player spawns")]
     public uint InitialOxygen = 5;
+    [Tooltip("The player's current oxygen value")]
     [HideInNormalInspector] public uint CurrentOxygen;
 
     [Header("Kinematics")]
+    [Tooltip("The delay between when button presses are read (this will hopefully eventually be replaced with something better)")]
     public float DelayBetweenMovement = 0.15f;
 
     [Header("Associations")]
+    [Tooltip("A reference to the player object in this level")]
     public Player player;
 
     [Header("UI")]
+    [Tooltip("A reference to the OxygenDisplay object in this level")]
     public OxygenDisplay OxygenDisplay;
 
     // Events
@@ -54,6 +60,11 @@ public class TurnManager : MonoBehaviour
         else
         {
             OxygenDisplay?.SetDisplay(false);
+        }
+
+        if (player == null)
+        {
+            Debug.LogError("No Player object was associated with the TurnManager");
         }
     }
 
