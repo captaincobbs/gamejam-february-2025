@@ -111,8 +111,9 @@ public class TurnManager : MonoBehaviour
         }
 
         entity.transform.position += direction;
+        Physics2D.SyncTransforms();
 
-        ConveyorBelt conveyorBelt = HitsConveyorBelt(entity);
+        ConveyorBelt conveyorBelt = HitsConveyorBelt(entity.transform.position);
         if (conveyorBelt != null && !entity.beenForciblyMoved)
         {
             entity.beenForciblyMoved = true;
@@ -128,13 +129,39 @@ public class TurnManager : MonoBehaviour
     {
         Vector3 targetPosition = entity.transform.position + direction;
 
-        Collider2D hit = Physics2D.OverlapBox(targetPosition, Vector2.one, 0f, LayerMask.GetMask("Static"));
-        return hit != null;
+        Collider2D hit = Physics2D.OverlapPoint(targetPosition, LayerMask.GetMask("Static"));
+        bool output = hit != null;
+
+        ConveyorBelt conveyorBelt = HitsConveyorBelt(entity.transform.position + direction);
+        if (conveyorBelt != null)
+        {
+            entity.beenForciblyMoved = true;
+            output = output || ConveyorBeltCancelsMovement(direction, conveyorBelt);
+        }
+
+        return output;
     }
 
-    ConveyorBelt HitsConveyorBelt(Entity entity)
+    public bool ConveyorBeltCancelsMovement(Vector3 direction, ConveyorBelt conveyorBelt)
     {
-        Collider2D hit = Physics2D.OverlapPoint(entity.transform.position, LayerMask.GetMask("Conveyor"));
+        switch (conveyorBelt.Direction)
+        {
+            case (ConveyorBelt.ConveyorDirection.Left):
+                return direction == Vector3.right;
+            case (ConveyorBelt.ConveyorDirection.Right):
+                return direction == Vector3.left;
+            case (ConveyorBelt.ConveyorDirection.Up):
+                return direction == Vector3.down;
+            case (ConveyorBelt.ConveyorDirection.Down):
+                return direction == Vector3.up;
+        }
+
+        return false;
+    }
+
+    ConveyorBelt HitsConveyorBelt(Vector3 position)
+    {
+        Collider2D hit = Physics2D.OverlapPoint(position, LayerMask.GetMask("Conveyor"));
 
         if (hit != null)
         {
