@@ -8,18 +8,18 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_EditorHideFlags: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: 1920
+    x: 0
     y: 43
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: 
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 42
+  controlID: 124
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -140,12 +140,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1466
+    width: 1467
     height: 941
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 43
+  controlID: 68
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -166,12 +166,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1466
+    width: 1467
     height: 557
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 44
+  controlID: 19
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -190,7 +190,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 348
+    width: 335
     height: 557
   m_MinSize: {x: 201, y: 226}
   m_MaxSize: {x: 4001, y: 4026}
@@ -214,9 +214,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 348
+    x: 335
     y: 0
-    width: 1118
+    width: 1132
     height: 557
   m_MinSize: {x: 202, y: 226}
   m_MaxSize: {x: 4002, y: 4026}
@@ -243,7 +243,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 557
-    width: 1466
+    width: 1467
     height: 384
   m_MinSize: {x: 231, y: 276}
   m_MaxSize: {x: 10001, y: 10026}
@@ -263,23 +263,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: Window
+  m_Name: InspectorWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1466
+    x: 1467
     y: 0
-    width: 454
+    width: 453
     height: 941
-  m_MinSize: {x: 51, y: 76}
+  m_MinSize: {x: 276, y: 76}
   m_MaxSize: {x: 4001, y: 4026}
-  m_ActualView: {fileID: 19}
+  m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
   - {fileID: 18}
   - {fileID: 19}
-  m_Selected: 2
+  m_Selected: 0
   m_LastSelected: 1
 --- !u!114 &12
 MonoBehaviour:
@@ -303,9 +303,9 @@ MonoBehaviour:
     m_TextWithWhitespace: "Game\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 349
+    x: 336
     y: 24
-    width: 1116
+    width: 1130
     height: 531
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -326,7 +326,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 1116, y: 510}
+  m_TargetSize: {x: 1130, y: 510}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -341,8 +341,8 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -558
-    m_HBaseRangeMax: 558
+    m_HBaseRangeMin: -565
+    m_HBaseRangeMax: 565
     m_VBaseRangeMin: -255
     m_VBaseRangeMax: 255
     m_HAllowExceedBaseRangeMin: 1
@@ -362,23 +362,23 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 1116
+      width: 1130
       height: 510
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 558, y: 255}
+    m_Translation: {x: 565, y: 255}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -558
+      x: -565
       y: -255
-      width: 1116
+      width: 1130
       height: 510
     m_MinimalGUI: 1
   m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 1116, y: 531}
+  m_LastWindowPixelSize: {x: 1130, y: 531}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -409,7 +409,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 24
-    width: 347
+    width: 334
     height: 531
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -425,9 +425,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 44faffff
       m_LastClickedID: 0
-      m_ExpandedIDs: 0afbffffb8c70000c8c70000d0c70000
+      m_ExpandedIDs: 9cf9ffff5ec80000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -474,9 +474,9 @@ MonoBehaviour:
     m_TextWithWhitespace: "Scene\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 2268
+    x: 335
     y: 79
-    width: 1116
+    width: 1130
     height: 531
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -1032,9 +1032,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 5.351833, y: -2.4140506, z: -0.91624147}
+    m_Target: {x: 4.4034634, y: -4.219384, z: -1.0438118}
     speed: 2
-    m_Value: {x: 6.2308035, y: -4.454686, z: -0.94279236}
+    m_Value: {x: 4.4034634, y: -4.219384, z: -1.0438118}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1084,9 +1084,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 3.772751
+    m_Target: 5.0953026
     speed: 2
-    m_Value: 6.4278464
+    m_Value: 5.0953026
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1144,7 +1144,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 581
-    width: 1465
+    width: 1466
     height: 358
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -1168,7 +1168,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Plugins
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1178,16 +1178,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Plugins
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Elijah\Game Jam February 2025
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 120}
-    m_SelectedIDs: a4c80000
-    m_LastClickedID: 51364
-    m_ExpandedIDs: 00000000cac80000ccc80000cec80000d0c80000
+    m_SelectedIDs: aacc0000
+    m_LastClickedID: 52394
+    m_ExpandedIDs: 0000000082c4000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1216,7 +1216,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000cac80000ccc80000cec80000d0c80000
+    m_ExpandedIDs: 0000000082c4000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1245,7 +1245,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c623000078cc0000f6c70000
+    m_ExpandedInstanceIDs: c623000078cc0000f6c700005cc80000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1296,9 +1296,9 @@ MonoBehaviour:
     m_TextWithWhitespace: "Console\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1920
+    x: 0
     y: 636
-    width: 1465
+    width: 1466
     height: 358
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -1333,9 +1333,9 @@ MonoBehaviour:
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 3386
-    y: 79
-    width: 453
+    x: 1468
+    y: 24
+    width: 452
     height: 915
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -1382,9 +1382,9 @@ MonoBehaviour:
     m_TextWithWhitespace: "Tile Palette\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 3386
+    x: 1467
     y: 79
-    width: 453
+    width: 452
     height: 915
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -1447,8 +1447,8 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 1467
-    y: 24
-    width: 453
+    y: 79
+    width: 452
     height: 915
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -1467,8 +1467,8 @@ MonoBehaviour:
   currentBranchAndRemoteHasUpdate: 0
   currentTrackingStatusHasUpdate: 0
   currentStatusEntriesHasUpdate: 0
-  repositoryProgressHasUpdate: 0
-  appManagerProgressHasUpdate: 0
+  repositoryProgressHasUpdate: 1
+  appManagerProgressHasUpdate: 1
   changeTab: 3
   activeTab: 3
   initProjectView:
@@ -1562,11 +1562,1550 @@ MonoBehaviour:
     treeScroll: {x: 0, y: 0}
     treeChanges:
       assets:
-        keys: []
-        values: []
+        keys:
+        - 00000000000000001000000000000000
+        - 0ee9bbebcb8eb7147bf453a7ad79b1a9
+        - beb453b2b63be7d4ca78a3adb23bb281
+        - ecdd46cf8a57b984faf2d64a8ef3ff83
+        - a6b13d1a809a09c4882edc0b657a00ee
+        - 43de4ab23f473da48bb6c21db7792b97
+        - 1dd4f84e0aa9cd141b82919ce193ae03
+        - 3d4a84985833ac645bf63a840462d4c9
+        - 60150152efc254e49a10867757703a2f
+        - e648610f381a4a140971ab7f239a468c
+        - f6b3b14a9e880de4b98178c25ac17849
+        - a1465eab1749b6c4aa3b75e5149cee17
+        - f8be6908b108b234f90fa92c663f17cb
+        - 68246fca901a6be43aad6eed1b7b5694
+        - b09323066ca73a643800b85f364ac840
+        - b210d824a761de14fa8a25bb98ce33f8
+        - 202a09c80dcc70a45913a1f34681ae97
+        - 9a08fccd5979aae459a122cc0d0c6a3c
+        - 81f099cbfed8c7b44844924e58bae3eb
+        - b360e3d9bfb0e3742be71fbf581b7688
+        - e0854d6ac8f5d81478420425ddac8527
+        - 45d57b73f1df06842a5a270760d916a8
+        - fddf6fc1195e3ab48a567ed1bf86e618
+        - 265b46bbcc8945a4d94427c289f1c26e
+        - 5a9cf37a940f1844292774a75cba6c65
+        - c1029c45828912b449a753fae4cd9547
+        - ab873c0d7112e4f49899cd9cfb7c0523
+        - 4d029ebabb39849428e6c68c3a43c7c4
+        - ef83a405010c30440ad3e755099da396
+        - 5c0752cf5425f4446a3548a8098c7842
+        - 161dc44c4bc372a4785ccfa9f75c9098
+        - d32ca98a9a1a8b643abb6a890bf79228
+        - b739770ee864f924098964be06280e8d
+        - 482d6f27e05197e4babfa6b65265b6ac
+        - 8782ceb993e739745bb41f91b02317ae
+        - fb6e16005f21ada4e8e3187e480b4353
+        - 25f68e97e4ae76741906514b26554594
+        - 968f44ce59e552e4290e8bcdf6e1cddc
+        - 1847489b734fa584887c0eda24b24a11
+        - a8502503f00d3d64ba3c92ba01f93603
+        - 7002c97aa79c3be46b65734cc95b5bd9
+        - 06ae579381df01a4a87bb149dec89954
+        - 7c5b46180ed14d64ab6a4fe9541a1ca1
+        - 870516e97e8a03d48bb659b71e364227
+        - 109e9bdd0fcc649c5bc59085c35bdc83
+        - b64761d87057a7a4794362b1150c1848
+        - 6abb4d2715dc9e44bb96e21e16e7892d
+        - 19d9a3ebe3db446488256965917ec5ee
+        - 1a049ab11bcb95c4a8e9fe7a1c751030
+        - f124dca4fd4ff9547b4bda1bf531e13a
+        - 30aed4d0e3293084698065202b2977a2
+        - 58379f5c9cd5d864284f49200ed048de
+        - 877b35c1308d4be449828406d120bce6
+        values:
+        - path: Assets
+          label: Assets
+          level: 0
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\FMOD
+          label: FMOD
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\FMOD\Desktop
+          label: Desktop
+          level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\FMOD\Desktop\Master.bank
+          label: Master.bank
+          level: 3
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\FMOD\Desktop\Master.bank
+            fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Desktop\Master.bank
+            projectPath: Assets\FMOD\Desktop\Master.bank
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 3
+        - path: Assets\FMOD\Desktop\Master.strings.bank
+          label: Master.strings.bank
+          level: 3
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\FMOD\Desktop\Master.strings.bank
+            fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Desktop\Master.strings.bank
+            projectPath: Assets\FMOD\Desktop\Master.strings.bank
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 3
+        - path: Assets\FMOD\FMOD.fspro
+          label: FMOD.fspro
+          level: 2
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\FMOD\FMOD.fspro
+            fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\FMOD.fspro
+            projectPath: Assets\FMOD\FMOD.fspro
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\FMOD\Metadata
+          label: Metadata
+          level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\FMOD\Metadata\Asset
+          label: Asset
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\FMOD\Metadata\Asset\{45494f83-cc69-4c50-a22a-eada1a2906ee}.xml
+          label: '{45494f83-cc69-4c50-a22a-eada1a2906ee}.xml'
+          level: 4
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\FMOD\Metadata\Asset\{45494f83-cc69-4c50-a22a-eada1a2906ee}.xml
+            fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Asset\{45494f83-cc69-4c50-a22a-eada1a2906ee}.xml
+            projectPath: Assets\FMOD\Metadata\Asset\{45494f83-cc69-4c50-a22a-eada1a2906ee}.xml
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\FMOD\Metadata\Bank
+          label: Bank
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\FMOD\Metadata\Bank\{679ba963-a3f7-4487-9093-dcd85e366d73}.xml
+          label: '{679ba963-a3f7-4487-9093-dcd85e366d73}.xml'
+          level: 4
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\FMOD\Metadata\Bank\{679ba963-a3f7-4487-9093-dcd85e366d73}.xml
+            fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Bank\{679ba963-a3f7-4487-9093-dcd85e366d73}.xml
+            projectPath: Assets\FMOD\Metadata\Bank\{679ba963-a3f7-4487-9093-dcd85e366d73}.xml
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\FMOD\Metadata\BankFolder
+          label: BankFolder
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\FMOD\Metadata\BankFolder\{aa51d194-1189-4a64-803e-55b9b36aab16}.xml
+          label: '{aa51d194-1189-4a64-803e-55b9b36aab16}.xml'
+          level: 4
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\FMOD\Metadata\BankFolder\{aa51d194-1189-4a64-803e-55b9b36aab16}.xml
+            fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\BankFolder\{aa51d194-1189-4a64-803e-55b9b36aab16}.xml
+            projectPath: Assets\FMOD\Metadata\BankFolder\{aa51d194-1189-4a64-803e-55b9b36aab16}.xml
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\FMOD\Metadata\EffectPresetFolder
+          label: EffectPresetFolder
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\FMOD\Metadata\EffectPresetFolder\{e9a6433e-1a27-4650-837e-dc9b58d9598c}.xml
+          label: '{e9a6433e-1a27-4650-837e-dc9b58d9598c}.xml'
+          level: 4
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\FMOD\Metadata\EffectPresetFolder\{e9a6433e-1a27-4650-837e-dc9b58d9598c}.xml
+            fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\EffectPresetFolder\{e9a6433e-1a27-4650-837e-dc9b58d9598c}.xml
+            projectPath: Assets\FMOD\Metadata\EffectPresetFolder\{e9a6433e-1a27-4650-837e-dc9b58d9598c}.xml
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\FMOD\Metadata\EncodingSetting
+          label: EncodingSetting
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\FMOD\Metadata\EncodingSetting\{5ca8bb83-22fb-4603-9bae-7077101242f3}.xml
+          label: '{5ca8bb83-22fb-4603-9bae-7077101242f3}.xml'
+          level: 4
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\FMOD\Metadata\EncodingSetting\{5ca8bb83-22fb-4603-9bae-7077101242f3}.xml
+            fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\EncodingSetting\{5ca8bb83-22fb-4603-9bae-7077101242f3}.xml
+            projectPath: Assets\FMOD\Metadata\EncodingSetting\{5ca8bb83-22fb-4603-9bae-7077101242f3}.xml
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\FMOD\Metadata\Event
+          label: Event
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\FMOD\Metadata\Event\{16b02c0f-f5b7-4fc3-bf0b-cf9e4d422576}.xml
+          label: '{16b02c0f-f5b7-4fc3-bf0b-cf9e4d422576}.xml'
+          level: 4
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\FMOD\Metadata\Event\{16b02c0f-f5b7-4fc3-bf0b-cf9e4d422576}.xml
+            fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Event\{16b02c0f-f5b7-4fc3-bf0b-cf9e4d422576}.xml
+            projectPath: Assets\FMOD\Metadata\Event\{16b02c0f-f5b7-4fc3-bf0b-cf9e4d422576}.xml
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\FMOD\Metadata\EventFolder
+          label: EventFolder
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\FMOD\Metadata\EventFolder\{0730f473-71b5-4b2c-a5bf-bb1e1339552f}.xml
+          label: '{0730f473-71b5-4b2c-a5bf-bb1e1339552f}.xml'
+          level: 4
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\FMOD\Metadata\EventFolder\{0730f473-71b5-4b2c-a5bf-bb1e1339552f}.xml
+            fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\EventFolder\{0730f473-71b5-4b2c-a5bf-bb1e1339552f}.xml
+            projectPath: Assets\FMOD\Metadata\EventFolder\{0730f473-71b5-4b2c-a5bf-bb1e1339552f}.xml
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\FMOD\Metadata\EventFolder\{84f0627a-04b6-4ab2-ac87-07551dbf4cd6}.xml
+          label: '{84f0627a-04b6-4ab2-ac87-07551dbf4cd6}.xml'
+          level: 4
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\FMOD\Metadata\EventFolder\{84f0627a-04b6-4ab2-ac87-07551dbf4cd6}.xml
+            fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\EventFolder\{84f0627a-04b6-4ab2-ac87-07551dbf4cd6}.xml
+            projectPath: Assets\FMOD\Metadata\EventFolder\{84f0627a-04b6-4ab2-ac87-07551dbf4cd6}.xml
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\FMOD\Metadata\EventFolder\{8d6ec3b9-2dd1-43ce-89e4-039b93b4634e}.xml
+          label: '{8d6ec3b9-2dd1-43ce-89e4-039b93b4634e}.xml'
+          level: 4
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\FMOD\Metadata\EventFolder\{8d6ec3b9-2dd1-43ce-89e4-039b93b4634e}.xml
+            fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\EventFolder\{8d6ec3b9-2dd1-43ce-89e4-039b93b4634e}.xml
+            projectPath: Assets\FMOD\Metadata\EventFolder\{8d6ec3b9-2dd1-43ce-89e4-039b93b4634e}.xml
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\FMOD\Metadata\EventFolder\{cf25fcf0-b2e2-40e2-972b-2f7a5f4fd368}.xml
+          label: '{cf25fcf0-b2e2-40e2-972b-2f7a5f4fd368}.xml'
+          level: 4
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\FMOD\Metadata\EventFolder\{cf25fcf0-b2e2-40e2-972b-2f7a5f4fd368}.xml
+            fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\EventFolder\{cf25fcf0-b2e2-40e2-972b-2f7a5f4fd368}.xml
+            projectPath: Assets\FMOD\Metadata\EventFolder\{cf25fcf0-b2e2-40e2-972b-2f7a5f4fd368}.xml
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\FMOD\Metadata\Master.xml
+          label: Master.xml
+          level: 3
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\FMOD\Metadata\Master.xml
+            fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Master.xml
+            projectPath: Assets\FMOD\Metadata\Master.xml
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\FMOD\Metadata\Mixer.xml
+          label: Mixer.xml
+          level: 3
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\FMOD\Metadata\Mixer.xml
+            fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Mixer.xml
+            projectPath: Assets\FMOD\Metadata\Mixer.xml
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\FMOD\Metadata\ParameterPresetFolder
+          label: ParameterPresetFolder
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\FMOD\Metadata\ParameterPresetFolder\{4a1eaca2-20ca-4653-bb5a-67c066e36988}.xml
+          label: '{4a1eaca2-20ca-4653-bb5a-67c066e36988}.xml'
+          level: 4
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\FMOD\Metadata\ParameterPresetFolder\{4a1eaca2-20ca-4653-bb5a-67c066e36988}.xml
+            fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\ParameterPresetFolder\{4a1eaca2-20ca-4653-bb5a-67c066e36988}.xml
+            projectPath: Assets\FMOD\Metadata\ParameterPresetFolder\{4a1eaca2-20ca-4653-bb5a-67c066e36988}.xml
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\FMOD\Metadata\Platform
+          label: Platform
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\FMOD\Metadata\Platform\{00c652cc-9f43-4129-9a5c-4cacd6b2b816}.xml
+          label: '{00c652cc-9f43-4129-9a5c-4cacd6b2b816}.xml'
+          level: 4
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\FMOD\Metadata\Platform\{00c652cc-9f43-4129-9a5c-4cacd6b2b816}.xml
+            fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Platform\{00c652cc-9f43-4129-9a5c-4cacd6b2b816}.xml
+            projectPath: Assets\FMOD\Metadata\Platform\{00c652cc-9f43-4129-9a5c-4cacd6b2b816}.xml
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\FMOD\Metadata\ProfilerFolder
+          label: ProfilerFolder
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\FMOD\Metadata\ProfilerFolder\{67e40a10-c0b0-4d66-b9a7-0ef387adb635}.xml
+          label: '{67e40a10-c0b0-4d66-b9a7-0ef387adb635}.xml'
+          level: 4
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\FMOD\Metadata\ProfilerFolder\{67e40a10-c0b0-4d66-b9a7-0ef387adb635}.xml
+            fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\ProfilerFolder\{67e40a10-c0b0-4d66-b9a7-0ef387adb635}.xml
+            projectPath: Assets\FMOD\Metadata\ProfilerFolder\{67e40a10-c0b0-4d66-b9a7-0ef387adb635}.xml
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\FMOD\Metadata\Return
+          label: Return
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\FMOD\Metadata\Return\{3ecbe911-a2bb-4795-afca-17b12b6f5523}.xml
+          label: '{3ecbe911-a2bb-4795-afca-17b12b6f5523}.xml'
+          level: 4
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\FMOD\Metadata\Return\{3ecbe911-a2bb-4795-afca-17b12b6f5523}.xml
+            fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Return\{3ecbe911-a2bb-4795-afca-17b12b6f5523}.xml
+            projectPath: Assets\FMOD\Metadata\Return\{3ecbe911-a2bb-4795-afca-17b12b6f5523}.xml
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\FMOD\Metadata\SandboxFolder
+          label: SandboxFolder
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\FMOD\Metadata\SandboxFolder\{d3eb3a52-8878-46ea-8445-0197561e9d1a}.xml
+          label: '{d3eb3a52-8878-46ea-8445-0197561e9d1a}.xml'
+          level: 4
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\FMOD\Metadata\SandboxFolder\{d3eb3a52-8878-46ea-8445-0197561e9d1a}.xml
+            fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\SandboxFolder\{d3eb3a52-8878-46ea-8445-0197561e9d1a}.xml
+            projectPath: Assets\FMOD\Metadata\SandboxFolder\{d3eb3a52-8878-46ea-8445-0197561e9d1a}.xml
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\FMOD\Metadata\SnapshotGroup
+          label: SnapshotGroup
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\FMOD\Metadata\SnapshotGroup\{60a98fb2-ee80-4561-91b9-e988c9d26677}.xml
+          label: '{60a98fb2-ee80-4561-91b9-e988c9d26677}.xml'
+          level: 4
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\FMOD\Metadata\SnapshotGroup\{60a98fb2-ee80-4561-91b9-e988c9d26677}.xml
+            fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\SnapshotGroup\{60a98fb2-ee80-4561-91b9-e988c9d26677}.xml
+            projectPath: Assets\FMOD\Metadata\SnapshotGroup\{60a98fb2-ee80-4561-91b9-e988c9d26677}.xml
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\FMOD\Metadata\Tags.xml
+          label: Tags.xml
+          level: 3
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\FMOD\Metadata\Tags.xml
+            fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Tags.xml
+            projectPath: Assets\FMOD\Metadata\Tags.xml
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\FMOD\Metadata\Workspace.xml
+          label: Workspace.xml
+          level: 3
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\FMOD\Metadata\Workspace.xml
+            fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Workspace.xml
+            projectPath: Assets\FMOD\Metadata\Workspace.xml
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\Plugins
+          label: Plugins
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Plugins\FMOD
+          label: FMOD
+          level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Plugins\FMOD\Resources
+          label: Resources
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Plugins\FMOD\Resources\FMODStudioSettings.asset
+          label: FMODStudioSettings.asset
+          level: 4
+          isFolder: 0
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Plugins\FMOD\Resources\FMODStudioSettings.asset
+            fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\Plugins\FMOD\Resources\FMODStudioSettings.asset
+            projectPath: Assets\Plugins\FMOD\Resources\FMODStudioSettings.asset
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 3
+        - path: Assets\Scenes
+          label: Scenes
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Scenes\Templates
+          label: Templates
+          level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Scenes\Templates\LevelTemplate.unity
+          label: LevelTemplate.unity
+          level: 3
+          isFolder: 0
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Scenes\Templates\LevelTemplate.unity
+            fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\Scenes\Templates\LevelTemplate.unity
+            projectPath: Assets\Scenes\Templates\LevelTemplate.unity
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 3
+        - path: Assets\Scripts
+          label: Scripts
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Scripts\AudioManager.cs
+          label: AudioManager.cs
+          level: 2
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Scripts\AudioManager.cs
+            fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\Scripts\AudioManager.cs
+            projectPath: Assets\Scripts\AudioManager.cs
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\Scripts\Entity.cs
+          label: Entity.cs
+          level: 2
+          isFolder: 0
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Scripts\Entity.cs
+            fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\Scripts\Entity.cs
+            projectPath: Assets\Scripts\Entity.cs
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 3
+        - path: Assets\Scripts\Player.cs
+          label: Player.cs
+          level: 2
+          isFolder: 0
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Scripts\Player.cs
+            fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\Scripts\Player.cs
+            projectPath: Assets\Scripts\Player.cs
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 3
+        - path: Assets\Scripts\TurnManager.cs
+          label: TurnManager.cs
+          level: 2
+          isFolder: 0
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Scripts\TurnManager.cs
+            fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\Scripts\TurnManager.cs
+            projectPath: Assets\Scripts\TurnManager.cs
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 3
+        - path: Assets\Scripts\WoodenBox.cs
+          label: WoodenBox.cs
+          level: 2
+          isFolder: 0
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Scripts\WoodenBox.cs
+            fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\Scripts\WoodenBox.cs
+            projectPath: Assets\Scripts\WoodenBox.cs
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 3
       folders:
-        keys: []
-        values: []
+        keys:
+        - Assets
+        - Assets\FMOD
+        - Assets\FMOD\.cache
+        - Assets\FMOD\.cache\buildrecords
+        - Assets\FMOD\.cache\buildrecords\Desktop
+        - Assets\FMOD\Desktop
+        - Assets\FMOD\Metadata
+        - Assets\FMOD\Metadata\Asset
+        - Assets\FMOD\Metadata\Bank
+        - Assets\FMOD\Metadata\BankFolder
+        - Assets\FMOD\Metadata\EffectPresetFolder
+        - Assets\FMOD\Metadata\EncodingSetting
+        - Assets\FMOD\Metadata\Event
+        - Assets\FMOD\Metadata\EventFolder
+        - Assets\FMOD\Metadata\ParameterPresetFolder
+        - Assets\FMOD\Metadata\Platform
+        - Assets\FMOD\Metadata\ProfilerFolder
+        - Assets\FMOD\Metadata\Return
+        - Assets\FMOD\Metadata\SandboxFolder
+        - Assets\FMOD\Metadata\SnapshotGroup
+        - Assets\Plugins
+        - Assets\Plugins\FMOD
+        - Assets\Plugins\FMOD\Resources
+        - Assets\Scenes
+        - Assets\Scenes\Templates
+        - Assets\Scripts
+        - UserSettings
+        - UserSettings\Layouts
+        values:
+        - path: Assets
+          label: Assets
+          level: 0
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\FMOD
+          label: FMOD
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\FMOD\.cache
+          label: .cache
+          level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\FMOD\.cache\buildrecords
+          label: buildrecords
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\FMOD\.cache\buildrecords\Desktop
+          label: Desktop
+          level: 4
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\FMOD\Desktop
+          label: Desktop
+          level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\FMOD\Metadata
+          label: Metadata
+          level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\FMOD\Metadata\Asset
+          label: Asset
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\FMOD\Metadata\Bank
+          label: Bank
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\FMOD\Metadata\BankFolder
+          label: BankFolder
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\FMOD\Metadata\EffectPresetFolder
+          label: EffectPresetFolder
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\FMOD\Metadata\EncodingSetting
+          label: EncodingSetting
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\FMOD\Metadata\Event
+          label: Event
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\FMOD\Metadata\EventFolder
+          label: EventFolder
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\FMOD\Metadata\ParameterPresetFolder
+          label: ParameterPresetFolder
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\FMOD\Metadata\Platform
+          label: Platform
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\FMOD\Metadata\ProfilerFolder
+          label: ProfilerFolder
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\FMOD\Metadata\Return
+          label: Return
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\FMOD\Metadata\SandboxFolder
+          label: SandboxFolder
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\FMOD\Metadata\SnapshotGroup
+          label: SnapshotGroup
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Plugins
+          label: Plugins
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Plugins\FMOD
+          label: FMOD
+          level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Plugins\FMOD\Resources
+          label: Resources
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Scenes
+          label: Scenes
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Scenes\Templates
+          label: Templates
+          level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Scripts
+          label: Scripts
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: UserSettings
+          label: UserSettings
+          level: 0
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: UserSettings\Layouts
+          label: Layouts
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
       checkedFileNodes:
         keys: []
         values: []
@@ -1595,6 +3134,1824 @@ MonoBehaviour:
           originalPath: 
           indexStatus: 0
           workTreeStatus: 0
+      - path: Assets
+        label: Assets
+        level: 0
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\FMOD
+        label: FMOD
+        level: 1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\FMOD\.cache
+        label: .cache
+        level: 2
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\FMOD\.cache\buildrecords
+        label: buildrecords
+        level: 3
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\FMOD\.cache\buildrecords\Desktop
+        label: Desktop
+        level: 4
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\FMOD\.cache\buildrecords\Desktop\Master.br
+        label: Master.br
+        level: 5
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\.cache\buildrecords\Desktop\Master.br
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\.cache\buildrecords\Desktop\Master.br
+          projectPath: Assets\FMOD\.cache\buildrecords\Desktop\Master.br
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Build.meta
+        label: Build.meta
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Build.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Build.meta
+          projectPath: Assets\FMOD\Build.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Desktop.meta
+        label: Desktop.meta
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Desktop.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Desktop.meta
+          projectPath: Assets\FMOD\Desktop.meta
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: Assets\FMOD\Desktop
+        label: Desktop
+        level: 2
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\FMOD\Desktop\Master.bank
+        label: Master.bank
+        level: 3
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Desktop\Master.bank
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Desktop\Master.bank
+          projectPath: Assets\FMOD\Desktop\Master.bank
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: Assets\FMOD\Desktop\Master.bank.meta
+        label: Master.bank.meta
+        level: 4
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Desktop\Master.bank.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Desktop\Master.bank.meta
+          projectPath: Assets\FMOD\Desktop\Master.bank.meta
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: Assets\FMOD\Desktop\Master.strings.bank
+        label: Master.strings.bank
+        level: 3
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Desktop\Master.strings.bank
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Desktop\Master.strings.bank
+          projectPath: Assets\FMOD\Desktop\Master.strings.bank
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: Assets\FMOD\Desktop\Master.strings.bank.meta
+        label: Master.strings.bank.meta
+        level: 4
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Desktop\Master.strings.bank.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Desktop\Master.strings.bank.meta
+          projectPath: Assets\FMOD\Desktop\Master.strings.bank.meta
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: Assets\FMOD\FMOD.fspro
+        label: FMOD.fspro
+        level: 2
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\FMOD.fspro
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\FMOD.fspro
+          projectPath: Assets\FMOD\FMOD.fspro
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\FMOD.fspro.meta
+        label: FMOD.fspro.meta
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\FMOD.fspro.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\FMOD.fspro.meta
+          projectPath: Assets\FMOD\FMOD.fspro.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata.meta
+        label: Metadata.meta
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata.meta
+          projectPath: Assets\FMOD\Metadata.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata
+        label: Metadata
+        level: 2
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\FMOD\Metadata\Asset.meta
+        label: Asset.meta
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\Asset.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Asset.meta
+          projectPath: Assets\FMOD\Metadata\Asset.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\Asset
+        label: Asset
+        level: 3
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\FMOD\Metadata\Asset\{45494f83-cc69-4c50-a22a-eada1a2906ee}.xml
+        label: '{45494f83-cc69-4c50-a22a-eada1a2906ee}.xml'
+        level: 4
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\Asset\{45494f83-cc69-4c50-a22a-eada1a2906ee}.xml
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Asset\{45494f83-cc69-4c50-a22a-eada1a2906ee}.xml
+          projectPath: Assets\FMOD\Metadata\Asset\{45494f83-cc69-4c50-a22a-eada1a2906ee}.xml
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\Asset\{45494f83-cc69-4c50-a22a-eada1a2906ee}.xml.meta
+        label: '{45494f83-cc69-4c50-a22a-eada1a2906ee}.xml.meta'
+        level: 5
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\Asset\{45494f83-cc69-4c50-a22a-eada1a2906ee}.xml.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Asset\{45494f83-cc69-4c50-a22a-eada1a2906ee}.xml.meta
+          projectPath: Assets\FMOD\Metadata\Asset\{45494f83-cc69-4c50-a22a-eada1a2906ee}.xml.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\Bank.meta
+        label: Bank.meta
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\Bank.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Bank.meta
+          projectPath: Assets\FMOD\Metadata\Bank.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\Bank
+        label: Bank
+        level: 3
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\FMOD\Metadata\Bank\{679ba963-a3f7-4487-9093-dcd85e366d73}.xml
+        label: '{679ba963-a3f7-4487-9093-dcd85e366d73}.xml'
+        level: 4
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\Bank\{679ba963-a3f7-4487-9093-dcd85e366d73}.xml
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Bank\{679ba963-a3f7-4487-9093-dcd85e366d73}.xml
+          projectPath: Assets\FMOD\Metadata\Bank\{679ba963-a3f7-4487-9093-dcd85e366d73}.xml
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\Bank\{679ba963-a3f7-4487-9093-dcd85e366d73}.xml.meta
+        label: '{679ba963-a3f7-4487-9093-dcd85e366d73}.xml.meta'
+        level: 5
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\Bank\{679ba963-a3f7-4487-9093-dcd85e366d73}.xml.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Bank\{679ba963-a3f7-4487-9093-dcd85e366d73}.xml.meta
+          projectPath: Assets\FMOD\Metadata\Bank\{679ba963-a3f7-4487-9093-dcd85e366d73}.xml.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\BankFolder.meta
+        label: BankFolder.meta
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\BankFolder.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\BankFolder.meta
+          projectPath: Assets\FMOD\Metadata\BankFolder.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\BankFolder
+        label: BankFolder
+        level: 3
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\FMOD\Metadata\BankFolder\{aa51d194-1189-4a64-803e-55b9b36aab16}.xml
+        label: '{aa51d194-1189-4a64-803e-55b9b36aab16}.xml'
+        level: 4
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\BankFolder\{aa51d194-1189-4a64-803e-55b9b36aab16}.xml
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\BankFolder\{aa51d194-1189-4a64-803e-55b9b36aab16}.xml
+          projectPath: Assets\FMOD\Metadata\BankFolder\{aa51d194-1189-4a64-803e-55b9b36aab16}.xml
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\BankFolder\{aa51d194-1189-4a64-803e-55b9b36aab16}.xml.meta
+        label: '{aa51d194-1189-4a64-803e-55b9b36aab16}.xml.meta'
+        level: 5
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\BankFolder\{aa51d194-1189-4a64-803e-55b9b36aab16}.xml.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\BankFolder\{aa51d194-1189-4a64-803e-55b9b36aab16}.xml.meta
+          projectPath: Assets\FMOD\Metadata\BankFolder\{aa51d194-1189-4a64-803e-55b9b36aab16}.xml.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\EffectPresetFolder.meta
+        label: EffectPresetFolder.meta
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\EffectPresetFolder.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\EffectPresetFolder.meta
+          projectPath: Assets\FMOD\Metadata\EffectPresetFolder.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\EffectPresetFolder
+        label: EffectPresetFolder
+        level: 3
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\FMOD\Metadata\EffectPresetFolder\{e9a6433e-1a27-4650-837e-dc9b58d9598c}.xml
+        label: '{e9a6433e-1a27-4650-837e-dc9b58d9598c}.xml'
+        level: 4
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\EffectPresetFolder\{e9a6433e-1a27-4650-837e-dc9b58d9598c}.xml
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\EffectPresetFolder\{e9a6433e-1a27-4650-837e-dc9b58d9598c}.xml
+          projectPath: Assets\FMOD\Metadata\EffectPresetFolder\{e9a6433e-1a27-4650-837e-dc9b58d9598c}.xml
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\EffectPresetFolder\{e9a6433e-1a27-4650-837e-dc9b58d9598c}.xml.meta
+        label: '{e9a6433e-1a27-4650-837e-dc9b58d9598c}.xml.meta'
+        level: 5
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\EffectPresetFolder\{e9a6433e-1a27-4650-837e-dc9b58d9598c}.xml.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\EffectPresetFolder\{e9a6433e-1a27-4650-837e-dc9b58d9598c}.xml.meta
+          projectPath: Assets\FMOD\Metadata\EffectPresetFolder\{e9a6433e-1a27-4650-837e-dc9b58d9598c}.xml.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\EncodingSetting.meta
+        label: EncodingSetting.meta
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\EncodingSetting.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\EncodingSetting.meta
+          projectPath: Assets\FMOD\Metadata\EncodingSetting.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\EncodingSetting
+        label: EncodingSetting
+        level: 3
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\FMOD\Metadata\EncodingSetting\{5ca8bb83-22fb-4603-9bae-7077101242f3}.xml
+        label: '{5ca8bb83-22fb-4603-9bae-7077101242f3}.xml'
+        level: 4
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\EncodingSetting\{5ca8bb83-22fb-4603-9bae-7077101242f3}.xml
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\EncodingSetting\{5ca8bb83-22fb-4603-9bae-7077101242f3}.xml
+          projectPath: Assets\FMOD\Metadata\EncodingSetting\{5ca8bb83-22fb-4603-9bae-7077101242f3}.xml
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\EncodingSetting\{5ca8bb83-22fb-4603-9bae-7077101242f3}.xml.meta
+        label: '{5ca8bb83-22fb-4603-9bae-7077101242f3}.xml.meta'
+        level: 5
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\EncodingSetting\{5ca8bb83-22fb-4603-9bae-7077101242f3}.xml.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\EncodingSetting\{5ca8bb83-22fb-4603-9bae-7077101242f3}.xml.meta
+          projectPath: Assets\FMOD\Metadata\EncodingSetting\{5ca8bb83-22fb-4603-9bae-7077101242f3}.xml.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\Event.meta
+        label: Event.meta
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\Event.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Event.meta
+          projectPath: Assets\FMOD\Metadata\Event.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\Event
+        label: Event
+        level: 3
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\FMOD\Metadata\Event\{16b02c0f-f5b7-4fc3-bf0b-cf9e4d422576}.xml
+        label: '{16b02c0f-f5b7-4fc3-bf0b-cf9e4d422576}.xml'
+        level: 4
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\Event\{16b02c0f-f5b7-4fc3-bf0b-cf9e4d422576}.xml
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Event\{16b02c0f-f5b7-4fc3-bf0b-cf9e4d422576}.xml
+          projectPath: Assets\FMOD\Metadata\Event\{16b02c0f-f5b7-4fc3-bf0b-cf9e4d422576}.xml
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\Event\{16b02c0f-f5b7-4fc3-bf0b-cf9e4d422576}.xml.meta
+        label: '{16b02c0f-f5b7-4fc3-bf0b-cf9e4d422576}.xml.meta'
+        level: 5
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\Event\{16b02c0f-f5b7-4fc3-bf0b-cf9e4d422576}.xml.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Event\{16b02c0f-f5b7-4fc3-bf0b-cf9e4d422576}.xml.meta
+          projectPath: Assets\FMOD\Metadata\Event\{16b02c0f-f5b7-4fc3-bf0b-cf9e4d422576}.xml.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\EventFolder.meta
+        label: EventFolder.meta
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\EventFolder.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\EventFolder.meta
+          projectPath: Assets\FMOD\Metadata\EventFolder.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\EventFolder
+        label: EventFolder
+        level: 3
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\FMOD\Metadata\EventFolder\{0730f473-71b5-4b2c-a5bf-bb1e1339552f}.xml
+        label: '{0730f473-71b5-4b2c-a5bf-bb1e1339552f}.xml'
+        level: 4
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\EventFolder\{0730f473-71b5-4b2c-a5bf-bb1e1339552f}.xml
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\EventFolder\{0730f473-71b5-4b2c-a5bf-bb1e1339552f}.xml
+          projectPath: Assets\FMOD\Metadata\EventFolder\{0730f473-71b5-4b2c-a5bf-bb1e1339552f}.xml
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\EventFolder\{0730f473-71b5-4b2c-a5bf-bb1e1339552f}.xml.meta
+        label: '{0730f473-71b5-4b2c-a5bf-bb1e1339552f}.xml.meta'
+        level: 5
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\EventFolder\{0730f473-71b5-4b2c-a5bf-bb1e1339552f}.xml.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\EventFolder\{0730f473-71b5-4b2c-a5bf-bb1e1339552f}.xml.meta
+          projectPath: Assets\FMOD\Metadata\EventFolder\{0730f473-71b5-4b2c-a5bf-bb1e1339552f}.xml.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\EventFolder\{84f0627a-04b6-4ab2-ac87-07551dbf4cd6}.xml
+        label: '{84f0627a-04b6-4ab2-ac87-07551dbf4cd6}.xml'
+        level: 4
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\EventFolder\{84f0627a-04b6-4ab2-ac87-07551dbf4cd6}.xml
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\EventFolder\{84f0627a-04b6-4ab2-ac87-07551dbf4cd6}.xml
+          projectPath: Assets\FMOD\Metadata\EventFolder\{84f0627a-04b6-4ab2-ac87-07551dbf4cd6}.xml
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\EventFolder\{84f0627a-04b6-4ab2-ac87-07551dbf4cd6}.xml.meta
+        label: '{84f0627a-04b6-4ab2-ac87-07551dbf4cd6}.xml.meta'
+        level: 5
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\EventFolder\{84f0627a-04b6-4ab2-ac87-07551dbf4cd6}.xml.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\EventFolder\{84f0627a-04b6-4ab2-ac87-07551dbf4cd6}.xml.meta
+          projectPath: Assets\FMOD\Metadata\EventFolder\{84f0627a-04b6-4ab2-ac87-07551dbf4cd6}.xml.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\EventFolder\{8d6ec3b9-2dd1-43ce-89e4-039b93b4634e}.xml
+        label: '{8d6ec3b9-2dd1-43ce-89e4-039b93b4634e}.xml'
+        level: 4
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\EventFolder\{8d6ec3b9-2dd1-43ce-89e4-039b93b4634e}.xml
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\EventFolder\{8d6ec3b9-2dd1-43ce-89e4-039b93b4634e}.xml
+          projectPath: Assets\FMOD\Metadata\EventFolder\{8d6ec3b9-2dd1-43ce-89e4-039b93b4634e}.xml
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\EventFolder\{8d6ec3b9-2dd1-43ce-89e4-039b93b4634e}.xml.meta
+        label: '{8d6ec3b9-2dd1-43ce-89e4-039b93b4634e}.xml.meta'
+        level: 5
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\EventFolder\{8d6ec3b9-2dd1-43ce-89e4-039b93b4634e}.xml.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\EventFolder\{8d6ec3b9-2dd1-43ce-89e4-039b93b4634e}.xml.meta
+          projectPath: Assets\FMOD\Metadata\EventFolder\{8d6ec3b9-2dd1-43ce-89e4-039b93b4634e}.xml.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\EventFolder\{cf25fcf0-b2e2-40e2-972b-2f7a5f4fd368}.xml
+        label: '{cf25fcf0-b2e2-40e2-972b-2f7a5f4fd368}.xml'
+        level: 4
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\EventFolder\{cf25fcf0-b2e2-40e2-972b-2f7a5f4fd368}.xml
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\EventFolder\{cf25fcf0-b2e2-40e2-972b-2f7a5f4fd368}.xml
+          projectPath: Assets\FMOD\Metadata\EventFolder\{cf25fcf0-b2e2-40e2-972b-2f7a5f4fd368}.xml
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\EventFolder\{cf25fcf0-b2e2-40e2-972b-2f7a5f4fd368}.xml.meta
+        label: '{cf25fcf0-b2e2-40e2-972b-2f7a5f4fd368}.xml.meta'
+        level: 5
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\EventFolder\{cf25fcf0-b2e2-40e2-972b-2f7a5f4fd368}.xml.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\EventFolder\{cf25fcf0-b2e2-40e2-972b-2f7a5f4fd368}.xml.meta
+          projectPath: Assets\FMOD\Metadata\EventFolder\{cf25fcf0-b2e2-40e2-972b-2f7a5f4fd368}.xml.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\Master.xml
+        label: Master.xml
+        level: 3
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\Master.xml
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Master.xml
+          projectPath: Assets\FMOD\Metadata\Master.xml
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\Master.xml.meta
+        label: Master.xml.meta
+        level: 4
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\Master.xml.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Master.xml.meta
+          projectPath: Assets\FMOD\Metadata\Master.xml.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\Mixer.xml
+        label: Mixer.xml
+        level: 3
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\Mixer.xml
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Mixer.xml
+          projectPath: Assets\FMOD\Metadata\Mixer.xml
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\Mixer.xml.meta
+        label: Mixer.xml.meta
+        level: 4
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\Mixer.xml.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Mixer.xml.meta
+          projectPath: Assets\FMOD\Metadata\Mixer.xml.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\ParameterPresetFolder.meta
+        label: ParameterPresetFolder.meta
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\ParameterPresetFolder.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\ParameterPresetFolder.meta
+          projectPath: Assets\FMOD\Metadata\ParameterPresetFolder.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\ParameterPresetFolder
+        label: ParameterPresetFolder
+        level: 3
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\FMOD\Metadata\ParameterPresetFolder\{4a1eaca2-20ca-4653-bb5a-67c066e36988}.xml
+        label: '{4a1eaca2-20ca-4653-bb5a-67c066e36988}.xml'
+        level: 4
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\ParameterPresetFolder\{4a1eaca2-20ca-4653-bb5a-67c066e36988}.xml
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\ParameterPresetFolder\{4a1eaca2-20ca-4653-bb5a-67c066e36988}.xml
+          projectPath: Assets\FMOD\Metadata\ParameterPresetFolder\{4a1eaca2-20ca-4653-bb5a-67c066e36988}.xml
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\ParameterPresetFolder\{4a1eaca2-20ca-4653-bb5a-67c066e36988}.xml.meta
+        label: '{4a1eaca2-20ca-4653-bb5a-67c066e36988}.xml.meta'
+        level: 5
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\ParameterPresetFolder\{4a1eaca2-20ca-4653-bb5a-67c066e36988}.xml.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\ParameterPresetFolder\{4a1eaca2-20ca-4653-bb5a-67c066e36988}.xml.meta
+          projectPath: Assets\FMOD\Metadata\ParameterPresetFolder\{4a1eaca2-20ca-4653-bb5a-67c066e36988}.xml.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\Platform.meta
+        label: Platform.meta
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\Platform.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Platform.meta
+          projectPath: Assets\FMOD\Metadata\Platform.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\Platform
+        label: Platform
+        level: 3
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\FMOD\Metadata\Platform\{00c652cc-9f43-4129-9a5c-4cacd6b2b816}.xml
+        label: '{00c652cc-9f43-4129-9a5c-4cacd6b2b816}.xml'
+        level: 4
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\Platform\{00c652cc-9f43-4129-9a5c-4cacd6b2b816}.xml
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Platform\{00c652cc-9f43-4129-9a5c-4cacd6b2b816}.xml
+          projectPath: Assets\FMOD\Metadata\Platform\{00c652cc-9f43-4129-9a5c-4cacd6b2b816}.xml
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\Platform\{00c652cc-9f43-4129-9a5c-4cacd6b2b816}.xml.meta
+        label: '{00c652cc-9f43-4129-9a5c-4cacd6b2b816}.xml.meta'
+        level: 5
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\Platform\{00c652cc-9f43-4129-9a5c-4cacd6b2b816}.xml.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Platform\{00c652cc-9f43-4129-9a5c-4cacd6b2b816}.xml.meta
+          projectPath: Assets\FMOD\Metadata\Platform\{00c652cc-9f43-4129-9a5c-4cacd6b2b816}.xml.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\ProfilerFolder.meta
+        label: ProfilerFolder.meta
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\ProfilerFolder.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\ProfilerFolder.meta
+          projectPath: Assets\FMOD\Metadata\ProfilerFolder.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\ProfilerFolder
+        label: ProfilerFolder
+        level: 3
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\FMOD\Metadata\ProfilerFolder\{67e40a10-c0b0-4d66-b9a7-0ef387adb635}.xml
+        label: '{67e40a10-c0b0-4d66-b9a7-0ef387adb635}.xml'
+        level: 4
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\ProfilerFolder\{67e40a10-c0b0-4d66-b9a7-0ef387adb635}.xml
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\ProfilerFolder\{67e40a10-c0b0-4d66-b9a7-0ef387adb635}.xml
+          projectPath: Assets\FMOD\Metadata\ProfilerFolder\{67e40a10-c0b0-4d66-b9a7-0ef387adb635}.xml
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\ProfilerFolder\{67e40a10-c0b0-4d66-b9a7-0ef387adb635}.xml.meta
+        label: '{67e40a10-c0b0-4d66-b9a7-0ef387adb635}.xml.meta'
+        level: 5
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\ProfilerFolder\{67e40a10-c0b0-4d66-b9a7-0ef387adb635}.xml.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\ProfilerFolder\{67e40a10-c0b0-4d66-b9a7-0ef387adb635}.xml.meta
+          projectPath: Assets\FMOD\Metadata\ProfilerFolder\{67e40a10-c0b0-4d66-b9a7-0ef387adb635}.xml.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\Return.meta
+        label: Return.meta
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\Return.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Return.meta
+          projectPath: Assets\FMOD\Metadata\Return.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\Return
+        label: Return
+        level: 3
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\FMOD\Metadata\Return\{3ecbe911-a2bb-4795-afca-17b12b6f5523}.xml
+        label: '{3ecbe911-a2bb-4795-afca-17b12b6f5523}.xml'
+        level: 4
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\Return\{3ecbe911-a2bb-4795-afca-17b12b6f5523}.xml
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Return\{3ecbe911-a2bb-4795-afca-17b12b6f5523}.xml
+          projectPath: Assets\FMOD\Metadata\Return\{3ecbe911-a2bb-4795-afca-17b12b6f5523}.xml
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\Return\{3ecbe911-a2bb-4795-afca-17b12b6f5523}.xml.meta
+        label: '{3ecbe911-a2bb-4795-afca-17b12b6f5523}.xml.meta'
+        level: 5
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\Return\{3ecbe911-a2bb-4795-afca-17b12b6f5523}.xml.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Return\{3ecbe911-a2bb-4795-afca-17b12b6f5523}.xml.meta
+          projectPath: Assets\FMOD\Metadata\Return\{3ecbe911-a2bb-4795-afca-17b12b6f5523}.xml.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\SandboxFolder.meta
+        label: SandboxFolder.meta
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\SandboxFolder.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\SandboxFolder.meta
+          projectPath: Assets\FMOD\Metadata\SandboxFolder.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\SandboxFolder
+        label: SandboxFolder
+        level: 3
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\FMOD\Metadata\SandboxFolder\{d3eb3a52-8878-46ea-8445-0197561e9d1a}.xml
+        label: '{d3eb3a52-8878-46ea-8445-0197561e9d1a}.xml'
+        level: 4
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\SandboxFolder\{d3eb3a52-8878-46ea-8445-0197561e9d1a}.xml
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\SandboxFolder\{d3eb3a52-8878-46ea-8445-0197561e9d1a}.xml
+          projectPath: Assets\FMOD\Metadata\SandboxFolder\{d3eb3a52-8878-46ea-8445-0197561e9d1a}.xml
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\SandboxFolder\{d3eb3a52-8878-46ea-8445-0197561e9d1a}.xml.meta
+        label: '{d3eb3a52-8878-46ea-8445-0197561e9d1a}.xml.meta'
+        level: 5
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\SandboxFolder\{d3eb3a52-8878-46ea-8445-0197561e9d1a}.xml.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\SandboxFolder\{d3eb3a52-8878-46ea-8445-0197561e9d1a}.xml.meta
+          projectPath: Assets\FMOD\Metadata\SandboxFolder\{d3eb3a52-8878-46ea-8445-0197561e9d1a}.xml.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\SnapshotGroup.meta
+        label: SnapshotGroup.meta
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\SnapshotGroup.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\SnapshotGroup.meta
+          projectPath: Assets\FMOD\Metadata\SnapshotGroup.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\SnapshotGroup
+        label: SnapshotGroup
+        level: 3
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\FMOD\Metadata\SnapshotGroup\{60a98fb2-ee80-4561-91b9-e988c9d26677}.xml
+        label: '{60a98fb2-ee80-4561-91b9-e988c9d26677}.xml'
+        level: 4
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\SnapshotGroup\{60a98fb2-ee80-4561-91b9-e988c9d26677}.xml
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\SnapshotGroup\{60a98fb2-ee80-4561-91b9-e988c9d26677}.xml
+          projectPath: Assets\FMOD\Metadata\SnapshotGroup\{60a98fb2-ee80-4561-91b9-e988c9d26677}.xml
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\SnapshotGroup\{60a98fb2-ee80-4561-91b9-e988c9d26677}.xml.meta
+        label: '{60a98fb2-ee80-4561-91b9-e988c9d26677}.xml.meta'
+        level: 5
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\SnapshotGroup\{60a98fb2-ee80-4561-91b9-e988c9d26677}.xml.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\SnapshotGroup\{60a98fb2-ee80-4561-91b9-e988c9d26677}.xml.meta
+          projectPath: Assets\FMOD\Metadata\SnapshotGroup\{60a98fb2-ee80-4561-91b9-e988c9d26677}.xml.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\Tags.xml
+        label: Tags.xml
+        level: 3
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\Tags.xml
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Tags.xml
+          projectPath: Assets\FMOD\Metadata\Tags.xml
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\Tags.xml.meta
+        label: Tags.xml.meta
+        level: 4
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\Tags.xml.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Tags.xml.meta
+          projectPath: Assets\FMOD\Metadata\Tags.xml.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\Workspace.xml
+        label: Workspace.xml
+        level: 3
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\Workspace.xml
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Workspace.xml
+          projectPath: Assets\FMOD\Metadata\Workspace.xml
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\FMOD\Metadata\Workspace.xml.meta
+        label: Workspace.xml.meta
+        level: 4
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\FMOD\Metadata\Workspace.xml.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Workspace.xml.meta
+          projectPath: Assets\FMOD\Metadata\Workspace.xml.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Plugins
+        label: Plugins
+        level: 1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Plugins\FMOD
+        label: FMOD
+        level: 2
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Plugins\FMOD\Resources
+        label: Resources
+        level: 3
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Plugins\FMOD\Resources\FMODStudioSettings.asset
+        label: FMODStudioSettings.asset
+        level: 4
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Plugins\FMOD\Resources\FMODStudioSettings.asset
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\Plugins\FMOD\Resources\FMODStudioSettings.asset
+          projectPath: Assets\Plugins\FMOD\Resources\FMODStudioSettings.asset
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: Assets\Scenes
+        label: Scenes
+        level: 1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Scenes\Templates
+        label: Templates
+        level: 2
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Scenes\Templates\LevelTemplate.unity
+        label: LevelTemplate.unity
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Scenes\Templates\LevelTemplate.unity
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\Scenes\Templates\LevelTemplate.unity
+          projectPath: Assets\Scenes\Templates\LevelTemplate.unity
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: Assets\Scripts
+        label: Scripts
+        level: 1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Scripts\AudioManager.cs
+        label: AudioManager.cs
+        level: 2
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Scripts\AudioManager.cs
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\Scripts\AudioManager.cs
+          projectPath: Assets\Scripts\AudioManager.cs
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Scripts\AudioManager.cs.meta
+        label: AudioManager.cs.meta
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Scripts\AudioManager.cs.meta
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\Scripts\AudioManager.cs.meta
+          projectPath: Assets\Scripts\AudioManager.cs.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Scripts\Entity.cs
+        label: Entity.cs
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Scripts\Entity.cs
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\Scripts\Entity.cs
+          projectPath: Assets\Scripts\Entity.cs
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: Assets\Scripts\Player.cs
+        label: Player.cs
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Scripts\Player.cs
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\Scripts\Player.cs
+          projectPath: Assets\Scripts\Player.cs
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: Assets\Scripts\TurnManager.cs
+        label: TurnManager.cs
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Scripts\TurnManager.cs
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\Scripts\TurnManager.cs
+          projectPath: Assets\Scripts\TurnManager.cs
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: Assets\Scripts\WoodenBox.cs
+        label: WoodenBox.cs
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Scripts\WoodenBox.cs
+          fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\Scripts\WoodenBox.cs
+          projectPath: Assets\Scripts\WoodenBox.cs
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: fmod_editor.log
+        label: fmod_editor.log
+        level: 0
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: fmod_editor.log
+          fullPath: C:\Users\Elijah\Game Jam February 2025\fmod_editor.log
+          projectPath: fmod_editor.log
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: UserSettings
+        label: UserSettings
+        level: 0
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: UserSettings\Layouts
+        label: Layouts
+        level: 1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: UserSettings\Layouts\default-6000.dwlt
+        label: default-6000.dwlt
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: UserSettings\Layouts\default-6000.dwlt
+          fullPath: C:\Users\Elijah\Game Jam February 2025\UserSettings\Layouts\default-6000.dwlt
+          projectPath: UserSettings\Layouts\default-6000.dwlt
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
       selectedNode:
         path: 
         label: 
@@ -1614,8 +4971,446 @@ MonoBehaviour:
           originalPath: 
           indexStatus: 0
           workTreeStatus: 0
-    gitStatusEntries: []
-    changedFilesText: No changed files
+    gitStatusEntries:
+    - path: Assets\FMOD\.cache\buildrecords\Desktop\Master.br
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\.cache\buildrecords\Desktop\Master.br
+      projectPath: Assets\FMOD\.cache\buildrecords\Desktop\Master.br
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Build.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Build.meta
+      projectPath: Assets\FMOD\Build.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Desktop.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Desktop.meta
+      projectPath: Assets\FMOD\Desktop.meta
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: Assets\FMOD\Desktop\Master.bank
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Desktop\Master.bank
+      projectPath: Assets\FMOD\Desktop\Master.bank
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: Assets\FMOD\Desktop\Master.bank.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Desktop\Master.bank.meta
+      projectPath: Assets\FMOD\Desktop\Master.bank.meta
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: Assets\FMOD\Desktop\Master.strings.bank
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Desktop\Master.strings.bank
+      projectPath: Assets\FMOD\Desktop\Master.strings.bank
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: Assets\FMOD\Desktop\Master.strings.bank.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Desktop\Master.strings.bank.meta
+      projectPath: Assets\FMOD\Desktop\Master.strings.bank.meta
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: Assets\FMOD\FMOD.fspro
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\FMOD.fspro
+      projectPath: Assets\FMOD\FMOD.fspro
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\FMOD.fspro.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\FMOD.fspro.meta
+      projectPath: Assets\FMOD\FMOD.fspro.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata.meta
+      projectPath: Assets\FMOD\Metadata.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\Asset.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Asset.meta
+      projectPath: Assets\FMOD\Metadata\Asset.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\Asset\{45494f83-cc69-4c50-a22a-eada1a2906ee}.xml
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Asset\{45494f83-cc69-4c50-a22a-eada1a2906ee}.xml
+      projectPath: Assets\FMOD\Metadata\Asset\{45494f83-cc69-4c50-a22a-eada1a2906ee}.xml
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\Asset\{45494f83-cc69-4c50-a22a-eada1a2906ee}.xml.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Asset\{45494f83-cc69-4c50-a22a-eada1a2906ee}.xml.meta
+      projectPath: Assets\FMOD\Metadata\Asset\{45494f83-cc69-4c50-a22a-eada1a2906ee}.xml.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\Bank.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Bank.meta
+      projectPath: Assets\FMOD\Metadata\Bank.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\Bank\{679ba963-a3f7-4487-9093-dcd85e366d73}.xml
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Bank\{679ba963-a3f7-4487-9093-dcd85e366d73}.xml
+      projectPath: Assets\FMOD\Metadata\Bank\{679ba963-a3f7-4487-9093-dcd85e366d73}.xml
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\Bank\{679ba963-a3f7-4487-9093-dcd85e366d73}.xml.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Bank\{679ba963-a3f7-4487-9093-dcd85e366d73}.xml.meta
+      projectPath: Assets\FMOD\Metadata\Bank\{679ba963-a3f7-4487-9093-dcd85e366d73}.xml.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\BankFolder.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\BankFolder.meta
+      projectPath: Assets\FMOD\Metadata\BankFolder.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\BankFolder\{aa51d194-1189-4a64-803e-55b9b36aab16}.xml
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\BankFolder\{aa51d194-1189-4a64-803e-55b9b36aab16}.xml
+      projectPath: Assets\FMOD\Metadata\BankFolder\{aa51d194-1189-4a64-803e-55b9b36aab16}.xml
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\BankFolder\{aa51d194-1189-4a64-803e-55b9b36aab16}.xml.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\BankFolder\{aa51d194-1189-4a64-803e-55b9b36aab16}.xml.meta
+      projectPath: Assets\FMOD\Metadata\BankFolder\{aa51d194-1189-4a64-803e-55b9b36aab16}.xml.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\EffectPresetFolder.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\EffectPresetFolder.meta
+      projectPath: Assets\FMOD\Metadata\EffectPresetFolder.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\EffectPresetFolder\{e9a6433e-1a27-4650-837e-dc9b58d9598c}.xml
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\EffectPresetFolder\{e9a6433e-1a27-4650-837e-dc9b58d9598c}.xml
+      projectPath: Assets\FMOD\Metadata\EffectPresetFolder\{e9a6433e-1a27-4650-837e-dc9b58d9598c}.xml
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\EffectPresetFolder\{e9a6433e-1a27-4650-837e-dc9b58d9598c}.xml.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\EffectPresetFolder\{e9a6433e-1a27-4650-837e-dc9b58d9598c}.xml.meta
+      projectPath: Assets\FMOD\Metadata\EffectPresetFolder\{e9a6433e-1a27-4650-837e-dc9b58d9598c}.xml.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\EncodingSetting.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\EncodingSetting.meta
+      projectPath: Assets\FMOD\Metadata\EncodingSetting.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\EncodingSetting\{5ca8bb83-22fb-4603-9bae-7077101242f3}.xml
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\EncodingSetting\{5ca8bb83-22fb-4603-9bae-7077101242f3}.xml
+      projectPath: Assets\FMOD\Metadata\EncodingSetting\{5ca8bb83-22fb-4603-9bae-7077101242f3}.xml
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\EncodingSetting\{5ca8bb83-22fb-4603-9bae-7077101242f3}.xml.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\EncodingSetting\{5ca8bb83-22fb-4603-9bae-7077101242f3}.xml.meta
+      projectPath: Assets\FMOD\Metadata\EncodingSetting\{5ca8bb83-22fb-4603-9bae-7077101242f3}.xml.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\Event.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Event.meta
+      projectPath: Assets\FMOD\Metadata\Event.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\Event\{16b02c0f-f5b7-4fc3-bf0b-cf9e4d422576}.xml
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Event\{16b02c0f-f5b7-4fc3-bf0b-cf9e4d422576}.xml
+      projectPath: Assets\FMOD\Metadata\Event\{16b02c0f-f5b7-4fc3-bf0b-cf9e4d422576}.xml
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\Event\{16b02c0f-f5b7-4fc3-bf0b-cf9e4d422576}.xml.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Event\{16b02c0f-f5b7-4fc3-bf0b-cf9e4d422576}.xml.meta
+      projectPath: Assets\FMOD\Metadata\Event\{16b02c0f-f5b7-4fc3-bf0b-cf9e4d422576}.xml.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\EventFolder.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\EventFolder.meta
+      projectPath: Assets\FMOD\Metadata\EventFolder.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\EventFolder\{0730f473-71b5-4b2c-a5bf-bb1e1339552f}.xml
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\EventFolder\{0730f473-71b5-4b2c-a5bf-bb1e1339552f}.xml
+      projectPath: Assets\FMOD\Metadata\EventFolder\{0730f473-71b5-4b2c-a5bf-bb1e1339552f}.xml
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\EventFolder\{0730f473-71b5-4b2c-a5bf-bb1e1339552f}.xml.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\EventFolder\{0730f473-71b5-4b2c-a5bf-bb1e1339552f}.xml.meta
+      projectPath: Assets\FMOD\Metadata\EventFolder\{0730f473-71b5-4b2c-a5bf-bb1e1339552f}.xml.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\EventFolder\{84f0627a-04b6-4ab2-ac87-07551dbf4cd6}.xml
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\EventFolder\{84f0627a-04b6-4ab2-ac87-07551dbf4cd6}.xml
+      projectPath: Assets\FMOD\Metadata\EventFolder\{84f0627a-04b6-4ab2-ac87-07551dbf4cd6}.xml
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\EventFolder\{84f0627a-04b6-4ab2-ac87-07551dbf4cd6}.xml.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\EventFolder\{84f0627a-04b6-4ab2-ac87-07551dbf4cd6}.xml.meta
+      projectPath: Assets\FMOD\Metadata\EventFolder\{84f0627a-04b6-4ab2-ac87-07551dbf4cd6}.xml.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\EventFolder\{8d6ec3b9-2dd1-43ce-89e4-039b93b4634e}.xml
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\EventFolder\{8d6ec3b9-2dd1-43ce-89e4-039b93b4634e}.xml
+      projectPath: Assets\FMOD\Metadata\EventFolder\{8d6ec3b9-2dd1-43ce-89e4-039b93b4634e}.xml
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\EventFolder\{8d6ec3b9-2dd1-43ce-89e4-039b93b4634e}.xml.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\EventFolder\{8d6ec3b9-2dd1-43ce-89e4-039b93b4634e}.xml.meta
+      projectPath: Assets\FMOD\Metadata\EventFolder\{8d6ec3b9-2dd1-43ce-89e4-039b93b4634e}.xml.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\EventFolder\{cf25fcf0-b2e2-40e2-972b-2f7a5f4fd368}.xml
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\EventFolder\{cf25fcf0-b2e2-40e2-972b-2f7a5f4fd368}.xml
+      projectPath: Assets\FMOD\Metadata\EventFolder\{cf25fcf0-b2e2-40e2-972b-2f7a5f4fd368}.xml
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\EventFolder\{cf25fcf0-b2e2-40e2-972b-2f7a5f4fd368}.xml.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\EventFolder\{cf25fcf0-b2e2-40e2-972b-2f7a5f4fd368}.xml.meta
+      projectPath: Assets\FMOD\Metadata\EventFolder\{cf25fcf0-b2e2-40e2-972b-2f7a5f4fd368}.xml.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\Master.xml
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Master.xml
+      projectPath: Assets\FMOD\Metadata\Master.xml
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\Master.xml.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Master.xml.meta
+      projectPath: Assets\FMOD\Metadata\Master.xml.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\Mixer.xml
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Mixer.xml
+      projectPath: Assets\FMOD\Metadata\Mixer.xml
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\Mixer.xml.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Mixer.xml.meta
+      projectPath: Assets\FMOD\Metadata\Mixer.xml.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\ParameterPresetFolder.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\ParameterPresetFolder.meta
+      projectPath: Assets\FMOD\Metadata\ParameterPresetFolder.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\ParameterPresetFolder\{4a1eaca2-20ca-4653-bb5a-67c066e36988}.xml
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\ParameterPresetFolder\{4a1eaca2-20ca-4653-bb5a-67c066e36988}.xml
+      projectPath: Assets\FMOD\Metadata\ParameterPresetFolder\{4a1eaca2-20ca-4653-bb5a-67c066e36988}.xml
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\ParameterPresetFolder\{4a1eaca2-20ca-4653-bb5a-67c066e36988}.xml.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\ParameterPresetFolder\{4a1eaca2-20ca-4653-bb5a-67c066e36988}.xml.meta
+      projectPath: Assets\FMOD\Metadata\ParameterPresetFolder\{4a1eaca2-20ca-4653-bb5a-67c066e36988}.xml.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\Platform.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Platform.meta
+      projectPath: Assets\FMOD\Metadata\Platform.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\Platform\{00c652cc-9f43-4129-9a5c-4cacd6b2b816}.xml
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Platform\{00c652cc-9f43-4129-9a5c-4cacd6b2b816}.xml
+      projectPath: Assets\FMOD\Metadata\Platform\{00c652cc-9f43-4129-9a5c-4cacd6b2b816}.xml
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\Platform\{00c652cc-9f43-4129-9a5c-4cacd6b2b816}.xml.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Platform\{00c652cc-9f43-4129-9a5c-4cacd6b2b816}.xml.meta
+      projectPath: Assets\FMOD\Metadata\Platform\{00c652cc-9f43-4129-9a5c-4cacd6b2b816}.xml.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\ProfilerFolder.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\ProfilerFolder.meta
+      projectPath: Assets\FMOD\Metadata\ProfilerFolder.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\ProfilerFolder\{67e40a10-c0b0-4d66-b9a7-0ef387adb635}.xml
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\ProfilerFolder\{67e40a10-c0b0-4d66-b9a7-0ef387adb635}.xml
+      projectPath: Assets\FMOD\Metadata\ProfilerFolder\{67e40a10-c0b0-4d66-b9a7-0ef387adb635}.xml
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\ProfilerFolder\{67e40a10-c0b0-4d66-b9a7-0ef387adb635}.xml.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\ProfilerFolder\{67e40a10-c0b0-4d66-b9a7-0ef387adb635}.xml.meta
+      projectPath: Assets\FMOD\Metadata\ProfilerFolder\{67e40a10-c0b0-4d66-b9a7-0ef387adb635}.xml.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\Return.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Return.meta
+      projectPath: Assets\FMOD\Metadata\Return.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\Return\{3ecbe911-a2bb-4795-afca-17b12b6f5523}.xml
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Return\{3ecbe911-a2bb-4795-afca-17b12b6f5523}.xml
+      projectPath: Assets\FMOD\Metadata\Return\{3ecbe911-a2bb-4795-afca-17b12b6f5523}.xml
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\Return\{3ecbe911-a2bb-4795-afca-17b12b6f5523}.xml.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Return\{3ecbe911-a2bb-4795-afca-17b12b6f5523}.xml.meta
+      projectPath: Assets\FMOD\Metadata\Return\{3ecbe911-a2bb-4795-afca-17b12b6f5523}.xml.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\SandboxFolder.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\SandboxFolder.meta
+      projectPath: Assets\FMOD\Metadata\SandboxFolder.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\SandboxFolder\{d3eb3a52-8878-46ea-8445-0197561e9d1a}.xml
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\SandboxFolder\{d3eb3a52-8878-46ea-8445-0197561e9d1a}.xml
+      projectPath: Assets\FMOD\Metadata\SandboxFolder\{d3eb3a52-8878-46ea-8445-0197561e9d1a}.xml
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\SandboxFolder\{d3eb3a52-8878-46ea-8445-0197561e9d1a}.xml.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\SandboxFolder\{d3eb3a52-8878-46ea-8445-0197561e9d1a}.xml.meta
+      projectPath: Assets\FMOD\Metadata\SandboxFolder\{d3eb3a52-8878-46ea-8445-0197561e9d1a}.xml.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\SnapshotGroup.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\SnapshotGroup.meta
+      projectPath: Assets\FMOD\Metadata\SnapshotGroup.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\SnapshotGroup\{60a98fb2-ee80-4561-91b9-e988c9d26677}.xml
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\SnapshotGroup\{60a98fb2-ee80-4561-91b9-e988c9d26677}.xml
+      projectPath: Assets\FMOD\Metadata\SnapshotGroup\{60a98fb2-ee80-4561-91b9-e988c9d26677}.xml
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\SnapshotGroup\{60a98fb2-ee80-4561-91b9-e988c9d26677}.xml.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\SnapshotGroup\{60a98fb2-ee80-4561-91b9-e988c9d26677}.xml.meta
+      projectPath: Assets\FMOD\Metadata\SnapshotGroup\{60a98fb2-ee80-4561-91b9-e988c9d26677}.xml.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\Tags.xml
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Tags.xml
+      projectPath: Assets\FMOD\Metadata\Tags.xml
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\Tags.xml.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Tags.xml.meta
+      projectPath: Assets\FMOD\Metadata\Tags.xml.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\Workspace.xml
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Workspace.xml
+      projectPath: Assets\FMOD\Metadata\Workspace.xml
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\FMOD\Metadata\Workspace.xml.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\FMOD\Metadata\Workspace.xml.meta
+      projectPath: Assets\FMOD\Metadata\Workspace.xml.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Plugins\FMOD\Resources\FMODStudioSettings.asset
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\Plugins\FMOD\Resources\FMODStudioSettings.asset
+      projectPath: Assets\Plugins\FMOD\Resources\FMODStudioSettings.asset
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: Assets\Scenes\Templates\LevelTemplate.unity
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\Scenes\Templates\LevelTemplate.unity
+      projectPath: Assets\Scenes\Templates\LevelTemplate.unity
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: Assets\Scripts\AudioManager.cs
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\Scripts\AudioManager.cs
+      projectPath: Assets\Scripts\AudioManager.cs
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Scripts\AudioManager.cs.meta
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\Scripts\AudioManager.cs.meta
+      projectPath: Assets\Scripts\AudioManager.cs.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Scripts\Entity.cs
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\Scripts\Entity.cs
+      projectPath: Assets\Scripts\Entity.cs
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: Assets\Scripts\Player.cs
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\Scripts\Player.cs
+      projectPath: Assets\Scripts\Player.cs
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: Assets\Scripts\TurnManager.cs
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\Scripts\TurnManager.cs
+      projectPath: Assets\Scripts\TurnManager.cs
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: Assets\Scripts\WoodenBox.cs
+      fullPath: C:\Users\Elijah\Game Jam February 2025\Assets\Scripts\WoodenBox.cs
+      projectPath: Assets\Scripts\WoodenBox.cs
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: fmod_editor.log
+      fullPath: C:\Users\Elijah\Game Jam February 2025\fmod_editor.log
+      projectPath: fmod_editor.log
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: UserSettings\Layouts\default-6000.dwlt
+      fullPath: C:\Users\Elijah\Game Jam February 2025\UserSettings\Layouts\default-6000.dwlt
+      projectPath: UserSettings\Layouts\default-6000.dwlt
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    changedFilesText: 73 changed files
     lastCurrentBranchChangedEvent:
       updatedTimeString: 0001-01-01T00:00:00.000+00:00
       cacheType: 1
@@ -19295,7 +23090,7 @@ MonoBehaviour:
   currentRemoteUrl: https://github.com/captaincobbs/gamejam-february-2025.git
   statusAhead: 0
   statusBehind: 0
-  hasItemsToCommit: 0
+  hasItemsToCommit: 1
   isTrackingRemoteBranch: 1
   currentBranchContent:
     m_Text: master
@@ -19308,13 +23103,13 @@ MonoBehaviour:
     m_Tooltip: Url of the origin remote
     m_TextWithWhitespace: "https://github.com/captaincobbs/gamejam-february-2025.git\u200B"
   lastCurrentBranchAndRemoteChangedEvent:
-    updatedTimeString: 2025-02-24T02:16:52.924-07:00
+    updatedTimeString: 2025-02-24T21:44:45.997-07:00
     cacheType: 1
   lastTrackingStatusChangedEvent:
-    updatedTimeString: 2025-02-24T02:16:53.301-07:00
+    updatedTimeString: 2025-02-24T22:05:19.058-07:00
     cacheType: 5
   lastStatusEntriesChangedEvent:
-    updatedTimeString: 2025-02-24T02:16:43.017-07:00
+    updatedTimeString: 2025-02-24T23:55:12.764-07:00
     cacheType: 6
   pullButtonContent:
     m_Text: Pull

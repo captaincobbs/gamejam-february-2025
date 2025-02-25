@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9069197525004256969}
   - component: {fileID: 1688259453299153910}
   - component: {fileID: 3840463509191316504}
-  - component: {fileID: 4512402346156221128}
+  - component: {fileID: 6962324107038103083}
   m_Layer: 3
   m_Name: Wooden Box
   m_TagString: Untagged
@@ -163,7 +163,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4512402346156221128
+--- !u!114 &6962324107038103083
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -172,7 +172,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 6146001231923768192}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b54074ad5162f5842b842f4cca22e171, type: 3}
+  m_Script: {fileID: 11500000, guid: 877b35c1308d4be449828406d120bce6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   beenForciblyMoved: 0
+  onMove:
+    Guid:
+      Data1: 1799715976
+      Data2: 1335888859
+      Data3: -1123841363
+      Data4: 771984639
+    Path: event:/Props/Wooden Box/WoodenBox_OnMove
+  onDeath:
+    Guid:
+      Data1: 1901464027
+      Data2: 1252429092
+      Data3: 2024773297
+      Data4: -61432463
+    Path: event:/Props/Wooden Box/WoodenBox_OnDeath

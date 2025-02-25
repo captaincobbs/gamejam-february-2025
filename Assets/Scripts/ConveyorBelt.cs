@@ -26,9 +26,9 @@ public class ConveyorBelt : MonoBehaviour
     SpriteRenderer spriteRenderer;
 
     // Private
-    TurnManager TurnManager
+    LevelManager TurnManager
     {
-        get => TurnManager.Instance;
+        get => LevelManager.Instance;
     }
 
     BoxCollider2D conveyorCollider;
