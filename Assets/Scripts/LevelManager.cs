@@ -25,7 +25,7 @@ public class LevelManager : MonoBehaviour
         set
         {
             currentOxygen = value;
-            AudioManager.Instance.SetParameterWithValue("parameter:/Player/Player_Material", value);
+            AudioManager.Instance.SetParameterWithValue("parameter:/Player/Player_OxygenLevel", value);
         }
     }
 
