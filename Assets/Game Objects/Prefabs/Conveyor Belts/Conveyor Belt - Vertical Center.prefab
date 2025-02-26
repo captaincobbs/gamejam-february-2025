@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7628494669790190784}
+  - component: {fileID: 402675149015841272}
   - component: {fileID: 8403403695841665947}
   - component: {fileID: 7303099750269778672}
-  - component: {fileID: 402675149015841272}
   m_Layer: 7
   m_Name: Conveyor Belt - Vertical Center
   m_TagString: Untagged
@@ -34,6 +34,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &402675149015841272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7629602241294886629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4f6622c523934c47bcfb649b3385029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Direction: 1
+  ReversedByTrigger: 0
+  ReverseTriggerID: 0
+  Enabled: 1
+  ToggledByTrigger: 0
+  ToggleTriggerID: 0
+  onPush:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  onReverse:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  onToggle:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  Sprites:
+  - {fileID: 21300204, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}
+  - {fileID: 21300206, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}
+  - {fileID: 21300208, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}
+  - {fileID: 21300210, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}
 --- !u!212 &8403403695841665947
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -135,26 +179,3 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
---- !u!114 &402675149015841272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7629602241294886629}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4f6622c523934c47bcfb649b3385029, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Direction: 1
-  FlippedByTrigger: 0
-  FlipTriggerID: 0
-  Enabled: 1
-  ToggledByTrigger: 0
-  ToggleTriggerID: 0
-  Sprites:
-  - {fileID: 21300204, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}
-  - {fileID: 21300206, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}
-  - {fileID: 21300208, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}
-  - {fileID: 21300210, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}

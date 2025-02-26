@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 842545054891029220}
+  - component: {fileID: 7360084894362158950}
   - component: {fileID: 3685447519153725943}
   - component: {fileID: 622281585887725484}
   - component: {fileID: 3752050821195527739}
-  - component: {fileID: 7360084894362158950}
   m_Layer: 6
   m_Name: Metal Box
   m_TagString: Untagged
@@ -35,6 +35,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7360084894362158950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2638245293831448211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01ed8a5f2e3e22848a14e4ee4d0b18a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDeath:
+    Guid:
+      Data1: -572644475
+      Data2: 1166321572
+      Data3: -810754932
+      Data4: 1914360378
+    Path: event:/Props/Metal Box/MetalBox_OnDeath
 --- !u!50 &3685447519153725943
 Rigidbody2D:
   serializedVersion: 5
@@ -163,22 +182,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7360084894362158950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2638245293831448211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01ed8a5f2e3e22848a14e4ee4d0b18a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onDeath:
-    Guid:
-      Data1: -572644475
-      Data2: 1166321572
-      Data3: -810754932
-      Data4: 1914360378
-    Path: event:/Props/Metal Box/MetalBox_OnDeath
