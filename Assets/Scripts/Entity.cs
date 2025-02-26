@@ -1,9 +1,13 @@
+using Assets.Scripts;
+using com.cyborgAssets.inspectorButtonPro;
 using UnityEngine;
 
-public abstract class Entity : MonoBehaviour
+public abstract class Entity : Killable
 {
     [HideInInspector] public bool beenForciblyMoved;
 
-    public abstract void OnMove();
-    public abstract void OnDeath();
+    [ProButton]
+    public abstract void Move();
+    [ProButton]
+    public override abstract void Death();
 }

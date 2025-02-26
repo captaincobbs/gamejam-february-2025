@@ -1,3 +1,4 @@
+using com.cyborgAssets.inspectorButtonPro;
 using FMODUnity;
 using UnityEngine;
 
@@ -6,12 +7,13 @@ public class WoodenBox : Entity
     [Header("Sound Events")]
     [SerializeField] private EventReference onMove;
     [SerializeField] private EventReference onDeath;
-    public override void OnMove()
+    [ProButton]
+    public override void Move()
     {
         AudioManager.PlayOneShot(onMove);
     }
-
-    public override void OnDeath()
+    [ProButton]
+    public override void Death()
     {
         AudioManager.PlayOneShot(onDeath);
     }

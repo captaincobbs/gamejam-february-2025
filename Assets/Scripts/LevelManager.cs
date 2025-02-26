@@ -43,6 +43,8 @@ public class LevelManager : MonoBehaviour
     private int turnNumber = 0;
     void Start()
     {
+        AudioManager.PlayOneShot(onLoad);
+
         if (UseOxygen)
         {
             CurrentOxygen = InitialOxygen;
@@ -113,7 +115,7 @@ public class LevelManager : MonoBehaviour
         }
 
         entity.transform.position += direction;
-        entity.OnMove();
+        entity.Move();
         Physics2D.SyncTransforms();
 
         ConveyorBelt conveyorBelt = HitsConveyorBelt(entity.transform.position);
@@ -199,6 +201,7 @@ public class LevelManager : MonoBehaviour
         isTurnProcessing = true;
 
         OnTurnEnd?.Invoke();
+        AudioManager.PlayOneShot(onTurn);
 
         if (UseOxygen)
         {
@@ -209,6 +212,7 @@ public class LevelManager : MonoBehaviour
             }
             else
             {
+
                 GameOver();
             }
         }
@@ -221,11 +225,12 @@ public class LevelManager : MonoBehaviour
 
     public void KillEntity(Entity entity)
     {
-        entity.OnDeath();
+        entity.Death();
     }
 
     void GameOver()
     {
+        
     }
 
     #region Singleton

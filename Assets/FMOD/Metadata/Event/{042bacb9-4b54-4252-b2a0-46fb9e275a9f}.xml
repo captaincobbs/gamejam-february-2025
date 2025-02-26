@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{042bacb9-4b54-4252-b2a0-46fb9e275a9f}">
+		<property name="color">
+			<value>Green</value>
+		</property>
 		<property name="name">
 			<value>ConveyorBelt_OnToggle</value>
 		</property>

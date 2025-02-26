@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{715609db-8d24-4aa6-b196-af78719d56fc}">
+		<property name="color">
+			<value>Green</value>
+		</property>
 		<property name="name">
 			<value>WoodenBox_OnDeath</value>
 		</property>

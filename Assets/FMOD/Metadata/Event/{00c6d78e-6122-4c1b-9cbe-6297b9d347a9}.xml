@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{00c6d78e-6122-4c1b-9cbe-6297b9d347a9}">
+		<property name="color">
+			<value>Red</value>
+		</property>
 		<property name="name">
 			<value>Player_OnOxygenRefilled</value>
 		</property>

@@ -1,3 +1,4 @@
+using com.cyborgAssets.inspectorButtonPro;
 using FMOD.Studio;
 using FMODUnity;
 using System.Collections;
@@ -16,12 +17,13 @@ public class Player : Entity
     [SerializeField] private EventReference onInteract;
     [SerializeField] private EventReference onWait;
     [SerializeField] private EventReference onSlide;
-    public override void OnMove()
+
+    public override void Move()
     {
         AudioManager.PlayOneShot(onMove);
     }
 
-    public override void OnDeath()
+    public override void Death()
     {
         AudioManager.PlayOneShot(onDeath);
     }

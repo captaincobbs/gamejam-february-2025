@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3685447519153725943}
   - component: {fileID: 622281585887725484}
   - component: {fileID: 3752050821195527739}
-  - component: {fileID: 2765267751109697689}
   - component: {fileID: 7360084894362158950}
   m_Layer: 6
   m_Name: Metal Box
@@ -164,33 +163,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2765267751109697689
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2638245293831448211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 877b35c1308d4be449828406d120bce6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  beenForciblyMoved: 0
-  onMove:
-    Guid:
-      Data1: 1799715976
-      Data2: 1335888859
-      Data3: -1123841363
-      Data4: 771984639
-    Path: event:/Props/Wooden Box/WoodenBox_OnMove
-  onDeath:
-    Guid:
-      Data1: 1901464027
-      Data2: 1252429092
-      Data3: 2024773297
-      Data4: -61432463
-    Path: event:/Props/Wooden Box/WoodenBox_OnDeath
 --- !u!114 &7360084894362158950
 MonoBehaviour:
   m_ObjectHideFlags: 0

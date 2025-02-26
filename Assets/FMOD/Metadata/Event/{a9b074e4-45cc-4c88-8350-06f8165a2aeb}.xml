@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{a9b074e4-45cc-4c88-8350-06f8165a2aeb}">
+		<property name="color">
+			<value>Red</value>
+		</property>
 		<property name="name">
 			<value>Level_OnUndo</value>
 		</property>
