@@ -7,9 +7,9 @@ public class MetalBox : Killable
 {
     [SerializeField] private EventReference onDeath;
 
-    [ProButton]
+    [ProPlayButton]
     public override void Death()
     {
-
+        AudioManager.Instance.PlayOneShot(onDeath);
     }
 }

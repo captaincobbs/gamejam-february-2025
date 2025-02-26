@@ -6,8 +6,8 @@ public abstract class Entity : Killable
 {
     [HideInInspector] public bool beenForciblyMoved;
 
-    [ProButton]
+    [ProPlayButton]
     public abstract void Move();
-    [ProButton]
+    [ProPlayButton]
     public override abstract void Death();
 }
