@@ -7,8 +7,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
     [SerializeField] private string levelName;
     void Start()
     {
-        Button button = GetComponent<Button>();
-        if (button != null)
+        if (TryGetComponent(out Button button))
         {
             button.onClick.AddListener(LoadLevel);
         }

@@ -20,7 +20,7 @@ public class OxygenDisplay : MonoBehaviour
             imageComponent = GetComponent<Image>();
         }
 
-        if (OxygenLevels != null && OxygenLevels.Length > 0)
+        if (OxygenLevels?.Length > 0)
         {
             if (level < OxygenLevels.Length)
             {

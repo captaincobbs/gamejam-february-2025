@@ -1,9 +1,5 @@
-using FMOD.Studio;
-using System.Collections.Generic;
 using FMODUnity;
 using UnityEngine;
-using Unity.VisualScripting;
-using static UnityEngine.Rendering.DebugUI;
 
 public class AudioManager : MonoBehaviour
 {

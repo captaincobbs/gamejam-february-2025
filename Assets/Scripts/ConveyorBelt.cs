@@ -1,5 +1,5 @@
-using FMODUnity;
 using System.Collections.Generic;
+using FMODUnity;
 using UnityEngine;
 
 public class ConveyorBelt : MonoBehaviour
@@ -32,7 +32,7 @@ public class ConveyorBelt : MonoBehaviour
     SpriteRenderer spriteRenderer;
 
     // Private
-    LevelManager levelManager
+    LevelManager LevelManager
     {
         get => LevelManager.Instance;
     }
@@ -44,17 +44,17 @@ public class ConveyorBelt : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         conveyorCollider = GetComponent<BoxCollider2D>();
 
-        if (levelManager != null)
+        if (LevelManager != null)
         {
-            levelManager.OnTurnEnd += Advance;
+            LevelManager.OnTurnEnd += Advance;
             if (ToggledByTrigger)
             {
-                levelManager.SubscribeTrigger(ToggleTriggerID, Toggle, onToggle);
+                LevelManager.SubscribeTrigger(ToggleTriggerID, Toggle, onToggle);
             }
 
             if (ReversedByTrigger)
             {
-                levelManager.SubscribeTrigger(ReverseTriggerID, Reverse, onReverse);
+                LevelManager.SubscribeTrigger(ReverseTriggerID, Reverse, onReverse);
             }
         }
         else
@@ -110,7 +110,7 @@ public class ConveyorBelt : MonoBehaviour
 
                     if (!entity.alreadyPushed)
                     {
-                        levelManager.MoveEntity(entity, new(moveDirection.x, moveDirection.y, 0f), true);
+                        LevelManager.MoveEntity(entity, new(moveDirection.x, moveDirection.y, 0f), true);
                     }
                 }
             }

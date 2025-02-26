@@ -1,8 +1,4 @@
-using com.cyborgAssets.inspectorButtonPro;
-using FMOD.Studio;
 using FMODUnity;
-using System.Collections;
-using System.Threading.Tasks.Sources;
 using UnityEngine;
 
 public class Player : Entity

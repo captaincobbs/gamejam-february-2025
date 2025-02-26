@@ -1,11 +1,9 @@
 using FMODUnity;
-using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.InputSystem.Editor;
 
 public class LevelManager : MonoBehaviour
 {
@@ -68,11 +66,18 @@ public class LevelManager : MonoBehaviour
         if (UseOxygen)
         {
             CurrentOxygen = InitialOxygen;
-            OxygenDisplay?.SetDisplayLevel(CurrentOxygen);
+
+            if (OxygenDisplay != null)
+            {
+                OxygenDisplay.SetDisplayLevel(CurrentOxygen);
+            }
         }
         else
         {
-            OxygenDisplay?.SetDisplay(false);
+            if (OxygenDisplay != null)
+            {
+                OxygenDisplay.SetDisplay(false);
+            }
         }
 
         if (player == null)
@@ -177,19 +182,14 @@ public class LevelManager : MonoBehaviour
 
     public bool ConveyorBeltCancelsMovement(Vector3 direction, ConveyorBelt conveyorBelt)
     {
-        switch (conveyorBelt.Direction)
+        return conveyorBelt.Direction switch
         {
-            case (ConveyorBelt.ConveyorDirection.Left):
-                return direction == Vector3.right;
-            case (ConveyorBelt.ConveyorDirection.Right):
-                return direction == Vector3.left;
-            case (ConveyorBelt.ConveyorDirection.Up):
-                return direction == Vector3.down;
-            case (ConveyorBelt.ConveyorDirection.Down):
-                return direction == Vector3.up;
-        }
-
-        return false;
+            (ConveyorBelt.ConveyorDirection.Left) => direction == Vector3.right,
+            (ConveyorBelt.ConveyorDirection.Right) => direction == Vector3.left,
+            (ConveyorBelt.ConveyorDirection.Up) => direction == Vector3.down,
+            (ConveyorBelt.ConveyorDirection.Down) => direction == Vector3.up,
+            _ => false,
+        };
     }
 
     ConveyorBelt HitsConveyorBelt(Vector3 position)
@@ -241,7 +241,6 @@ public class LevelManager : MonoBehaviour
             }
             else
             {
-
                 GameOver();
             }
         }
@@ -272,7 +271,7 @@ public class LevelManager : MonoBehaviour
 
     void GameOver()
     {
-
+        // TODO
     }
 
     #region Trigger Management
