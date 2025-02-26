@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Entity : Killable
 {
-    [HideInInspector] public bool beenForciblyMoved;
+    [HideInInspector] public bool alreadyPushed = false;
 
     [ProPlayButton]
     public abstract void Move();

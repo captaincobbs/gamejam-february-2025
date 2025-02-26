@@ -2,6 +2,7 @@ using FMODUnity;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class LevelManager : MonoBehaviour
@@ -41,6 +42,8 @@ public class LevelManager : MonoBehaviour
     private bool isTurnProcessing = false;
     private bool canPlayerMove = true;
     private int turnNumber = 0;
+    private List<Entity> entities = new();
+
     void Start()
     {
         AudioManager.Instance.PlayOneShot(onLoad);
@@ -59,6 +62,8 @@ public class LevelManager : MonoBehaviour
         {
             Debug.LogError("No Player object was associated with the TurnManager");
         }
+
+        entities = FindObjectsByType<Entity>(FindObjectsSortMode.InstanceID).ToList();
     }
 
     void Update()
@@ -114,17 +119,16 @@ public class LevelManager : MonoBehaviour
             }
         }
 
+        entity.alreadyPushed = entity.alreadyPushed || pushed;
         entity.transform.position += direction;
         entity.Move();
         Physics2D.SyncTransforms();
 
         ConveyorBelt conveyorBelt = HitsConveyorBelt(entity.transform.position);
-        if (conveyorBelt != null && !entity.beenForciblyMoved)
+        if (conveyorBelt != null && !entity.alreadyPushed)
         {
-            entity.beenForciblyMoved = true;
-            bool output = MoveEntity(entity, conveyorBelt.GetDirectionalValue(), true);
-            entity.beenForciblyMoved = false;
-            return output;
+            entity.alreadyPushed = true;
+            return MoveEntity(entity, conveyorBelt.GetDirectionalValue(), true);
         }
 
         return true;
@@ -138,10 +142,12 @@ public class LevelManager : MonoBehaviour
         bool output = hit != null;
 
         ConveyorBelt conveyorBelt = HitsConveyorBelt(entity.transform.position + direction);
-        if (conveyorBelt != null)
+        if (conveyorBelt != null && ConveyorBeltCancelsMovement(direction, conveyorBelt))
         {
-            entity.beenForciblyMoved = true;
-            output = output || ConveyorBeltCancelsMovement(direction, conveyorBelt);
+            //entity.alreadyPushed = true;
+
+            // Is Also blocked if the conveyor belt prevents movement
+            output = true;
         }
 
         return output;
@@ -219,6 +225,12 @@ public class LevelManager : MonoBehaviour
 
         turnNumber++;
         Debug.Log($"Turn {turnNumber}");
+
+        foreach (Entity entity in entities)
+        {
+            entity.alreadyPushed = false;
+        }
+
         yield return new WaitForSeconds(DelayBetweenMovement);
         isTurnProcessing = false;
     }

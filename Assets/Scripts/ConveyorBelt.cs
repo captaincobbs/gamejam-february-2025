@@ -97,14 +97,12 @@ public class ConveyorBelt : MonoBehaviour
 
             foreach (Collider2D collider in Physics2D.OverlapBoxAll(colliderCenter, colliderSize, 0f, LayerMask.GetMask("Entity")))
             {
-                if (collider != null)
+                if (collider != null && collider.TryGetComponent<Entity>(out var entity))
                 {
-                    Entity entity = collider.GetComponent<Entity>();
+                    Vector2 moveDirection = GetDirectionalValue();
 
-                    if (entity != null)
+                    if (!entity.alreadyPushed)
                     {
-                        Vector2 moveDirection = GetDirectionalValue();
-
                         TurnManager.MoveEntity(entity, new(moveDirection.x, moveDirection.y, 0f), true);
                     }
                 }
