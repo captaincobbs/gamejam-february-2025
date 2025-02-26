@@ -1,9 +1,11 @@
+using Assets.Scripts;
 using FMODUnity;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class LevelManager : MonoBehaviour
 {
@@ -29,6 +31,17 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    private FloorMaterial playerFloorMaterial = FloorMaterial.Error;
+    [HideInInspector] public FloorMaterial PlayerFloorMaterial
+    {
+        get => playerFloorMaterial;
+        set
+        {
+            playerFloorMaterial = value;
+            AudioManager.Instance.SetParameterWithLabel("parameter:/Player/Player_Material", Enum.GetName(typeof(FloorMaterial), playerFloorMaterial));
+        }
+    }
+
     [Header("Kinematics")]
     [Tooltip("The delay between when button presses are read (this will hopefully eventually be replaced with something better)")]
     public float DelayBetweenMovement = 0.15f;
@@ -36,6 +49,7 @@ public class LevelManager : MonoBehaviour
     [Header("Associations")]
     [Tooltip("A reference to the player object in this level")]
     public Player player;
+    public Tilemap floorTilemap;
 
     [Header("UI")]
     [Tooltip("A reference to the OxygenDisplay object in this level")]
@@ -84,6 +98,10 @@ public class LevelManager : MonoBehaviour
         {
             Debug.LogError("No Player object was associated with the TurnManager");
         }
+        else
+        {
+            CheckPlayerFloor();
+        }
 
         entities = FindObjectsByType<Entity>(FindObjectsSortMode.InstanceID).ToList();
     }
@@ -99,31 +117,38 @@ public class LevelManager : MonoBehaviour
     void ProcessPlayerInput()
     {
         Vector2 direction = new(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        bool turnPassed = false;
+        bool moved = false;
 
         if (direction.x == -1)
         {
-            turnPassed = MoveEntity(player, Vector3.left);
+            moved = MoveEntity(player, Vector3.left);
         }
         else if (direction.x == 1)
         {
-            turnPassed = MoveEntity(player, Vector3.right);
-        }
-        else if (direction.y == 1)
-        {
-            turnPassed = MoveEntity(player, Vector3.up);
+            moved = MoveEntity(player, Vector3.right);
         }
         else if (direction.y == -1)
         {
-            turnPassed = MoveEntity(player, Vector3.down);
+            moved = MoveEntity(player, Vector3.down);
         }
+        else if (direction.y == 1)
+        {
+            moved = MoveEntity(player, Vector3.up);
+        }
+
+        if (moved)
+        {
+            CheckPlayerFloor();
+        }
+
+        bool turnPassed = false;
         if (Input.GetKeyUp(KeyCode.Space))
         {
             turnPassed = true;
             player.OnWait();
         }
 
-        if (turnPassed)
+        if (turnPassed || moved)
         {
             StartCoroutine(ProcessEndTurn());
         }
@@ -272,6 +297,40 @@ public class LevelManager : MonoBehaviour
     void GameOver()
     {
         // TODO
+    }
+
+    void CheckPlayerFloor()
+    {
+        Vector3 playerPosition = player.transform.position;
+        Vector3Int gridPosition = floorTilemap.WorldToCell(playerPosition);
+        Debug.Log($"Player: {playerPosition}, Grid: {gridPosition}");
+
+        TileBase tile = floorTilemap.GetTile(gridPosition);
+
+        if (tile != null)
+        {
+            Debug.Log(tile.name);
+
+            switch (tile.name.ToLower())
+            {
+                case "metal":
+                    PlayerFloorMaterial = FloorMaterial.Metal;
+                    break;
+                case "concrete":
+                    PlayerFloorMaterial = FloorMaterial.Concrete;
+                    break;
+                case "ice":
+                    PlayerFloorMaterial = FloorMaterial.Ice;
+                    break;
+                default:
+                    PlayerFloorMaterial = FloorMaterial.Error;
+                    break;
+            }
+        }
+        else
+        {
+            PlayerFloorMaterial = FloorMaterial.Error;
+        }
     }
 
     #region Trigger Management

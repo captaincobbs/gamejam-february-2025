@@ -777,9 +777,9 @@ MonoBehaviour:
   InitialOxygen: 5
   MaximumOxygen: 10
   MinimumOxygen: 0
-  CurrentOxygen: 0
   DelayBetweenMovement: 0.15
   player: {fileID: 8923763466277554918}
+  floorTilemap: {fileID: 1811490254}
   OxygenDisplay: {fileID: 1812256148}
   onLoad:
     Guid:
@@ -828,6 +828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a049ab11bcb95c4a8e9fe7a1c751030, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LogEvents: 1
 --- !u!1001 &1721118606
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -912,6 +913,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7628494669790190784, guid: 2cb204e8801d66e47a7581b4f5585c81,
     type: 3}
   m_PrefabInstance: {fileID: 840319869083747108}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1839735485 &1811490254 stripped
+Tilemap:
+  m_CorrespondingSourceObject: {fileID: 4648960262342601855, guid: 821b67d4793bc4141a06700c1c7c5fc1,
+    type: 3}
+  m_PrefabInstance: {fileID: 5523489422558092666}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &1812256147 stripped
 RectTransform:
