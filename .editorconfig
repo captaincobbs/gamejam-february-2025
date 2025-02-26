@@ -1,0 +1,16 @@
+﻿[*.cs]
+
+# RCS1213: Remove unused member declaration
+dotnet_diagnostic.RCS1213.severity = none
+
+# RCS1110: Declare type inside namespace
+dotnet_diagnostic.RCS1110.severity = none
+
+# RCS1169: Make field read-only
+dotnet_diagnostic.RCS1169.severity = none
+
+# RCS1006: Merge 'else' with nested 'if'
+dotnet_diagnostic.RCS1006.severity = none
+
+# RCS1146: Use conditional access
+dotnet_diagnostic.RCS1146.severity = none
