@@ -43,7 +43,7 @@ public class LevelManager : MonoBehaviour
     private int turnNumber = 0;
     void Start()
     {
-        AudioManager.PlayOneShot(onLoad);
+        AudioManager.Instance.PlayOneShot(onLoad);
 
         if (UseOxygen)
         {
@@ -201,7 +201,7 @@ public class LevelManager : MonoBehaviour
         isTurnProcessing = true;
 
         OnTurnEnd?.Invoke();
-        AudioManager.PlayOneShot(onTurn);
+        AudioManager.Instance.PlayOneShot(onTurn);
 
         if (UseOxygen)
         {
@@ -230,7 +230,7 @@ public class LevelManager : MonoBehaviour
 
     void GameOver()
     {
-        
+
     }
 
     #region Singleton

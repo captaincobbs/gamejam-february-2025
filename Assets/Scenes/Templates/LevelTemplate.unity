@@ -584,6 +584,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1387460845}
+  - component: {fileID: 1387460847}
   - component: {fileID: 1387460846}
   m_Layer: 0
   m_Name: Level
@@ -663,6 +664,18 @@ MonoBehaviour:
       Data3: -1808233539
       Data4: 2144847292
     Path: event:/Level/Level_OnUnload
+--- !u!114 &1387460847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387460844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a049ab11bcb95c4a8e9fe7a1c751030, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1721118606
 PrefabInstance:
   m_ObjectHideFlags: 0

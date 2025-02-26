@@ -20,46 +20,46 @@ public class Player : Entity
 
     public override void Move()
     {
-        AudioManager.PlayOneShot(onMove);
+        AudioManager.Instance.PlayOneShot(onMove);
     }
 
     public override void Death()
     {
-        AudioManager.PlayOneShot(onDeath);
+        AudioManager.Instance.PlayOneShot(onDeath);
     }
 
     public void OnOxygenUsed()
     {
-        AudioManager.PlayOneShot(onOxygenUsed);
+        AudioManager.Instance.PlayOneShot(onOxygenUsed);
     }
 
     public void OnOxygenRefilled()
     {
-        AudioManager.PlayOneShot(onOxygenRefilled);
+        AudioManager.Instance.PlayOneShot(onOxygenRefilled);
     }
 
     public void OnLift()
     {
-        AudioManager.PlayOneShot(onLift);
+        AudioManager.Instance.PlayOneShot(onLift);
     }
 
     public void OnDrop()
     {
-        AudioManager.PlayOneShot(onDrop);
+        AudioManager.Instance.PlayOneShot(onDrop);
     }
 
     public void OnInteract()
     {
-        AudioManager.PlayOneShot(onInteract);
+        AudioManager.Instance.PlayOneShot(onInteract);
     }
 
     public void OnWait()
     {
-        AudioManager.PlayOneShot(onWait);
+        AudioManager.Instance.PlayOneShot(onWait);
     }
 
     public void OnSlide()
     {
-        AudioManager.PlayOneShot(onSlide);
+        AudioManager.Instance.PlayOneShot(onSlide);
     }
 }

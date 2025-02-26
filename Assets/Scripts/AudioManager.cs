@@ -2,25 +2,47 @@ using FMOD.Studio;
 using System.Collections.Generic;
 using FMODUnity;
 using UnityEngine;
+using Unity.VisualScripting;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager Instance { get; private set; }
-
-    private void Awake()
+    private static AudioManager instance;
+    public static AudioManager Instance
     {
-        if (Instance != null)
+        get
         {
-            Debug.LogError("Multiple AudioManagers in this scene");
+            if (instance == null)
+            {
+                Debug.LogError("This Scene does not have an AudioManager");
+            }
 
-            Instance = this;
+            return instance;
         }
     }
 
-    private void InstancePlayOneShot(EventReference sound)
+    public void PlayOneShot(EventReference sound)
     {
-        RuntimeManager.PlayOneShot(sound);
+        Debug.Log($"Event Played: {sound.Path}");
+        RuntimeManager.PlayOneShot(sound, Vector3.zero);
     }
 
-    public static void PlayOneShot(EventReference sound) => Instance?.InstancePlayOneShot(sound);
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (instance == this)
+        {
+            instance = null;
+        }
+    }
 }

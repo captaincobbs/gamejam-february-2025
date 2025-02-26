@@ -10,11 +10,11 @@ public class WoodenBox : Entity
     [ProButton]
     public override void Move()
     {
-        AudioManager.PlayOneShot(onMove);
+        AudioManager.Instance.PlayOneShot(onMove);
     }
     [ProButton]
     public override void Death()
     {
-        AudioManager.PlayOneShot(onDeath);
+        AudioManager.Instance.PlayOneShot(onDeath);
     }
 }
