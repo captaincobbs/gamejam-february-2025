@@ -14,6 +14,13 @@ public class Player : Entity
     [SerializeField] private EventReference onWait;
     [SerializeField] private EventReference onSlide;
 
+    [HideInInspector] public Vector2 Direction = Vector2.down;
+
+    public void AdvanceAnimation()
+    {
+
+    }
+
     public override void Move()
     {
         AudioManager.Instance.PlayOneShot(onMove);
@@ -24,37 +31,37 @@ public class Player : Entity
         AudioManager.Instance.PlayOneShot(onDeath);
     }
 
-    public void OnOxygenUsed()
+    public void OxygenUsed()
     {
         AudioManager.Instance.PlayOneShot(onOxygenUsed);
     }
 
-    public void OnOxygenRefilled()
+    public void OxygenRefilled()
     {
         AudioManager.Instance.PlayOneShot(onOxygenRefilled);
     }
 
-    public void OnLift()
+    public void Lift()
     {
         AudioManager.Instance.PlayOneShot(onLift);
     }
 
-    public void OnDrop()
+    public void Drop()
     {
         AudioManager.Instance.PlayOneShot(onDrop);
     }
 
-    public void OnInteract()
+    public void Interact()
     {
         AudioManager.Instance.PlayOneShot(onInteract);
     }
 
-    public void OnWait()
+    public void Wait()
     {
         AudioManager.Instance.PlayOneShot(onWait);
     }
 
-    public void OnSlide()
+    public void Slide()
     {
         AudioManager.Instance.PlayOneShot(onSlide);
     }

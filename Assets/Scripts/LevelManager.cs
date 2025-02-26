@@ -116,37 +116,51 @@ public class LevelManager : MonoBehaviour
 
     void ProcessPlayerInput()
     {
-        Vector2 direction = new(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        Vector2 rawDirection = new(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         bool moved = false;
+        bool turnPassed = false;
+        Vector2 actualDirection = Vector2.zero;
 
-        if (direction.x == -1)
+        if (rawDirection.x == -1)
         {
             moved = MoveEntity(player, Vector3.left);
+            actualDirection = Vector2.left;
         }
-        else if (direction.x == 1)
+        else if (rawDirection.x == 1)
         {
             moved = MoveEntity(player, Vector3.right);
+            actualDirection = Vector2.right;
         }
-        else if (direction.y == -1)
+        else if (rawDirection.y == -1)
         {
             moved = MoveEntity(player, Vector3.down);
+            actualDirection = Vector2.down;
         }
-        else if (direction.y == 1)
+        else if (rawDirection.y == 1)
         {
             moved = MoveEntity(player, Vector3.up);
+            actualDirection = Vector2.up;
+        }
+        else if (Input.GetKeyUp(KeyCode.Space))
+        {
+            turnPassed = true;
+            player.Wait();
+        }
+        else if (Input.GetKeyUp(KeyCode.E))
+        {
+            turnPassed = true;
+            InteractWith(player.Direction);
+            player.Interact();
         }
 
         if (moved)
         {
+            player.Direction = actualDirection;
+            player.AdvanceAnimation();
             CheckPlayerFloor();
         }
 
-        bool turnPassed = false;
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            turnPassed = true;
-            player.OnWait();
-        }
+
 
         if (turnPassed || moved)
         {
@@ -261,12 +275,12 @@ public class LevelManager : MonoBehaviour
             if (CurrentOxygen > MinimumOxygen)
             {
                 CurrentOxygen--;
-                player.OnOxygenUsed();
+                player.OxygenUsed();
                 OxygenDisplay.SetDisplayLevel(CurrentOxygen);
             }
             else
             {
-                GameOver();
+                LoseLevel();
             }
         }
 
@@ -291,12 +305,22 @@ public class LevelManager : MonoBehaviour
     {
         CurrentOxygen = Math.Min(Math.Max(MaximumOxygen, CurrentOxygen + amount), refillUpTo);
         OxygenDisplay.SetDisplayLevel(CurrentOxygen);
-        player.OnOxygenRefilled();
+        player.OxygenRefilled();
     }
 
-    void GameOver()
+    public void InteractWith(Vector2 direction)
     {
-        // TODO
+
+    }
+
+    void LoseLevel()
+    {
+        KillEntity(player);
+    }
+
+    void WinLevel()
+    {
+
     }
 
     void CheckPlayerFloor()
