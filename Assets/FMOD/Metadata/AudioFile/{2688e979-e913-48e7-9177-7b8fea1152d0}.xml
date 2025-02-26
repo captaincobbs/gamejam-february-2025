@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{2688e979-e913-48e7-9177-7b8fea1152d0}">
+		<property name="assetPath">
+			<value>fs_concrete - Trimmed (15).wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.27387755102040817</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{45494f83-cc69-4c50-a22a-eada1a2906ee}</destination>
+		</relationship>
+	</object>
+</objects>
