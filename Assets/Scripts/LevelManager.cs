@@ -1,9 +1,11 @@
 using FMODUnity;
+using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem.Editor;
 
 public class LevelManager : MonoBehaviour
 {
@@ -12,8 +14,22 @@ public class LevelManager : MonoBehaviour
     public bool UseOxygen = true;
     [Tooltip("The starting oxygen value when the player spawns")]
     public uint InitialOxygen = 5;
+    [Tooltip("The maximum allowed oxygen value")]
+    public uint MaximumOxygen = 10;
+    [Tooltip("The minimum allowed oxygen value, going below this will kill the player")]
+    public uint MinimumOxygen = 0;
     [Tooltip("The player's current oxygen value")]
-    [HideInNormalInspector] public uint CurrentOxygen;
+
+    private uint currentOxygen;
+    [HideInNormalInspector] public uint CurrentOxygen
+    {
+        get => currentOxygen;
+        set
+        {
+            currentOxygen = value;
+            AudioManager.Instance.SetParameterWithValue("parameter:/Player/Player_Material", value);
+        }
+    }
 
     [Header("Kinematics")]
     [Tooltip("The delay between when button presses are read (this will hopefully eventually be replaced with something better)")]
@@ -36,7 +52,8 @@ public class LevelManager : MonoBehaviour
 
     // Events
     public event Action OnTurnEnd;
-    public Dictionary<int, Action> OnTrigger = new();
+    public Dictionary<uint, Action> Triggers = new();
+    public Dictionary<uint, List<EventReference>> SoundTriggers = new();
 
     // Turn Processing
     private bool isTurnProcessing = false;
@@ -94,6 +111,11 @@ public class LevelManager : MonoBehaviour
         else if (direction.y == -1)
         {
             turnPassed = MoveEntity(player, Vector3.down);
+        }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            turnPassed = true;
+            player.OnWait();
         }
 
         if (turnPassed)
@@ -211,10 +233,11 @@ public class LevelManager : MonoBehaviour
 
         if (UseOxygen)
         {
-            if (CurrentOxygen > 0)
+            if (CurrentOxygen > MinimumOxygen)
             {
                 CurrentOxygen--;
-                OxygenDisplay?.SetDisplayLevel(CurrentOxygen);
+                player.OnOxygenUsed();
+                OxygenDisplay.SetDisplayLevel(CurrentOxygen);
             }
             else
             {
@@ -240,10 +263,74 @@ public class LevelManager : MonoBehaviour
         entity.Death();
     }
 
+    public void RefillOxygen(uint amount, uint refillUpTo)
+    {
+        CurrentOxygen = Math.Min(Math.Max(MaximumOxygen, CurrentOxygen + amount), refillUpTo);
+        OxygenDisplay.SetDisplayLevel(CurrentOxygen);
+        player.OnOxygenRefilled();
+    }
+
     void GameOver()
     {
 
     }
+
+    #region Trigger Management
+    public void SubscribeTrigger(uint triggerID, Action action, EventReference? soundEvent = null)
+    {
+        if (!Triggers.ContainsKey(triggerID))
+        {
+            Triggers[triggerID] = action;
+        }
+        else
+        {
+            Triggers[triggerID] += action;
+        }
+
+        if (soundEvent != null)
+        {
+            if (!SoundTriggers.ContainsKey(triggerID))
+            {
+                SoundTriggers[triggerID] = new() { soundEvent.Value };
+            }
+            else
+            {
+                SoundTriggers[triggerID].Add(soundEvent.Value);
+            }
+        }
+    }
+
+    public void UnsubscribeTrigger(uint triggerID, Action action)
+    {
+        if (Triggers.ContainsKey(triggerID))
+        {
+            Triggers[triggerID] -= action;
+
+            // If no more listeners then remove the trigger
+            if (Triggers[triggerID] == null)
+            {
+                Triggers.Remove(triggerID);
+            }
+        }
+    }
+
+    public void InvokeTrigger(uint triggerID)
+    {
+        if (Triggers.TryGetValue(triggerID, out Action action))
+        {
+            Debug.Log($"Trigger: {triggerID}");
+            action?.Invoke();
+
+            if (SoundTriggers.TryGetValue(triggerID, out List<EventReference> events) && events.Count > 0)
+            {
+                foreach (EventReference soundEvent in events)
+                {
+                    AudioManager.Instance.PlayOneShot(soundEvent);
+                }
+            }
+        }
+    }
+    #endregion
 
     #region Singleton
     private static LevelManager instance;
@@ -276,6 +363,8 @@ public class LevelManager : MonoBehaviour
     // Destroy static instance when scene is unloaded
     private void OnDestroy()
     {
+        AudioManager.Instance.PlayOneShot(onUnload);
+
         if (instance == this)
         {
             instance = null;

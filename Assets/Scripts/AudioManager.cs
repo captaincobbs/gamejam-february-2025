@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using FMODUnity;
 using UnityEngine;
 using Unity.VisualScripting;
+using static UnityEngine.Rendering.DebugUI;
 
 public class AudioManager : MonoBehaviour
 {
+    public bool LogEvents = true;
+
     private static AudioManager instance;
     public static AudioManager Instance
     {
@@ -22,8 +25,32 @@ public class AudioManager : MonoBehaviour
 
     public void PlayOneShot(EventReference sound)
     {
-        Debug.Log($"Event Played: {sound.Path}");
+        if (LogEvents)
+        {
+            Debug.Log($"Event Played: {sound.Path}");
+        }
+
         RuntimeManager.PlayOneShot(sound, Vector3.zero);
+    }
+
+    public void SetParameterWithValue(string name, float value)
+    {
+        if (LogEvents)
+        {
+            Debug.Log($"Parameter Updated: {name} to {value}");
+        }
+
+        RuntimeManager.StudioSystem.setParameterByName(name, value);
+    }
+
+    public void SetParameterWithLabel(string name, string label)
+    {
+        if (LogEvents)
+        {
+            Debug.Log($"Parameter Updated: {name} to {label}");
+        }
+
+        RuntimeManager.StudioSystem.setParameterByNameWithLabel(name, label);
     }
 
     private void Awake()
@@ -35,14 +62,6 @@ public class AudioManager : MonoBehaviour
         else
         {
             instance = this;
-        }
-    }
-
-    private void OnDestroy()
-    {
-        if (instance == this)
-        {
-            instance = null;
         }
     }
 }

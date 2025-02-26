@@ -1,3 +1,4 @@
+using FMODUnity;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,9 +8,9 @@ public class ConveyorBelt : MonoBehaviour
     [Tooltip("Don't make a vertical-looking conveyor belt go horizontally (or vice versa) or the animation will break")]
     public ConveyorDirection Direction = ConveyorDirection.Left;
     [Tooltip("Whether this conveyor belt can be flipped via a trigger")]
-    public bool FlippedByTrigger = false;
+    public bool ReversedByTrigger = false;
     [Tooltip("The ID of the trigger that will flip this conveyor belt")]
-    public int FlipTriggerID = 0;
+    public uint ReverseTriggerID = 0;
 
     [Header("State")]
     [Tooltip("Whether the conveyor belt will push or not")]
@@ -17,7 +18,12 @@ public class ConveyorBelt : MonoBehaviour
     [Tooltip("Whether this conveyor belt can be toggled on/off via a trigger")]
     public bool ToggledByTrigger = false;
     [Tooltip("The ID of the trigger that will toggle this conveyor belt")]
-    public int ToggleTriggerID = 0;
+    public uint ToggleTriggerID = 0;
+
+    [Header("Sound Events")]
+    [SerializeField] private EventReference onPush;
+    [SerializeField] private EventReference onReverse;
+    [SerializeField] private EventReference onToggle;
 
     [Header("Sprite")]
     [Tooltip("An order list of sprites that the conveyor belt will cycle through during turns")]
@@ -26,7 +32,7 @@ public class ConveyorBelt : MonoBehaviour
     SpriteRenderer spriteRenderer;
 
     // Private
-    LevelManager TurnManager
+    LevelManager levelManager
     {
         get => LevelManager.Instance;
     }
@@ -38,19 +44,17 @@ public class ConveyorBelt : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         conveyorCollider = GetComponent<BoxCollider2D>();
 
-
-
-        if (TurnManager != null)
+        if (levelManager != null)
         {
-            TurnManager.OnTurnEnd += Advance;
+            levelManager.OnTurnEnd += Advance;
             if (ToggledByTrigger)
             {
-                TurnManager.OnTrigger[ToggleTriggerID] += Toggle;
+                levelManager.SubscribeTrigger(ToggleTriggerID, Toggle, onToggle);
             }
 
-            if (FlippedByTrigger)
+            if (ReversedByTrigger)
             {
-                TurnManager.OnTrigger[ToggleTriggerID] += FlipDirection;
+                levelManager.SubscribeTrigger(ReverseTriggerID, Reverse, onReverse);
             }
         }
         else
@@ -64,9 +68,12 @@ public class ConveyorBelt : MonoBehaviour
         }
     }
 
-    void Toggle() { Enabled = !Enabled; }
+    void Toggle()
+    {
+        Enabled = !Enabled;
+    }
 
-    void FlipDirection()
+    void Reverse()
     {
         if (Direction == ConveyorDirection.Left)
         {
@@ -103,7 +110,7 @@ public class ConveyorBelt : MonoBehaviour
 
                     if (!entity.alreadyPushed)
                     {
-                        TurnManager.MoveEntity(entity, new(moveDirection.x, moveDirection.y, 0f), true);
+                        levelManager.MoveEntity(entity, new(moveDirection.x, moveDirection.y, 0f), true);
                     }
                 }
             }
