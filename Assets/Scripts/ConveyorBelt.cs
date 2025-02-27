@@ -68,7 +68,10 @@ public class ConveyorBelt : MonoBehaviour
 
             if (Enabled)
             {
-                LevelManager.OnTurnEvents.Add(SoundEventType.ConveyorAdvance, onAdvance);
+                if (!LevelManager.OnTurnEvents.ContainsKey(SoundEventType.ConveyorAdvance))
+                {
+                    LevelManager.OnTurnEvents.Add(SoundEventType.ConveyorAdvance, onAdvance);
+                }
             }
         }
         else
@@ -88,7 +91,10 @@ public class ConveyorBelt : MonoBehaviour
 
         if (!Enabled)
         {
-            LevelManager.OnTurnEvents.Remove(SoundEventType.ConveyorAdvance);
+            if (!LevelManager.OnTurnEvents.ContainsKey(SoundEventType.ConveyorAdvance))
+            {
+                LevelManager.OnTurnEvents.Add(SoundEventType.ConveyorAdvance, onAdvance);
+            }
         }
     }
 
