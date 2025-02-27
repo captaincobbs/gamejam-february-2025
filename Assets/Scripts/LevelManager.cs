@@ -65,7 +65,7 @@ public class LevelManager : MonoBehaviour
     // Events
     public event Action OnTurnEnd;
     public Dictionary<uint, Trigger> Triggers = new();
-    public Dictionary<Assets.Scripts.SoundEventType, EventReference> OnTurnEvents;
+    public Dictionary<SoundEventType, EventReference> OnTurnEvents = new();
 
     // Turn Processing
     private bool isTurnProcessing = false;
