@@ -1,3 +1,4 @@
+using Assets.Scripts;
 using FMODUnity;
 using UnityEngine;
 
@@ -14,7 +15,7 @@ public class Player : Entity
     [SerializeField] private EventReference onWait;
     [SerializeField] private EventReference onSlide;
 
-    [HideInInspector] public Vector2 Direction = Vector2.down;
+    [HideInInspector] public MovementDirection Direction = MovementDirection.Down;
 
     public void AdvanceAnimation()
     {

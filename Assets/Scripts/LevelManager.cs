@@ -64,8 +64,8 @@ public class LevelManager : MonoBehaviour
 
     // Events
     public event Action OnTurnEnd;
-    public Dictionary<uint, Action> Triggers = new();
-    public Dictionary<uint, List<EventReference>> SoundTriggers = new();
+    public Dictionary<uint, Trigger> Triggers = new();
+    public Dictionary<Assets.Scripts.SoundEventType, EventReference> OnTurnEvents;
 
     // Turn Processing
     private bool isTurnProcessing = false;
@@ -119,27 +119,27 @@ public class LevelManager : MonoBehaviour
         Vector2 rawDirection = new(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         bool moved = false;
         bool turnPassed = false;
-        Vector2 actualDirection = Vector2.zero;
+        MovementDirection? actualDirection = null;
 
         if (rawDirection.x == -1)
         {
             moved = MoveEntity(player, Vector3.left);
-            actualDirection = Vector2.left;
+            actualDirection = MovementDirection.Left;
         }
         else if (rawDirection.x == 1)
         {
             moved = MoveEntity(player, Vector3.right);
-            actualDirection = Vector2.right;
+            actualDirection = MovementDirection.Right;
         }
         else if (rawDirection.y == -1)
         {
             moved = MoveEntity(player, Vector3.down);
-            actualDirection = Vector2.down;
+            actualDirection = MovementDirection.Down;
         }
         else if (rawDirection.y == 1)
         {
             moved = MoveEntity(player, Vector3.up);
-            actualDirection = Vector2.up;
+            actualDirection = MovementDirection.Up;
         }
         else if (Input.GetKeyUp(KeyCode.Space))
         {
@@ -155,12 +155,10 @@ public class LevelManager : MonoBehaviour
 
         if (moved)
         {
-            player.Direction = actualDirection;
+            player.Direction = actualDirection.Value;
             player.AdvanceAnimation();
             CheckPlayerFloor();
         }
-
-
 
         if (turnPassed || moved)
         {
@@ -191,7 +189,7 @@ public class LevelManager : MonoBehaviour
         Physics2D.SyncTransforms();
 
         ConveyorBelt conveyorBelt = HitsConveyorBelt(entity.transform.position);
-        if (conveyorBelt != null && !entity.alreadyPushed)
+        if (conveyorBelt != null && !entity.alreadyPushed && conveyorBelt.Enabled)
         {
             entity.alreadyPushed = true;
             return MoveEntity(entity, conveyorBelt.GetDirectionalValue(), true);
@@ -223,10 +221,10 @@ public class LevelManager : MonoBehaviour
     {
         return conveyorBelt.Direction switch
         {
-            (ConveyorBelt.ConveyorDirection.Left) => direction == Vector3.right,
-            (ConveyorBelt.ConveyorDirection.Right) => direction == Vector3.left,
-            (ConveyorBelt.ConveyorDirection.Up) => direction == Vector3.down,
-            (ConveyorBelt.ConveyorDirection.Down) => direction == Vector3.up,
+            (MovementDirection.Left) => direction == Vector3.right,
+            (MovementDirection.Right) => direction == Vector3.left,
+            (MovementDirection.Up) => direction == Vector3.down,
+            (MovementDirection.Down) => direction == Vector3.up,
             _ => false,
         };
     }
@@ -292,6 +290,11 @@ public class LevelManager : MonoBehaviour
             entity.alreadyPushed = false;
         }
 
+        foreach (EventReference soundEvent in OnTurnEvents.Values)
+        {
+            AudioManager.Instance.PlayOneShot(soundEvent);
+        }
+
         yield return new WaitForSeconds(DelayBetweenMovement);
         isTurnProcessing = false;
     }
@@ -308,9 +311,34 @@ public class LevelManager : MonoBehaviour
         player.OxygenRefilled();
     }
 
-    public void InteractWith(Vector2 direction)
+    public void InteractWith(MovementDirection direction)
     {
+        Vector3 offset = Vector3.zero;
 
+        switch (direction)
+        {
+            case MovementDirection.Up:
+                offset = Vector3.up;
+                break;
+            case MovementDirection.Down:
+                offset = Vector3.down;
+                break;
+            case MovementDirection.Left:
+                offset = Vector3.left;
+                break;
+            case MovementDirection.Right:
+                offset = Vector3.right;
+                break;
+        }
+
+        Collider2D hit = Physics2D.OverlapPoint(player.transform.position + offset, LayerMask.GetMask("Interaction"));
+        if (hit != null)
+        {
+            if (hit.TryGetComponent(out Interactable hitInteractable))
+            {
+                hitInteractable.Interact();
+            }
+        }
     }
 
     void LoseLevel()
@@ -335,21 +363,13 @@ public class LevelManager : MonoBehaviour
         {
             Debug.Log(tile.name);
 
-            switch (tile.name.ToLower())
+            PlayerFloorMaterial = tile.name.ToLower() switch
             {
-                case "metal":
-                    PlayerFloorMaterial = FloorMaterial.Metal;
-                    break;
-                case "concrete":
-                    PlayerFloorMaterial = FloorMaterial.Concrete;
-                    break;
-                case "ice":
-                    PlayerFloorMaterial = FloorMaterial.Ice;
-                    break;
-                default:
-                    PlayerFloorMaterial = FloorMaterial.Error;
-                    break;
-            }
+                "metal" => FloorMaterial.Metal,
+                "concrete" => FloorMaterial.Concrete,
+                "ice" => FloorMaterial.Ice,
+                _ => FloorMaterial.Error,
+            };
         }
         else
         {
@@ -358,26 +378,27 @@ public class LevelManager : MonoBehaviour
     }
 
     #region Trigger Management
-    public void SubscribeTrigger(uint triggerID, Action action, EventReference? soundEvent = null)
+    public void SubscribeTrigger(uint triggerID, Action action, TriggerEvent @event)
     {
         if (!Triggers.ContainsKey(triggerID))
         {
-            Triggers[triggerID] = action;
+            Triggers[triggerID] = new()
+            {
+                Action = action,
+            };
+
+            if (@event != null)
+            {
+                Triggers[triggerID].EventReferences.Add(@event.Type, @event.SoundEvent);
+            }
         }
         else
         {
-            Triggers[triggerID] += action;
-        }
+            Triggers[triggerID].Action += action;
 
-        if (soundEvent != null)
-        {
-            if (!SoundTriggers.ContainsKey(triggerID))
+            if (@event != null && Triggers[triggerID].EventReferences.ContainsKey(@event.Type))
             {
-                SoundTriggers[triggerID] = new() { soundEvent.Value };
-            }
-            else
-            {
-                SoundTriggers[triggerID].Add(soundEvent.Value);
+                Triggers[triggerID].EventReferences.Add(@event.Type, @event.SoundEvent);
             }
         }
     }
@@ -386,29 +407,22 @@ public class LevelManager : MonoBehaviour
     {
         if (Triggers.ContainsKey(triggerID))
         {
-            Triggers[triggerID] -= action;
-
-            // If no more listeners then remove the trigger
-            if (Triggers[triggerID] == null)
-            {
-                Triggers.Remove(triggerID);
-            }
+            Triggers[triggerID].Action = null;
+            Triggers[triggerID].EventReferences.Clear();
+            Triggers.Remove(triggerID);
         }
     }
 
     public void InvokeTrigger(uint triggerID)
     {
-        if (Triggers.TryGetValue(triggerID, out Action action))
+        if (Triggers.TryGetValue(triggerID, out Trigger trigger))
         {
             Debug.Log($"Trigger: {triggerID}");
-            action?.Invoke();
+            trigger.Action?.Invoke();
 
-            if (SoundTriggers.TryGetValue(triggerID, out List<EventReference> events) && events.Count > 0)
+            foreach (EventReference soundEvent in trigger.EventReferences.Values)
             {
-                foreach (EventReference soundEvent in events)
-                {
-                    AudioManager.Instance.PlayOneShot(soundEvent);
-                }
+                AudioManager.Instance.PlayOneShot(soundEvent);
             }
         }
     }

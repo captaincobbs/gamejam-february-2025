@@ -547,8 +547,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a48654dce3803d44d9b28b106a53f9cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonType: 0
-  triggerID: 0
+  ButtonType: 0
+  Pressed: 0
+  TriggerID: 0
+  timerOffset: {x: 0, y: 0}
+  whenPressed: {fileID: 21300044, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}
+  whenUnpressed: {fileID: 21300042, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}
   onPress:
     Guid:
       Data1: 489242407
@@ -2921,6 +2925,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 672463406}
     m_Modifications:
+    - target: {fileID: 3386876240530062119, guid: 60526e275ff835047a915e9f7119df86,
+        type: 3}
+      propertyPath: ToggledByTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3386876240530062119, guid: 60526e275ff835047a915e9f7119df86,
+        type: 3}
+      propertyPath: ReversedByTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4345575340014542734, guid: 60526e275ff835047a915e9f7119df86,
         type: 3}
       propertyPath: m_Name
@@ -3385,7 +3399,7 @@ PrefabInstance:
     - target: {fileID: 842545054891029220, guid: 660fed0a2185d8c4691ae4b04cccafa2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 842545054891029220, guid: 660fed0a2185d8c4691ae4b04cccafa2,
         type: 3}

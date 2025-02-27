@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Assets.Scripts;
 using FMODUnity;
 using UnityEngine;
 
@@ -6,7 +7,7 @@ public class ConveyorBelt : MonoBehaviour
 {
     [Header("Direction")]
     [Tooltip("Don't make a vertical-looking conveyor belt go horizontally (or vice versa) or the animation will break")]
-    public ConveyorDirection Direction = ConveyorDirection.Left;
+    public MovementDirection Direction = MovementDirection.Left;
     [Tooltip("Whether this conveyor belt can be flipped via a trigger")]
     public bool ReversedByTrigger = false;
     [Tooltip("The ID of the trigger that will flip this conveyor belt")]
@@ -21,7 +22,7 @@ public class ConveyorBelt : MonoBehaviour
     public uint ToggleTriggerID = 0;
 
     [Header("Sound Events")]
-    [SerializeField] private EventReference onPush;
+    [SerializeField] private EventReference onAdvance;
     [SerializeField] private EventReference onReverse;
     [SerializeField] private EventReference onToggle;
 
@@ -49,12 +50,25 @@ public class ConveyorBelt : MonoBehaviour
             LevelManager.OnTurnEnd += Advance;
             if (ToggledByTrigger)
             {
-                LevelManager.SubscribeTrigger(ToggleTriggerID, Toggle, onToggle);
+                LevelManager.SubscribeTrigger(
+                        ToggleTriggerID,
+                        Toggle,
+                        new(SoundEventType.ConveyorEnable, onToggle)
+                    );
             }
 
             if (ReversedByTrigger)
             {
-                LevelManager.SubscribeTrigger(ReverseTriggerID, Reverse, onReverse);
+                LevelManager.SubscribeTrigger(
+                        ReverseTriggerID,
+                        Reverse,
+                        new(SoundEventType.ConveyorReverse, onReverse)
+                    );
+            }
+
+            if (Enabled)
+            {
+                LevelManager.OnTurnEvents.Add(SoundEventType.ConveyorAdvance, onAdvance);
             }
         }
         else
@@ -71,25 +85,30 @@ public class ConveyorBelt : MonoBehaviour
     void Toggle()
     {
         Enabled = !Enabled;
+
+        if (!Enabled)
+        {
+            LevelManager.OnTurnEvents.Remove(SoundEventType.ConveyorAdvance);
+        }
     }
 
     void Reverse()
     {
-        if (Direction == ConveyorDirection.Left)
+        if (Direction == MovementDirection.Left)
         {
-            Direction = ConveyorDirection.Right;
+            Direction = MovementDirection.Right;
         }
-        else if (Direction == ConveyorDirection.Right)
+        else if (Direction == MovementDirection.Right)
         {
-            Direction = ConveyorDirection.Left;
+            Direction = MovementDirection.Left;
         }
-        else if (Direction == ConveyorDirection.Up)
+        else if (Direction == MovementDirection.Up)
         {
-            Direction = ConveyorDirection.Down;
+            Direction = MovementDirection.Down;
         }
         else
         {
-            Direction = ConveyorDirection.Up;
+            Direction = MovementDirection.Up;
         }
     }
 
@@ -119,8 +138,8 @@ public class ConveyorBelt : MonoBehaviour
 
     void ProgressAnimation()
     {
-        // If going positively, increment normally
-        if (Direction == ConveyorDirection.Right || Direction == ConveyorDirection.Down)
+        // If going positively, move animation forwards
+        if (Direction == MovementDirection.Right || Direction == MovementDirection.Down)
         {
             currentFrame = (currentFrame + 1) % (Sprites.Count);
         }
@@ -134,15 +153,15 @@ public class ConveyorBelt : MonoBehaviour
 
     public Vector2 GetDirectionalValue()
     {
-        if (Direction == ConveyorDirection.Left)
+        if (Direction == MovementDirection.Left)
         {
             return Vector2.left;
         }
-        else if (Direction == ConveyorDirection.Right)
+        else if (Direction == MovementDirection.Right)
         {
             return Vector2.right;
         }
-        else if (Direction == ConveyorDirection.Up)
+        else if (Direction == MovementDirection.Up)
         {
             return Vector2.up;
         }
@@ -150,13 +169,5 @@ public class ConveyorBelt : MonoBehaviour
         {
             return Vector2.down;
         }
-    }
-
-    public enum ConveyorDirection
-    {
-        Up,
-        Down,
-        Left,
-        Right
     }
 }
