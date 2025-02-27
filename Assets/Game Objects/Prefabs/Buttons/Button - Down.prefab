@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7629602241294886629
+--- !u!1 &3768159130784292116
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,83 +8,78 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7628494669790190784}
-  - component: {fileID: 402675149015841272}
-  - component: {fileID: 8403403695841665947}
-  - component: {fileID: 7303099750269778672}
-  m_Layer: 7
-  m_Name: Conveyor Belt - Vertical Center
+  - component: {fileID: 8467176731976043742}
+  - component: {fileID: 198832148465675256}
+  - component: {fileID: 7306314737713334917}
+  - component: {fileID: 1148138299913264413}
+  m_Layer: 8
+  m_Name: Button - Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7628494669790190784
+--- !u!4 &8467176731976043742
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7629602241294886629}
+  m_GameObject: {fileID: 3768159130784292116}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6, y: -4, z: 1}
+  m_LocalPosition: {x: 4, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &402675149015841272
+--- !u!114 &198832148465675256
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7629602241294886629}
+  m_GameObject: {fileID: 3768159130784292116}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4f6622c523934c47bcfb649b3385029, type: 3}
+  m_Script: {fileID: 11500000, guid: a48654dce3803d44d9b28b106a53f9cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: 1
-  ReversedByTrigger: 0
-  ReverseTriggerID: 0
-  Enabled: 1
-  ToggledByTrigger: 0
-  ToggleTriggerID: 0
-  onAdvance:
+  ButtonType: 0
+  Pressed: 0
+  TriggerID: 0
+  timerOffset: {x: 0, y: 0}
+  whenPressed: {fileID: 21300044, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}
+  whenUnpressed: {fileID: 21300042, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}
+  onPress:
     Guid:
-      Data1: 1902455778
-      Data2: 1110010196
-      Data3: -673088845
-      Data4: -499128857
-    Path: event:/Props/Conveyor Belt/ConveyorBelt_OnPush
-  onReverse:
+      Data1: 489242407
+      Data2: 1263417177
+      Data3: 68819871
+      Data4: -511073293
+    Path: event:/Props/Button/Button_OnPress
+  onUnpress:
     Guid:
-      Data1: 1631711923
-      Data2: 1292704002
-      Data3: 1201035919
-      Data4: -659863698
-    Path: event:/Props/Conveyor Belt/ConveyorBelt_OnReverse
-  onToggle:
+      Data1: -1439844305
+      Data2: 1287221052
+      Data3: -647999869
+      Data4: 311076677
+    Path: event:/Props/Button/Button_OnUnpress
+  onTick:
     Guid:
-      Data1: 69971129
-      Data2: 1112689492
-      Data3: -79257422
-      Data4: -1621481570
-    Path: event:/Props/Conveyor Belt/ConveyorBelt_OnToggle
-  Sprites:
-  - {fileID: 21300204, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}
-  - {fileID: 21300206, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}
-  - {fileID: 21300208, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}
-  - {fileID: 21300210, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}
---- !u!212 &8403403695841665947
+      Data1: -126171721
+      Data2: 1153390549
+      Data3: -723552380
+      Data4: -1850415248
+    Path: event:/Props/Button/Button_OnTick
+--- !u!212 &7306314737713334917
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7629602241294886629}
+  m_GameObject: {fileID: 3768159130784292116}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -122,7 +117,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300204, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}
+  m_Sprite: {fileID: 21300042, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -133,13 +128,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &7303099750269778672
+--- !u!61 &1148138299913264413
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7629602241294886629}
+  m_GameObject: {fileID: 3768159130784292116}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -177,5 +172,5 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.5, y: 0.5}
+  m_Size: {x: 0.9, y: 0.9}
   m_EdgeRadius: 0

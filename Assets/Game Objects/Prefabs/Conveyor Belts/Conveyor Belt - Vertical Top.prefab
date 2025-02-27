@@ -52,27 +52,27 @@ MonoBehaviour:
   Enabled: 1
   ToggledByTrigger: 0
   ToggleTriggerID: 0
-  onPush:
+  onAdvance:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1902455778
+      Data2: 1110010196
+      Data3: -673088845
+      Data4: -499128857
+    Path: event:/Props/Conveyor Belt/ConveyorBelt_OnPush
   onReverse:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1631711923
+      Data2: 1292704002
+      Data3: 1201035919
+      Data4: -659863698
+    Path: event:/Props/Conveyor Belt/ConveyorBelt_OnReverse
   onToggle:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 69971129
+      Data2: 1112689492
+      Data3: -79257422
+      Data4: -1621481570
+    Path: event:/Props/Conveyor Belt/ConveyorBelt_OnToggle
   Sprites:
   - {fileID: 21300190, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}
   - {fileID: 21300192, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}
