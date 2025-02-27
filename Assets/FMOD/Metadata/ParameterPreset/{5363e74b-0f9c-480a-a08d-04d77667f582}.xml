@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{5363e74b-0f9c-480a-a08d-04d77667f582}">
+		<property name="name">
+			<value>Player_OxygenLevel</value>
+		</property>
+		<relationship name="folder">
+			<destination>{efcad866-8ef1-40a5-9b60-7eac7403d3cb}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{daf6cc27-ddbc-4f4d-b041-e97b3ad05859}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{daf6cc27-ddbc-4f4d-b041-e97b3ad05859}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>11</value>
+		</property>
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>
