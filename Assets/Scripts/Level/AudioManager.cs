@@ -21,12 +21,18 @@ public class AudioManager : MonoBehaviour
 
     public void PlayOneShot(EventReference sound)
     {
-        if (LogEvents)
+        if (!sound.IsNull)
         {
-            Debug.Log($"Event Played: {sound.Path}");
-        }
+            if (LogEvents)
+            {
+                Debug.Log($"Event Played: {sound.Path}");
+            }
 
-        RuntimeManager.PlayOneShot(sound, Vector3.zero);
+            RuntimeManager.PlayOneShot(sound, Vector3.zero);
+        }
+        {
+            Debug.LogWarning("Event Reference is null");
+        }
     }
 
     public void SetParameterWithValue(string name, float value)

@@ -1,4 +1,5 @@
 using Assets.Scripts;
+using Assets.Scripts.Level.Props;
 using FMODUnity;
 using UnityEngine;
 
@@ -21,7 +22,9 @@ public class WallButton : Interactable
     [SerializeField] private EventReference onTick;
 
     // References
-    SpriteRenderer spriteRenderer;
+    SpriteRenderer buttonRenderer;
+    ButtonTimer timer;
+
     LevelManager LevelManager
     {
         get => LevelManager.Instance;
@@ -29,7 +32,7 @@ public class WallButton : Interactable
 
     private void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        buttonRenderer = GetComponent<SpriteRenderer>();
     }
 
     public override void Interact()
@@ -44,7 +47,7 @@ public class WallButton : Interactable
             if (!Pressed)
             {
                 AudioManager.Instance.PlayOneShot(onPress);
-                spriteRenderer.sprite = whenPressed;
+                buttonRenderer.sprite = whenPressed;
                 LevelManager.InvokeTrigger(TriggerID);
 
                 switch (ButtonType)
@@ -63,7 +66,7 @@ public class WallButton : Interactable
             else
             {
                 AudioManager.Instance.PlayOneShot(onUnpress);
-                spriteRenderer.sprite = whenUnpressed;
+                buttonRenderer.sprite = whenUnpressed;
                 LevelManager.InvokeTrigger(TriggerID);
             }
 
