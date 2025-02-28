@@ -256,32 +256,26 @@ public class LevelManager : MonoBehaviour
 
     }
 
-    FloorMaterial CheckPlayerFloor()
-    {
-        Collider2D collider = Physics2D.OverlapPoint(player.transform.position, LayerMask.GetMask("Floor"));
-
-        if (collider != null && collider.TryGetComponent(out FloorTile playerTile))
-        {
-            return playerTile.Material;
-        }
-
-        return FloorMaterial.Error;
-    }
+    FloorMaterial CheckPlayerFloor() => GetFloorMaterialAtPosition(player.transform.position);
     #endregion
 
     #region Entity
-    public bool MoveEntity(Entity entity, Vector3 direction, bool pushed = false)
+    public bool MoveEntity(Entity entity, Vector3 direction, bool pushed = false, bool canPush = true)
     {
         if (IsBlocked(entity, direction))
         {
             return false;
         }
 
-        Entity entityInFront = GetEntityInDirection(entity, direction);
+        bool isEntity = TryGetEntityAt(entity.transform.position + direction, entity, out Entity entityInFront);
 
-        if (entityInFront != null)
+        if (isEntity)
         {
-            if (!MoveEntity(entityInFront, direction))
+            if (canPush && !MoveEntity(entityInFront, direction))
+            {
+                return false;
+            }
+            else if (!canPush)
             {
                 return false;
             }
@@ -291,6 +285,12 @@ public class LevelManager : MonoBehaviour
         entity.transform.position += direction;
         entity.Move();
         Physics2D.SyncTransforms();
+
+        if (GetFloorMaterialAtPosition(entity.transform.position) == FloorMaterial.Ice)
+        {
+            MoveEntity(entity, direction, false, false);
+        }
+
         return true;
     }
 
@@ -299,24 +299,40 @@ public class LevelManager : MonoBehaviour
         entity.Death();
     }
 
-    Entity GetEntityInDirection(Entity entity, Vector3 direction)
+    public bool TryGetEntityAt(Vector3 position, Entity exclude, out Entity entity)
     {
-        Vector3 targetPosition = entity.transform.position + direction;
-        Collider2D hit = Physics2D.OverlapPoint(targetPosition, LayerMask.GetMask("Entity"));
+        return TryGetEntityAt(position, new List<Entity> { exclude }, out entity);
+    }
+
+    public bool TryGetEntityAt(Vector3 position, List<Entity> excludes, out Entity entity)
+    {
+        Collider2D hit = Physics2D.OverlapPoint(position, LayerMask.GetMask("Entity"));
+        entity = null;
 
         if (hit != null)
         {
             Entity hitEntity = hit.GetComponent<Entity>();
 
-            if (hitEntity == entity)
+            if (excludes.Contains(hitEntity))
             {
-                return null; // Prevent stack overflow
+                return false; // Prevent stack overflow self-reference
             }
 
-            return hitEntity;
+            entity = hitEntity;
+            return true;
         }
 
-        return null;
+        return false;
+    }
+
+    public FloorMaterial GetFloorMaterialAtPosition(Vector3 position)
+    {
+        Collider2D hit = Physics2D.OverlapPoint(position, LayerMask.GetMask("Floor"));
+        if (hit != null && hit.TryGetComponent(out FloorTile floorTile))
+        {
+            return floorTile.Material;
+        }
+        return FloorMaterial.Error;
     }
 
     bool IsBlocked(Entity entity, Vector3 direction)
