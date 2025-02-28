@@ -23,81 +23,41 @@ public class Player : Entity
 
     public override void Move()
     {
-        if (onMove.IsNull)
-        {
-            Debug.LogWarning("OnMove is null");
-        }
-
-        AudioManager.Instance.PlayOneShot(onMove);
+        AudioManager.Instance.PlayOneShot(onMove, $"Player.{nameof(onMove)}");
     }
 
     public override void Death()
     {
-        if (onDeath.IsNull)
-        {
-            Debug.LogWarning("OnDeath is null");
-        }
-
-        AudioManager.Instance.PlayOneShot(onDeath);
+        AudioManager.Instance.PlayOneShot(onDeath, $"Player.{nameof(onLift)}");
     }
 
     public void OxygenUsed()
     {
-        if (onOxygenUsed.IsNull)
-        {
-            Debug.LogWarning("OnOxygenUsed is null");
-        }
-
-        AudioManager.Instance.PlayOneShot(onOxygenUsed);
+        AudioManager.Instance.PlayOneShot(onOxygenUsed, $"Player.{nameof(onLift)}");
     }
 
     public void Lift()
     {
-        if (onLift.IsNull)
-        {
-            Debug.LogWarning("OnLift is null");
-        }
-
-        AudioManager.Instance.PlayOneShot(onLift);
+        AudioManager.Instance.PlayOneShot(onLift, $"Player.{nameof(onLift)}");
     }
 
     public void Drop()
     {
-        if (onDrop.IsNull)
-        {
-            Debug.LogWarning("OnDrop is null");
-        }
-
-        AudioManager.Instance.PlayOneShot(onDrop);
+        AudioManager.Instance.PlayOneShot(onDrop, $"Player.{nameof(onDrop)}");
     }
 
     public void Interact()
     {
-        if (onInteract.IsNull)
-        {
-            Debug.LogWarning("OnInteract is null");
-        }
-
-        AudioManager.Instance.PlayOneShot(onInteract);
+        AudioManager.Instance.PlayOneShot(onInteract, $"Player.{nameof(onInteract)}");
     }
 
     public void Wait()
     {
-        if (onWait.IsNull)
-        {
-            Debug.LogWarning("OnWait is null");
-        }
-
-        AudioManager.Instance.PlayOneShot(onWait);
+        AudioManager.Instance.PlayOneShot(onWait, $"Player.{nameof(onWait)}");
     }
 
     public void Slide()
     {
-        if (onSlide.IsNull)
-        {
-            Debug.LogWarning("OnSlide is null");
-        }
-
-        AudioManager.Instance.PlayOneShot(onSlide);
+        AudioManager.Instance.PlayOneShot(onSlide, $"Player.{nameof(onSlide)}");
     }
 }

@@ -75,11 +75,7 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        if (onLoad.IsNull)
-        {
-            Debug.LogWarning("OnLoad is null");
-        }
-        AudioManager.Instance.PlayOneShot(onLoad);
+        AudioManager.Instance.PlayOneShot(onLoad, nameof(onLoad));
 
         if (UseOxygen)
         {
@@ -130,7 +126,7 @@ public class LevelManager : MonoBehaviour
             Debug.LogWarning("OnTurn is null");
         }
 
-        AudioManager.Instance.PlayOneShot(onTurn);
+        AudioManager.Instance.PlayOneShot(onTurn, nameof(onTurn));
 
         if (UseOxygen)
         {
@@ -295,14 +291,6 @@ public class LevelManager : MonoBehaviour
         entity.transform.position += direction;
         entity.Move();
         Physics2D.SyncTransforms();
-
-        //ConveyorBelt conveyorBelt = ConveyorBelt.GetAtPosition(entity.transform.position);
-        //if (conveyorBelt != null && !entity.alreadyPushed && conveyorBelt.Enabled)
-        //{
-        //    entity.alreadyPushed = true;
-        //    return MoveEntity(entity, conveyorBelt.GetDirectionalValue(), true);
-        //}
-
         return true;
     }
 
@@ -336,20 +324,7 @@ public class LevelManager : MonoBehaviour
         Vector3 targetPosition = entity.transform.position + direction;
 
         Collider2D hit = Physics2D.OverlapPoint(targetPosition, LayerMask.GetMask("Static"));
-        bool output = hit != null;
-
-        // uncomment this if conveyor belts should block movement
-        //ConveyorBelt conveyorBelt = ConveyorBelt.GetAtPosition(entity.transform.position + direction);
-        //if (conveyorBelt != null && conveyorBelt.AbsorbsMovement(direction))
-        //{
-
-        //    //entity.alreadyPushed = true;
-
-        //    // Is Also blocked if the conveyor belt prevents movement
-        //    output = true;
-        //}
-
-        return output;
+        return hit != null;
     }
     #endregion
 
@@ -398,7 +373,7 @@ public class LevelManager : MonoBehaviour
 
             foreach (EventReference soundEvent in trigger.EventReferences.Values)
             {
-                AudioManager.Instance.PlayOneShot(soundEvent);
+                AudioManager.Instance.PlayOneShot(soundEvent, $"TriggerInvoke");
             }
         }
     }
@@ -440,7 +415,7 @@ public class LevelManager : MonoBehaviour
             Debug.LogWarning("OnUnload is null");
         }
 
-        AudioManager.Instance.PlayOneShot(onUnload);
+        AudioManager.Instance.PlayOneShot(onUnload, nameof(onUnload));
 
         if (instance == this)
         {

@@ -19,7 +19,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlayOneShot(EventReference sound)
+    public void PlayOneShot(EventReference sound, string varName)
     {
         if (!sound.IsNull)
         {
@@ -32,7 +32,7 @@ public class AudioManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Event Reference is null");
+            Debug.LogWarning($"Event Reference '{varName}' is null");
         }
     }
 

@@ -79,11 +79,14 @@ public class ConveyorBelt : MonoBehaviour
 
     void Toggle()
     {
+        AudioManager.Instance.PlayOneShot(onToggle, $"ConveyorBelt.{nameof(onToggle)}");
         Enabled = !Enabled;
     }
 
     void Reverse()
     {
+        AudioManager.Instance.PlayOneShot(onReverse, $"ConveyorBelt.{nameof(onReverse)}");
+
         if (Direction == MovementDirection.Left)
         {
             Direction = MovementDirection.Right;
@@ -119,12 +122,7 @@ public class ConveyorBelt : MonoBehaviour
 
                     if (!entity.alreadyPushed && LevelManager.MoveEntity(entity, new(moveDirection.x, moveDirection.y, 0f), true))
                     {
-                        if (onAdvance.IsNull)
-                        {
-                            Debug.LogWarning("OnAdvance is null");
-                        }
-
-                        AudioManager.Instance.PlayOneShot(onAdvance);
+                        AudioManager.Instance.PlayOneShot(onAdvance, $"ConveyorBelt.{nameof(onAdvance)}");
                     }
                 }
             }

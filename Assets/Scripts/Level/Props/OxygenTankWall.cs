@@ -39,12 +39,7 @@ public class OxygenTankWall : Interactable
     {
         if (!IsConsumed)
         {
-            if (onUse.IsNull)
-            {
-                Debug.LogWarning("OnUse is null");
-            }
-
-            AudioManager.Instance.PlayOneShot(onUse);
+            AudioManager.Instance.PlayOneShot(onUse, $"OxygenTankWall.{nameof(onUse)}");
             LevelManager.RefillOxygen(oxygenRefilled, refillUpTo);
 
             if (ConsumedOnUse)

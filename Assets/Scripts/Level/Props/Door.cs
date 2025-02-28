@@ -24,11 +24,11 @@ public class Door : MonoBehaviour
 
     public void Open()
     {
-
+        AudioManager.Instance.PlayOneShot(onOpen, $"Door.{nameof(onOpen)}");
     }
 
     public void Close()
     {
-
+        AudioManager.Instance.PlayOneShot(onClose, $"Door.{nameof(onClose)}");
     }
 }

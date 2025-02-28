@@ -1,7 +1,7 @@
 using FMODUnity;
 using UnityEngine;
 
-public class OxygenTank : MonoBehaviour
+public class OxygenTankFloor : MonoBehaviour
 {
     [Header("Properties")]
     private bool isConsumed = false;
@@ -38,12 +38,7 @@ public class OxygenTank : MonoBehaviour
     {
         if (!IsConsumed && collider.TryGetComponent(out Player _))
         {
-            if (onUse.IsNull)
-            {
-                Debug.LogWarning("OnUse is null");
-            }
-
-            AudioManager.Instance.PlayOneShot(onUse);
+            AudioManager.Instance.PlayOneShot(onUse, $"OxygenTankFloor.{nameof(onUse)}");
             LevelManager.RefillOxygen(oxygenRefilled, refillUpTo);
 
             if (ConsumedOnUse)

@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77c2a0b8d5ae73a428001e7d9cfb02a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConsumedOnUse: 0
+  ConsumedOnUse: 1
   oxygenRefilled: 5
   refillUpTo: 5
   onUse:
@@ -124,7 +124,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0

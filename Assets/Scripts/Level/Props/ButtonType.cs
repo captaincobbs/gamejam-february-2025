@@ -2,9 +2,9 @@
 {
     public enum ButtonType
     {
-        Toggle,
-        Trigger1,
-        Trigger5,
-        Trigger10
+        Toggle = 0,
+        Trigger1 = 1,
+        Trigger5 = 5,
+        Trigger10 = 10
     }
 }

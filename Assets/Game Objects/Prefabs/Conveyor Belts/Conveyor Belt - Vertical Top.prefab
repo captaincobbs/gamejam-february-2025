@@ -74,10 +74,10 @@ MonoBehaviour:
       Data4: -1621481570
     Path: event:/Props/Conveyor Belt/ConveyorBelt_OnToggle
   Sprites:
-  - {fileID: 21300190, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}
-  - {fileID: 21300192, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}
-  - {fileID: 21300194, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}
-  - {fileID: 21300196, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}
+  - {fileID: -222174308, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}
+  - {fileID: 35594416, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}
+  - {fileID: 603215535, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}
+  - {fileID: -1677591984, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}
 --- !u!212 &5279695850372621870
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -130,7 +130,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &4271732368229677412

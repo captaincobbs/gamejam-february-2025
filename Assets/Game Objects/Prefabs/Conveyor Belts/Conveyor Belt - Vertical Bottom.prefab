@@ -74,10 +74,10 @@ MonoBehaviour:
       Data4: -1621481570
     Path: event:/Props/Conveyor Belt/ConveyorBelt_OnToggle
   Sprites:
-  - {fileID: 21300218, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}
-  - {fileID: 21300220, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}
-  - {fileID: 21300222, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}
-  - {fileID: 21300224, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}
+  - {fileID: 1026000073, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}
+  - {fileID: -1877384233, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}
+  - {fileID: 1780479728, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}
+  - {fileID: 1278192049, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}
 --- !u!212 &555952805368858399
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -122,7 +122,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300218, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}
+  m_Sprite: {fileID: 1026000073, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -363,7 +363,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 10
+      name: Ten
       rect:
         serializedVersion: 2
         x: 604
@@ -371,7 +371,7 @@ TextureImporter:
         width: 46
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -398,7 +398,6 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      10: 1906896974
       Eight: -1370661682523340017
       Five: 2788568348960109317
       Four: -5962389079421231736
@@ -406,6 +405,7 @@ TextureImporter:
       One: 8020143640844766479
       Seven: -7921052967969465774
       Six: 226702753830753226
+      Ten: 1906896974
       Three: -1259408508766424310
       Two: -6251682230944352461
       Zero: 5777552420452043588
