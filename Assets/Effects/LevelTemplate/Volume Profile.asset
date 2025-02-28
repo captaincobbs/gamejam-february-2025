@@ -66,10 +66,10 @@ MonoBehaviour:
   m_Name: Volume Profile
   m_EditorClassIdentifier: 
   components:
+  - {fileID: 7619769059170177167}
   - {fileID: -9176665015425380207}
   - {fileID: 4262100002303077856}
   - {fileID: -6583703066578988835}
-  - {fileID: 7619769059170177167}
 --- !u!114 &4262100002303077856
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -85,19 +85,19 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.26
+    m_Value: 0.42
   xMultiplier:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.637
   yMultiplier:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.803
   center:
     m_OverrideState: 1
     m_Value: {x: 0.5, y: 0.5}
   scale:
     m_OverrideState: 1
-    m_Value: 0.99
+    m_Value: 0.97
 --- !u!114 &7619769059170177167
 MonoBehaviour:
   m_ObjectHideFlags: 3
