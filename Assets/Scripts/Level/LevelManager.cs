@@ -65,8 +65,7 @@ public class LevelManager : MonoBehaviour
 
     // Events
     public event Action OnTurnEnd;
-    public Dictionary<uint, Trigger> Triggers = new();
-    public Dictionary<SoundEventType, EventReference> OnTurnEvents = new();
+    private Dictionary<uint, Trigger> Triggers = new();
 
     // Turn Processing
     private bool isTurnProcessing = false;
@@ -76,6 +75,10 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
+        if (onLoad.IsNull)
+        {
+            Debug.LogWarning("OnLoad is null");
+        }
         AudioManager.Instance.PlayOneShot(onLoad);
 
         if (UseOxygen)
@@ -122,6 +125,11 @@ public class LevelManager : MonoBehaviour
         isTurnProcessing = true;
 
         OnTurnEnd?.Invoke();
+        if (onTurn.IsNull)
+        {
+            Debug.LogWarning("OnTurn is null");
+        }
+
         AudioManager.Instance.PlayOneShot(onTurn);
 
         if (UseOxygen)
@@ -145,11 +153,6 @@ public class LevelManager : MonoBehaviour
         foreach (Entity entity in entities)
         {
             entity.alreadyPushed = false;
-        }
-
-        foreach (EventReference soundEvent in OnTurnEvents.Values)
-        {
-            AudioManager.Instance.PlayOneShot(soundEvent);
         }
 
         yield return new WaitForSeconds(DelayBetweenMovement);
@@ -293,12 +296,12 @@ public class LevelManager : MonoBehaviour
         entity.Move();
         Physics2D.SyncTransforms();
 
-        ConveyorBelt conveyorBelt = ConveyorBelt.GetAtPosition(entity.transform.position);
-        if (conveyorBelt != null && !entity.alreadyPushed && conveyorBelt.Enabled)
-        {
-            entity.alreadyPushed = true;
-            return MoveEntity(entity, conveyorBelt.GetDirectionalValue(), true);
-        }
+        //ConveyorBelt conveyorBelt = ConveyorBelt.GetAtPosition(entity.transform.position);
+        //if (conveyorBelt != null && !entity.alreadyPushed && conveyorBelt.Enabled)
+        //{
+        //    entity.alreadyPushed = true;
+        //    return MoveEntity(entity, conveyorBelt.GetDirectionalValue(), true);
+        //}
 
         return true;
     }
@@ -335,15 +338,16 @@ public class LevelManager : MonoBehaviour
         Collider2D hit = Physics2D.OverlapPoint(targetPosition, LayerMask.GetMask("Static"));
         bool output = hit != null;
 
-        ConveyorBelt conveyorBelt = ConveyorBelt.GetAtPosition(entity.transform.position + direction);
-        if (conveyorBelt != null && conveyorBelt.AbsorbsMovement(direction))
-        {
+        // uncomment this if conveyor belts should block movement
+        //ConveyorBelt conveyorBelt = ConveyorBelt.GetAtPosition(entity.transform.position + direction);
+        //if (conveyorBelt != null && conveyorBelt.AbsorbsMovement(direction))
+        //{
 
-            //entity.alreadyPushed = true;
+        //    //entity.alreadyPushed = true;
 
-            // Is Also blocked if the conveyor belt prevents movement
-            output = true;
-        }
+        //    // Is Also blocked if the conveyor belt prevents movement
+        //    output = true;
+        //}
 
         return output;
     }
@@ -431,6 +435,11 @@ public class LevelManager : MonoBehaviour
     // Destroy static instance when scene is unloaded
     private void OnDestroy()
     {
+        if (onUnload.IsNull)
+        {
+            Debug.LogWarning("OnUnload is null");
+        }
+
         AudioManager.Instance.PlayOneShot(onUnload);
 
         if (instance == this)

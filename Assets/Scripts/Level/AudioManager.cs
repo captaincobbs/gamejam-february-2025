@@ -30,6 +30,7 @@ public class AudioManager : MonoBehaviour
 
             RuntimeManager.PlayOneShot(sound, Vector3.zero);
         }
+        else
         {
             Debug.LogWarning("Event Reference is null");
         }

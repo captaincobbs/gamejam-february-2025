@@ -8,6 +8,11 @@ public class MetalBox : Killable
 
     public override void Death()
     {
+        if (onDeath.IsNull)
+        {
+            Debug.LogWarning("OnDeath is null");
+        }
+
         AudioManager.Instance.PlayOneShot(onDeath);
     }
 }

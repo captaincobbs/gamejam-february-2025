@@ -65,14 +65,6 @@ public class ConveyorBelt : MonoBehaviour
                     new(SoundEventType.ConveyorReverse, onReverse)
                 );
             }
-
-            if (Enabled)
-            {
-                if (!LevelManager.OnTurnEvents.ContainsKey(SoundEventType.ConveyorAdvance))
-                {
-                    LevelManager.OnTurnEvents.Add(SoundEventType.ConveyorAdvance, onAdvance);
-                }
-            }
         }
         else
         {
@@ -88,14 +80,6 @@ public class ConveyorBelt : MonoBehaviour
     void Toggle()
     {
         Enabled = !Enabled;
-
-        if (!Enabled)
-        {
-            if (!LevelManager.OnTurnEvents.ContainsKey(SoundEventType.ConveyorAdvance))
-            {
-                LevelManager.OnTurnEvents.Add(SoundEventType.ConveyorAdvance, onAdvance);
-            }
-        }
     }
 
     void Reverse()
@@ -133,9 +117,14 @@ public class ConveyorBelt : MonoBehaviour
                 {
                     Vector2 moveDirection = GetDirectionalValue();
 
-                    if (!entity.alreadyPushed)
+                    if (!entity.alreadyPushed && LevelManager.MoveEntity(entity, new(moveDirection.x, moveDirection.y, 0f), true))
                     {
-                        LevelManager.MoveEntity(entity, new(moveDirection.x, moveDirection.y, 0f), true);
+                        if (onAdvance.IsNull)
+                        {
+                            Debug.LogWarning("OnAdvance is null");
+                        }
+
+                        AudioManager.Instance.PlayOneShot(onAdvance);
                     }
                 }
             }

@@ -38,6 +38,11 @@ public class OxygenTank : MonoBehaviour
     {
         if (!IsConsumed && collider.TryGetComponent(out Player _))
         {
+            if (onUse.IsNull)
+            {
+                Debug.LogWarning("OnUse is null");
+            }
+
             AudioManager.Instance.PlayOneShot(onUse);
             LevelManager.RefillOxygen(oxygenRefilled, refillUpTo);
 

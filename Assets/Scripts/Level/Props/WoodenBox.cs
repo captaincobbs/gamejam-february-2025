@@ -8,11 +8,21 @@ public class WoodenBox : Entity
     [SerializeField] private EventReference onDeath;
     public override void Move()
     {
+        if (onMove.IsNull)
+        {
+            Debug.LogWarning("OnMove is null");
+        }
+
         AudioManager.Instance.PlayOneShot(onMove);
     }
 
     public override void Death()
     {
+        if (onDeath.IsNull)
+        {
+            Debug.LogWarning("OnDeath is null");
+        }
+
         AudioManager.Instance.PlayOneShot(onDeath);
     }
 }

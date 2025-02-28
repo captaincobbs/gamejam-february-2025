@@ -46,6 +46,11 @@ public class WallButton : Interactable
         {
             if (!Pressed)
             {
+                if (onPress.IsNull)
+                {
+                    Debug.LogWarning("OnPress is null");
+                }
+
                 AudioManager.Instance.PlayOneShot(onPress);
                 buttonRenderer.sprite = whenPressed;
                 LevelManager.InvokeTrigger(TriggerID);
@@ -65,6 +70,11 @@ public class WallButton : Interactable
             }
             else
             {
+                if (onUnpress.IsNull)
+                {
+                    Debug.LogWarning("OnUnpress is null");
+                }
+
                 AudioManager.Instance.PlayOneShot(onUnpress);
                 buttonRenderer.sprite = whenUnpressed;
                 LevelManager.InvokeTrigger(TriggerID);
@@ -80,6 +90,11 @@ public class WallButton : Interactable
         {
             turnsRemaining--;
             UpdateTimer();
+            if (onTick.IsNull)
+            {
+                Debug.LogWarning("OnTick is null");
+            }
+
             AudioManager.Instance.PlayOneShot(onTick);
         }
         else

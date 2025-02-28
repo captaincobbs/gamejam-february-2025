@@ -12,6 +12,5 @@ namespace Assets.Scripts.Level.Props
         [Header("Sprite")]
         List<Sprite> Sprites;
         [NonSerialized] public int TimeRemaining;
-
     }
 }
