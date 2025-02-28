@@ -8,7 +8,6 @@ public class Player : Entity
     [SerializeField] private EventReference onMove;
     [SerializeField] private EventReference onDeath;
     [SerializeField] private EventReference onOxygenUsed;
-    [SerializeField] private EventReference onOxygenRefilled;
     [SerializeField] private EventReference onLift;
     [SerializeField] private EventReference onDrop;
     [SerializeField] private EventReference onInteract;
@@ -35,11 +34,6 @@ public class Player : Entity
     public void OxygenUsed()
     {
         AudioManager.Instance.PlayOneShot(onOxygenUsed);
-    }
-
-    public void OxygenRefilled()
-    {
-        AudioManager.Instance.PlayOneShot(onOxygenRefilled);
     }
 
     public void Lift()

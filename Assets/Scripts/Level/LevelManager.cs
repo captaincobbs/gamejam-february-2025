@@ -215,7 +215,6 @@ public class LevelManager : MonoBehaviour
         CurrentOxygen = Math.Min(Math.Max(MaximumOxygen, CurrentOxygen + amount), refillUpTo);
         OxygenDisplay.SetDisplayLevel(CurrentOxygen);
         PlayerFaceDisplay.SetDisplayLevel(CurrentOxygen);
-        player.OxygenRefilled();
     }
 
     public void InteractWith(MovementDirection direction)

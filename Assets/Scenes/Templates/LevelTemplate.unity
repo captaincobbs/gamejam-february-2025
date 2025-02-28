@@ -3060,6 +3060,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 672463406}
     m_Modifications:
+    - target: {fileID: 1355951631120935028, guid: c90ded0278d6e5c41a04e174dc63d942,
+        type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786991420485615040, guid: c90ded0278d6e5c41a04e174dc63d942,
+        type: 3}
+      propertyPath: ConsumedOnUse
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4851314332554030263, guid: c90ded0278d6e5c41a04e174dc63d942,
         type: 3}
       propertyPath: m_Name
@@ -3477,6 +3487,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Oxygen Tank - Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 6868036362752876175, guid: 38e4afe36241ed741855e7ccf44685a7,
+        type: 3}
+      propertyPath: ConsumedOnUse
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

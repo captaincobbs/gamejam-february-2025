@@ -46,8 +46,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93ae27d5f3724ef4db2799473fffba3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ConsumedOnUse: 0
   oxygenRefilled: 5
   refillUpTo: 5
+  onUse:
+    Guid:
+      Data1: -90031897
+      Data2: 1089184386
+      Data3: 532062354
+      Data4: 1029228088
+    Path: event:/Props/OxygenTank/OxygenTank_OnUse
 --- !u!212 &2226487877901565487
 SpriteRenderer:
   m_ObjectHideFlags: 0
