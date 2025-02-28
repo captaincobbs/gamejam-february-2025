@@ -148,7 +148,8 @@ public class LevelManager : MonoBehaviour
         }
         else if (Input.GetKeyUp(KeyCode.E))
         {
-            turnPassed = true;
+            // Interacting does not take a turn
+            //turnPassed = true;
             InteractWith(player.Direction);
             player.Interact();
         }
@@ -355,7 +356,6 @@ public class LevelManager : MonoBehaviour
     {
         Vector3 playerPosition = player.transform.position;
         Vector3Int gridPosition = floorTilemap.WorldToCell(playerPosition);
-        Debug.Log($"Player: {playerPosition}, Grid: {gridPosition}");
 
         TileBase tile = floorTilemap.GetTile(gridPosition);
 

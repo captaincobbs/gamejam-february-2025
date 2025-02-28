@@ -51,19 +51,19 @@ public class ConveyorBelt : MonoBehaviour
             if (ToggledByTrigger)
             {
                 LevelManager.SubscribeTrigger(
-                        ToggleTriggerID,
-                        Toggle,
-                        new(SoundEventType.ConveyorEnable, onToggle)
-                    );
+                    ToggleTriggerID,
+                    Toggle,
+                    new(SoundEventType.ConveyorEnable, onToggle)
+                );
             }
 
             if (ReversedByTrigger)
             {
                 LevelManager.SubscribeTrigger(
-                        ReverseTriggerID,
-                        Reverse,
-                        new(SoundEventType.ConveyorReverse, onReverse)
-                    );
+                    ReverseTriggerID,
+                    Reverse,
+                    new(SoundEventType.ConveyorReverse, onReverse)
+                );
             }
 
             if (Enabled)

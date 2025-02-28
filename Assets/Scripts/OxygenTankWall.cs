@@ -13,7 +13,6 @@ public class OxygenTankWall : Interactable
 
     public override void Interact()
     {
-        // +1 because oxygen is used immediately afterwards
-        LevelManager.RefillOxygen(oxygenRefilled + 1, refillUpTo + 1);
+        LevelManager.RefillOxygen(oxygenRefilled, refillUpTo);
     }
 }
