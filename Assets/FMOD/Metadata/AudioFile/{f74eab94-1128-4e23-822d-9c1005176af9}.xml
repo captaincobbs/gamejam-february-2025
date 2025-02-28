@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{f74eab94-1128-4e23-822d-9c1005176af9}">
+		<property name="assetPath">
+			<value>ConveyerBelt_OnToggle.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.54546485260770972</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{45494f83-cc69-4c50-a22a-eada1a2906ee}</destination>
+		</relationship>
+	</object>
+</objects>

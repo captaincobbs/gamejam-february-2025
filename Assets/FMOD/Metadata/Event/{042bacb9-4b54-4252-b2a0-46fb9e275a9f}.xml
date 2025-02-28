@@ -8,7 +8,7 @@
 			<value>ConveyorBelt_OnToggle</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{28e560c1-1a45-4d41-bf13-663b405b98ab}</destination>
@@ -27,6 +27,9 @@
 		</relationship>
 		<relationship name="markerTracks">
 			<destination>{a5bb5227-dfb1-4ce7-83f7-a48a7e095bfb}</destination>
+		</relationship>
+		<relationship name="groupTracks">
+			<destination>{ce772e9b-d4a9-4e61-a287-c52086169039}</destination>
 		</relationship>
 		<relationship name="timeline">
 			<destination>{69ff9b4c-6173-43bd-892d-cc80409cae79}</destination>
@@ -56,12 +59,24 @@
 			<destination>{78beedb9-4b69-4d21-a1ed-ff0442fe30fa}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{68f3c0bc-472a-4a00-8ca1-711b0334be9d}" />
-	<object class="MarkerTrack" id="{a5bb5227-dfb1-4ce7-83f7-a48a7e095bfb}" />
-	<object class="Timeline" id="{69ff9b4c-6173-43bd-892d-cc80409cae79}">
-		<property name="isProxyEnabled">
-			<value>false</value>
+	<object class="EventAutomatableProperties" id="{68f3c0bc-472a-4a00-8ca1-711b0334be9d}">
+		<property name="maxVoices">
+			<value>1</value>
 		</property>
+	</object>
+	<object class="MarkerTrack" id="{a5bb5227-dfb1-4ce7-83f7-a48a7e095bfb}" />
+	<object class="GroupTrack" id="{ce772e9b-d4a9-4e61-a287-c52086169039}">
+		<relationship name="modules">
+			<destination>{7c7cc8ad-f220-4967-8e30-62282ef6d302}</destination>
+		</relationship>
+		<relationship name="mixerGroup">
+			<destination>{3c6308f9-0097-420a-8cc9-5776c50ee117}</destination>
+		</relationship>
+	</object>
+	<object class="Timeline" id="{69ff9b4c-6173-43bd-892d-cc80409cae79}">
+		<relationship name="modules">
+			<destination>{7c7cc8ad-f220-4967-8e30-62282ef6d302}</destination>
+		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{8419901d-46f0-44fa-adbd-0f9526a940cd}">
 		<relationship name="effectChain">
@@ -80,6 +95,31 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{c2abd51d-826e-4144-aefb-875145597588}" />
+	<object class="SingleSound" id="{7c7cc8ad-f220-4967-8e30-62282ef6d302}">
+		<property name="start">
+			<value>0.20000000000000001</value>
+		</property>
+		<property name="length">
+			<value>0.54546485260770972</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{f74eab94-1128-4e23-822d-9c1005176af9}</destination>
+		</relationship>
+	</object>
+	<object class="EventMixerGroup" id="{3c6308f9-0097-420a-8cc9-5776c50ee117}">
+		<property name="name">
+			<value>Audio 1</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{e299bf7b-14fd-45e6-89e0-ccf2474ba533}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{f8d57c32-190a-4ba4-a316-5268b35d9ecb}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{8419901d-46f0-44fa-adbd-0f9526a940cd}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusEffectChain" id="{9140bc34-e294-4921-888f-3aa42fe38708}">
 		<relationship name="effects">
 			<destination>{3cdd4404-ccbc-48bc-b974-b250a55d696d}</destination>
@@ -87,5 +127,21 @@
 	</object>
 	<object class="MixerBusPanner" id="{91512afb-242b-4b11-9d35-f5902f60ff8d}" />
 	<object class="MixerBusFader" id="{ddce736e-f5b2-41a9-972f-4c1c50c86efb}" />
+	<object class="MixerBusEffectChain" id="{e299bf7b-14fd-45e6-89e0-ccf2474ba533}">
+		<relationship name="effects">
+			<destination>{499dc3f1-0a5b-46b5-9fd7-9a2fe79ff28d}</destination>
+			<destination>{b81326fa-2c46-4095-8cf7-82b14f5efd19}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{f8d57c32-190a-4ba4-a316-5268b35d9ecb}" />
 	<object class="MixerBusFader" id="{3cdd4404-ccbc-48bc-b974-b250a55d696d}" />
+	<object class="MixerBusFader" id="{499dc3f1-0a5b-46b5-9fd7-9a2fe79ff28d}" />
+	<object class="ThreeEQEffect" id="{b81326fa-2c46-4095-8cf7-82b14f5efd19}">
+		<property name="lowGain">
+			<value>-10.5</value>
+		</property>
+		<property name="highGain">
+			<value>-10</value>
+		</property>
+	</object>
 </objects>
