@@ -5,7 +5,7 @@
 			<value>Green</value>
 		</property>
 		<property name="name">
-			<value>MetalBox_OnDeath</value>
+			<value>MetalBox_OnKill</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>

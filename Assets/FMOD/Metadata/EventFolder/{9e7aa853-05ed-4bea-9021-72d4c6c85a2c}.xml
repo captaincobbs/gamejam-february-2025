@@ -5,7 +5,7 @@
 			<value>Green</value>
 		</property>
 		<property name="name">
-			<value>OxygenTank</value>
+			<value>Oxygen Tank</value>
 		</property>
 		<relationship name="folder">
 			<destination>{5c25d9ce-57d2-4f34-b2c7-7b16dad89f87}</destination>
