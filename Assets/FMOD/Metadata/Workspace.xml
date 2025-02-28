@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.03.00">
 	<object class="Workspace" id="{8b2fc46a-cb5f-460d-a220-01ee31caed99}">
-		<property name="builtBanksOutputDirectory" />
 		<relationship name="masterEventFolder">
 			<destination>{0730f473-71b5-4b2c-a5bf-bb1e1339552f}</destination>
 		</relationship>
@@ -9,7 +8,7 @@
 			<destination>{6e5048c5-5305-47da-86da-1f2052b0afeb}</destination>
 		</relationship>
 		<relationship name="masterEffectPresetFolder">
-			<destination>{e9a6433e-1a27-4650-837e-dc9b58d9598c}</destination>
+			<destination>{4afe4334-00b0-4649-b4f8-21a860265c47}</destination>
 		</relationship>
 		<relationship name="masterParameterPresetFolder">
 			<destination>{4a1eaca2-20ca-4653-bb5a-67c066e36988}</destination>
@@ -27,7 +26,7 @@
 			<destination>{bba67e75-fb8b-47d1-a786-801d5cedbca4}</destination>
 		</relationship>
 		<relationship name="profilerSessionFolder">
-			<destination>{67e40a10-c0b0-4d66-b9a7-0ef387adb635}</destination>
+			<destination>{5a017bcc-33cd-4470-b3be-1d13097c6e26}</destination>
 		</relationship>
 		<relationship name="platforms">
 			<destination>{00c652cc-9f43-4129-9a5c-4cacd6b2b816}</destination>
