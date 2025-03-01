@@ -6,22 +6,26 @@ namespace Assets.Scripts.Level.Props
     public class Door : MonoBehaviour
     {
         [SerializeField] public bool IsEntrance;
+
         [Header("State")]
-        [SerializeField] bool startOpen;
+        [SerializeField] public bool IsOpen;
         [SerializeField] bool toggledByTrigger;
         [SerializeField] uint triggerID;
+
+        [Header("Sprite")]
+        [SerializeField] private Sprite whenOpen;
+        [SerializeField] private Sprite whenClosed;
+
         [Header("Sound Events")]
         [SerializeField] private EventReference onOpen;
         [SerializeField] private EventReference onClose;
+
+        // References
+        private SpriteRenderer spriteRenderer;
         void Start()
         {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
+            spriteRenderer = GetComponent<SpriteRenderer>();
+            spriteRenderer.sprite = IsOpen ? whenOpen : whenClosed;
         }
 
         public void Open()

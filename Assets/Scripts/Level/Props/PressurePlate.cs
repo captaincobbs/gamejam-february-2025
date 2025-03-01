@@ -1,5 +1,3 @@
-using Assets.Scripts;
-using Assets.Scripts.Level.Props;
 using FMODUnity;
 using UnityEngine;
 
@@ -36,7 +34,7 @@ namespace Assets.Scripts.Level.Props
         [SerializeField] private EventReference onTick;
 
         // References
-        SpriteRenderer pressurePlateRenderer;
+        SpriteRenderer spriteRenderer;
         ButtonTimer timer;
 
         LevelManager LevelManager
@@ -46,7 +44,8 @@ namespace Assets.Scripts.Level.Props
 
         void Start()
         {
-            pressurePlateRenderer = GetComponent<SpriteRenderer>();
+            spriteRenderer = GetComponent<SpriteRenderer>();
+            spriteRenderer.sprite = Pressed ? whenPressed : whenUnpressed;
             LevelManager.Instance.AsTurnEnd += OnTurn;
             Transform timerTransform = transform.GetChild(0);
 
@@ -65,13 +64,13 @@ namespace Assets.Scripts.Level.Props
             if (!Pressed)
             {
                 AudioManager.Instance.PlayOneShot(onPress, $"PressurePlate.{nameof(onPress)}");
-                pressurePlateRenderer.sprite = whenPressed;
+                spriteRenderer.sprite = whenPressed;
                 LevelManager.InvokeTrigger(TriggerID);
             }
             else
             {
                 AudioManager.Instance.PlayOneShot(onUnpress, $"PressurePlate.{nameof(onUnpress)}");
-                pressurePlateRenderer.sprite = whenUnpressed;
+                spriteRenderer.sprite = whenUnpressed;
                 LevelManager.InvokeTrigger(TriggerID);
             }
 

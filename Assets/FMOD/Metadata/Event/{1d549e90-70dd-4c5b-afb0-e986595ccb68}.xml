@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{1d549e90-70dd-4c5b-afb0-e986595ccb68}">
 		<property name="color">
-			<value>Yellow</value>
+			<value>Green</value>
 		</property>
 		<property name="name">
 			<value>Portal_OnTeleport</value>
@@ -56,7 +56,7 @@
 			<destination>{691bc3b5-2a68-4853-80d8-bc3c6b1a280f}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{78beedb9-4b69-4d21-a1ed-ff0442fe30fa}</destination>
+			<destination>{e19a6a19-1dc9-45ab-849d-4250c135576d}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{ef6fa8ab-bca1-4095-95ca-2536a510524b}" />
@@ -97,6 +97,9 @@
 		</property>
 		<property name="timelockedOffset">
 			<value>0.050000000000000003</value>
+		</property>
+		<property name="volume">
+			<value>-13.5</value>
 		</property>
 		<property name="pitch">
 			<value>2.4000001</value>

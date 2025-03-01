@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{715609db-8d24-4aa6-b196-af78719d56fc}">
+		<property name="color">
+			<value>Green</value>
+		</property>
 		<property name="name">
 			<value>WoodenBox_OnKill</value>
 		</property>
@@ -53,7 +56,7 @@
 			<destination>{ba58eec6-3c0d-4a31-85d7-0a202afc156f}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{78beedb9-4b69-4d21-a1ed-ff0442fe30fa}</destination>
+			<destination>{e19a6a19-1dc9-45ab-849d-4250c135576d}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{f0e54570-4be6-4ca9-ae0c-3f7cd4f71aa9}">

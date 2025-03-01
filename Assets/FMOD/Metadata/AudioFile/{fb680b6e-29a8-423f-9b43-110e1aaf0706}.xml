@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{fb680b6e-29a8-423f-9b43-110e1aaf0706}">
+		<property name="assetPath">
+			<value>puzzle song.ogg</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>67.30265306122449</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{45494f83-cc69-4c50-a22a-eada1a2906ee}</destination>
+		</relationship>
+	</object>
+</objects>

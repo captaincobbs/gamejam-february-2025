@@ -11,6 +11,7 @@
         LaserEnable,
         CollectorEnable,
         LifeSupportEnable,
-        RoomDepressurize
+        RoomDepressurize,
+        PortalToggle,
     }
 }

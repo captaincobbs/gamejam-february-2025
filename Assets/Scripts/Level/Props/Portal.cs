@@ -9,7 +9,7 @@ namespace Assets.Scripts.Level.Props
     {
         [Header("State")]
         public bool Enabled;
-        [Tooltip("Portals with the same ID will teleport to each other")]
+        [Tooltip("Portals with the same ID will teleport to each other, if there are more than 2 then entities will be teleported between them in a cycle")]
         public PortalID PortalID;
         [Tooltip("The type of entity that can enter the portal")]
         public EntityFilterType EntityFilter;
@@ -34,29 +34,44 @@ namespace Assets.Scripts.Level.Props
             get => LevelManager.Instance;
         }
 
-        static Dictionary<PortalID, List<Portal>> Portals = new();
+        static readonly Dictionary<PortalID, List<Portal>> Portals = new();
 
         void Start()
         {
+            spriteRenderer.sprite = Enabled ? whenEnabled : whenDisabled;
             spriteRenderer = GetComponent<SpriteRenderer>();
             portalCollider = GetComponent<BoxCollider2D>();
+
+            if (!Portals.ContainsKey(PortalID))
+            {
+                Portals[PortalID] = new();
+            }
+
+            Portals[PortalID].Add(this);
+
+            if (LevelManager != null)
+            {
+                LevelManager.OnTurnEnd += OnTurn;
+
+                if (ToggledOnTrigger)
+                {
+                    LevelManager.SubscribeTrigger(
+                        TriggerID,
+                        Toggle,
+                        new(SoundEventType.PortalToggle, onToggle)
+                    );
+                }
+            }
         }
 
         void Toggle()
         {
-
-        }
-
-        void OnTriggerEnter2D(Collider2D other)
-        {
+            Enabled = !Enabled;
+            spriteRenderer.sprite = Enabled ? whenEnabled : whenDisabled;
+            AudioManager.Instance.PlayOneShot(onToggle, $"Portal.{nameof(onToggle)}");
         }
 
         void OnTurn()
-        {
-
-        }
-
-        void Teleport()
         {
             if (Enabled)
             {
@@ -65,12 +80,48 @@ namespace Assets.Scripts.Level.Props
 
                 foreach (Collider2D collider in Physics2D.OverlapBoxAll(colliderCenter, colliderSize, 0f, LayerMask.GetMask("Entity")))
                 {
-                    if (collider != null && collider.TryGetComponent<Entity>(out var entity))
+                    if (collider != null && collider.TryGetComponent(out Entity entity) && !entity.alreadyTeleported)
                     {
-
+                        Teleport(entity);
                     }
                 }
             }
+        }
+
+        void Teleport(Entity entity)
+        {
+            Portal nextPortal = FindNextPortal();
+
+            if (nextPortal != null && !entity.alreadyTeleported)
+            {
+                Debug.Log("Teleported");
+                entity.alreadyTeleported = true;
+                entity.transform.position = nextPortal.transform.position;
+                AudioManager.Instance.PlayOneShot(onTeleport, $"Portal.{nameof(onTeleport)}");
+            }
+        }
+
+        Portal FindNextPortal()
+        {
+            if (Portals.TryGetValue(PortalID, out List<Portal> portals))
+            {
+                int currentIndex = portals.IndexOf(this);
+                int portalCount = portals.Count;
+                int nextIndex = (currentIndex + 1) % portalCount;
+
+                while (nextIndex != currentIndex)
+                {
+                    Portal nextPortal = portals[nextIndex];
+
+                    if (nextPortal != this && nextPortal.Enabled)
+                    {
+                        return nextPortal;
+                    }
+
+                    nextIndex = (nextIndex + 1) % portalCount;
+                }
+            }
+            return null;
         }
     }
 }
