@@ -1,70 +1,73 @@
 using FMODUnity;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+namespace Assets.Scripts.Level
 {
-    public bool LogEvents = true;
-
-    private static AudioManager instance;
-    public static AudioManager Instance
+    public class AudioManager : MonoBehaviour
     {
-        get
+        public bool LogEvents = true;
+
+        private static AudioManager instance;
+        public static AudioManager Instance
         {
-            if (instance == null)
+            get
             {
-                Debug.LogError("This Scene does not have an AudioManager");
+                if (instance == null)
+                {
+                    Debug.LogError("This Scene does not have an AudioManager");
+                }
+
+                return instance;
             }
-
-            return instance;
         }
-    }
 
-    public void PlayOneShot(EventReference sound, string varName)
-    {
-        if (!sound.IsNull)
+        public void PlayOneShot(EventReference sound, string varName)
+        {
+            if (!sound.IsNull)
+            {
+                if (LogEvents)
+                {
+                    Debug.Log($"Event Played: {sound.Path}");
+                }
+
+                RuntimeManager.PlayOneShot(sound, Vector3.zero);
+            }
+            else
+            {
+                Debug.LogWarning($"Event Reference '{varName}' is null");
+            }
+        }
+
+        public void SetParameterWithValue(string name, float value)
         {
             if (LogEvents)
             {
-                Debug.Log($"Event Played: {sound.Path}");
+                Debug.Log($"Parameter Updated: {name} to {value}");
             }
 
-            RuntimeManager.PlayOneShot(sound, Vector3.zero);
-        }
-        else
-        {
-            Debug.LogWarning($"Event Reference '{varName}' is null");
-        }
-    }
-
-    public void SetParameterWithValue(string name, float value)
-    {
-        if (LogEvents)
-        {
-            Debug.Log($"Parameter Updated: {name} to {value}");
+            RuntimeManager.StudioSystem.setParameterByName(name, value);
         }
 
-        RuntimeManager.StudioSystem.setParameterByName(name, value);
-    }
-
-    public void SetParameterWithLabel(string name, string label)
-    {
-        if (LogEvents)
+        public void SetParameterWithLabel(string name, string label)
         {
-            Debug.Log($"Parameter Updated: {name} to {label}");
+            if (LogEvents)
+            {
+                Debug.Log($"Parameter Updated: {name} to {label}");
+            }
+
+            RuntimeManager.StudioSystem.setParameterByNameWithLabel(name, label);
         }
 
-        RuntimeManager.StudioSystem.setParameterByNameWithLabel(name, label);
-    }
-
-    private void Awake()
-    {
-        if (instance != null && instance != this)
+        private void Awake()
         {
-            Destroy(gameObject);
-        }
-        else
-        {
-            instance = this;
+            if (instance != null && instance != this)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                instance = this;
+            }
         }
     }
 }

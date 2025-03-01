@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Assets.Scripts.Level.UI
+namespace Assets.Scripts
 {
     [Serializable]
     public struct UIntWithSprite

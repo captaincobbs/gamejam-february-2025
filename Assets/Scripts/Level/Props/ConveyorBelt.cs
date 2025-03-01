@@ -1,202 +1,206 @@
 using System.Collections.Generic;
 using Assets.Scripts;
+using Assets.Scripts.Level;
 using FMODUnity;
 using UnityEngine;
 
-public class ConveyorBelt : MonoBehaviour
+namespace Assets.Scripts.Level.Props
 {
-    [Header("Direction")]
-    [Tooltip("Don't make a vertical-looking conveyor belt go horizontally (or vice versa) or the animation will break")]
-    public MovementDirection Direction = MovementDirection.Left;
-    [Tooltip("Whether this conveyor belt can be flipped via a trigger")]
-    public bool ReversedByTrigger = false;
-    [Tooltip("The ID of the trigger that will flip this conveyor belt")]
-    public uint ReverseTriggerID = 0;
-
-    [Header("State")]
-    [Tooltip("Whether the conveyor belt will push or not")]
-    public bool Enabled = true;
-    [Tooltip("Whether this conveyor belt can be toggled on/off via a trigger")]
-    public bool ToggledByTrigger = false;
-    [Tooltip("The ID of the trigger that will toggle this conveyor belt")]
-    public uint ToggleTriggerID = 0;
-
-    [Header("Sound Events")]
-    [SerializeField] private EventReference onAdvance;
-    [SerializeField] private EventReference onReverse;
-    [SerializeField] private EventReference onToggle;
-
-    [Header("Sprite")]
-    [Tooltip("An order list of sprites that the conveyor belt will cycle through during turns")]
-    public List<Sprite> Sprites = new();
-    int currentFrame;
-    SpriteRenderer spriteRenderer;
-
-    // Private
-    LevelManager LevelManager
+    public class ConveyorBelt : MonoBehaviour
     {
-        get => LevelManager.Instance;
-    }
+        [Header("Direction")]
+        [Tooltip("Don't make a vertical-looking conveyor belt go horizontally (or vice versa) or the animation will break")]
+        public MovementDirection Direction = MovementDirection.Left;
+        [Tooltip("Whether this conveyor belt can be flipped via a trigger")]
+        public bool ReversedByTrigger = false;
+        [Tooltip("The ID of the trigger that will flip this conveyor belt")]
+        public uint ReverseTriggerID = 0;
 
-    BoxCollider2D conveyorCollider;
+        [Header("State")]
+        [Tooltip("Whether the conveyor belt will push or not")]
+        public bool Enabled = true;
+        [Tooltip("Whether this conveyor belt can be toggled on/off via a trigger")]
+        public bool ToggledByTrigger = false;
+        [Tooltip("The ID of the trigger that will toggle this conveyor belt")]
+        public uint ToggleTriggerID = 0;
 
-    void Start()
-    {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        conveyorCollider = GetComponent<BoxCollider2D>();
+        [Header("Sound Events")]
+        [SerializeField] private EventReference onAdvance;
+        [SerializeField] private EventReference onReverse;
+        [SerializeField] private EventReference onToggle;
 
-        if (LevelManager != null)
+        [Header("Sprite")]
+        [Tooltip("An order list of sprites that the conveyor belt will cycle through during turns")]
+        public List<Sprite> Sprites = new();
+        int currentFrame;
+        SpriteRenderer spriteRenderer;
+
+        // Private
+        LevelManager LevelManager
         {
-            LevelManager.OnTurnEnd += Advance;
-            if (ToggledByTrigger)
+            get => LevelManager.Instance;
+        }
+
+        BoxCollider2D conveyorCollider;
+
+        void Start()
+        {
+            spriteRenderer = GetComponent<SpriteRenderer>();
+            conveyorCollider = GetComponent<BoxCollider2D>();
+
+            if (LevelManager != null)
             {
-                LevelManager.SubscribeTrigger(
-                    ToggleTriggerID,
-                    Toggle,
-                    new(SoundEventType.ConveyorEnable, onToggle)
-                );
-            }
-
-            if (ReversedByTrigger)
-            {
-                LevelManager.SubscribeTrigger(
-                    ReverseTriggerID,
-                    Reverse,
-                    new(SoundEventType.ConveyorReverse, onReverse)
-                );
-            }
-        }
-        else
-        {
-            Debug.LogError("Conveyor Belt can't find a parent TurnManager");
-        }
-
-        if (Sprites == null || Sprites.Count == 0)
-        {
-            Debug.LogError("Conveyor Belt was not provided a Sprite");
-        }
-    }
-
-    void Toggle()
-    {
-        AudioManager.Instance.PlayOneShot(onToggle, $"ConveyorBelt.{nameof(onToggle)}");
-        Enabled = !Enabled;
-    }
-
-    void Reverse()
-    {
-        AudioManager.Instance.PlayOneShot(onReverse, $"ConveyorBelt.{nameof(onReverse)}");
-
-        if (Direction == MovementDirection.Left)
-        {
-            Direction = MovementDirection.Right;
-        }
-        else if (Direction == MovementDirection.Right)
-        {
-            Direction = MovementDirection.Left;
-        }
-        else if (Direction == MovementDirection.Up)
-        {
-            Direction = MovementDirection.Down;
-        }
-        else
-        {
-            Direction = MovementDirection.Up;
-        }
-    }
-
-    void Advance()
-    {
-        if (Enabled)
-        {
-            ProgressAnimation();
-
-            Vector2 colliderCenter = conveyorCollider.bounds.center;
-            Vector2 colliderSize = conveyorCollider.bounds.size;
-
-            foreach (Collider2D collider in Physics2D.OverlapBoxAll(colliderCenter, colliderSize, 0f, LayerMask.GetMask("Entity")))
-            {
-                if (collider != null && collider.TryGetComponent<Entity>(out var entity))
+                LevelManager.OnTurnEnd += Advance;
+                if (ToggledByTrigger)
                 {
-                    Vector2 moveDirection = GetDirectionalValue();
+                    LevelManager.SubscribeTrigger(
+                        ToggleTriggerID,
+                        Toggle,
+                        new(SoundEventType.ConveyorEnable, onToggle)
+                    );
+                }
 
-                    if (!entity.alreadyPushed && LevelManager.MoveEntity(entity, new(moveDirection.x, moveDirection.y, 0f), true))
+                if (ReversedByTrigger)
+                {
+                    LevelManager.SubscribeTrigger(
+                        ReverseTriggerID,
+                        Reverse,
+                        new(SoundEventType.ConveyorReverse, onReverse)
+                    );
+                }
+            }
+            else
+            {
+                Debug.LogError("Conveyor Belt can't find a parent TurnManager");
+            }
+
+            if (Sprites == null || Sprites.Count == 0)
+            {
+                Debug.LogError("Conveyor Belt was not provided a Sprite");
+            }
+        }
+
+        void Toggle()
+        {
+            AudioManager.Instance.PlayOneShot(onToggle, $"ConveyorBelt.{nameof(onToggle)}");
+            Enabled = !Enabled;
+        }
+
+        void Reverse()
+        {
+            AudioManager.Instance.PlayOneShot(onReverse, $"ConveyorBelt.{nameof(onReverse)}");
+
+            if (Direction == MovementDirection.Left)
+            {
+                Direction = MovementDirection.Right;
+            }
+            else if (Direction == MovementDirection.Right)
+            {
+                Direction = MovementDirection.Left;
+            }
+            else if (Direction == MovementDirection.Up)
+            {
+                Direction = MovementDirection.Down;
+            }
+            else
+            {
+                Direction = MovementDirection.Up;
+            }
+        }
+
+        void Advance()
+        {
+            if (Enabled)
+            {
+                ProgressAnimation();
+
+                Vector2 colliderCenter = conveyorCollider.bounds.center;
+                Vector2 colliderSize = conveyorCollider.bounds.size;
+
+                foreach (Collider2D collider in Physics2D.OverlapBoxAll(colliderCenter, colliderSize, 0f, LayerMask.GetMask("Entity")))
+                {
+                    if (collider != null && collider.TryGetComponent<Entity>(out var entity))
                     {
-                        AudioManager.Instance.PlayOneShot(onAdvance, $"ConveyorBelt.{nameof(onAdvance)}");
+                        Vector2 moveDirection = GetDirectionalValue();
+
+                        if (!entity.alreadyPushed && LevelManager.MoveEntity(entity, new(moveDirection.x, moveDirection.y, 0f), true))
+                        {
+                            AudioManager.Instance.PlayOneShot(onAdvance, $"ConveyorBelt.{nameof(onAdvance)}");
+                        }
                     }
                 }
             }
         }
-    }
 
-    void ProgressAnimation()
-    {
-        // If going positively, move animation forwards
-        if (Direction == MovementDirection.Right || Direction == MovementDirection.Down)
+        void ProgressAnimation()
         {
-            currentFrame = (currentFrame + 1) % (Sprites.Count);
-        }
-        // Otherwise, go backwards
-        else
-        {
-            currentFrame = (currentFrame - 1 + Sprites.Count) % Sprites.Count;
-        }
-        spriteRenderer.sprite = Sprites[currentFrame];
-    }
-
-    public Vector2 GetDirectionalValue()
-    {
-        if (Direction == MovementDirection.Left)
-        {
-            return Vector2.left;
-        }
-        else if (Direction == MovementDirection.Right)
-        {
-            return Vector2.right;
-        }
-        else if (Direction == MovementDirection.Up)
-        {
-            return Vector2.up;
-        }
-        else if (Direction == MovementDirection.Down)
-        {
-            return Vector2.down;
-        }
-
-        return Vector2.zero;
-    }
-
-    public bool AbsorbsMovement(Vector3 direction)
-    {
-        if (Enabled)
-        {
-            switch (Direction)
+            // If going positively, move animation forwards
+            if (Direction == MovementDirection.Right || Direction == MovementDirection.Down)
             {
-                case (MovementDirection.Left):
-                    return direction == Vector3.right;
-                case (MovementDirection.Right):
-                    return direction == Vector3.left;
-                case (MovementDirection.Up):
-                    return direction == Vector3.down;
-                case (MovementDirection.Down):
-                    return direction == Vector3.up;
+                currentFrame = (currentFrame + 1) % (Sprites.Count);
             }
+            // Otherwise, go backwards
+            else
+            {
+                currentFrame = (currentFrame - 1 + Sprites.Count) % Sprites.Count;
+            }
+            spriteRenderer.sprite = Sprites[currentFrame];
         }
 
-        return false;
-    }
-
-    #region Static Members
-    public static ConveyorBelt GetAtPosition(Vector3 position)
-    {
-        Collider2D hit = Physics2D.OverlapPoint(position, LayerMask.GetMask("Conveyor"));
-
-        if (hit != null)
+        public Vector2 GetDirectionalValue()
         {
-            return hit.GetComponent<ConveyorBelt>();
+            if (Direction == MovementDirection.Left)
+            {
+                return Vector2.left;
+            }
+            else if (Direction == MovementDirection.Right)
+            {
+                return Vector2.right;
+            }
+            else if (Direction == MovementDirection.Up)
+            {
+                return Vector2.up;
+            }
+            else if (Direction == MovementDirection.Down)
+            {
+                return Vector2.down;
+            }
+
+            return Vector2.zero;
         }
 
-        return null;
+        public bool AbsorbsMovement(Vector3 direction)
+        {
+            if (Enabled)
+            {
+                switch (Direction)
+                {
+                    case (MovementDirection.Left):
+                        return direction == Vector3.right;
+                    case (MovementDirection.Right):
+                        return direction == Vector3.left;
+                    case (MovementDirection.Up):
+                        return direction == Vector3.down;
+                    case (MovementDirection.Down):
+                        return direction == Vector3.up;
+                }
+            }
+
+            return false;
+        }
+
+        #region Static Members
+        public static ConveyorBelt GetAtPosition(Vector3 position)
+        {
+            Collider2D hit = Physics2D.OverlapPoint(position, LayerMask.GetMask("Conveyor"));
+
+            if (hit != null)
+            {
+                return hit.GetComponent<ConveyorBelt>();
+            }
+
+            return null;
+        }
+        #endregion
     }
-    #endregion
 }

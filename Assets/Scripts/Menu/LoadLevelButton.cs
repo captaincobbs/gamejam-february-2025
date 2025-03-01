@@ -2,28 +2,31 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+namespace Assets.Scripts.Menu
 {
-    [SerializeField] private string levelName;
-    void Start()
+    public class NewMonoBehaviourScript : MonoBehaviour
     {
-        if (TryGetComponent(out Button button))
+        [SerializeField] private string levelName;
+        void Start()
         {
-            button.onClick.AddListener(LoadLevel);
+            if (TryGetComponent(out Button button))
+            {
+                button.onClick.AddListener(LoadLevel);
+            }
         }
-    }
 
-    private void LoadLevel()
-    {
-        if (SceneExists(levelName))
+        private void LoadLevel()
         {
-            SceneManager.LoadScene(levelName);
+            if (SceneExists(levelName))
+            {
+                SceneManager.LoadScene(levelName);
+            }
+            else
+            {
+                Debug.LogError($"Requested Scene '{levelName}' does not exist");
+            }
         }
-        else
-        {
-            Debug.LogError($"Requested Scene '{levelName}' does not exist");
-        }
-    }
 
-    private bool SceneExists(string sceneName) => SceneUtility.GetBuildIndexByScenePath(sceneName) != -1;
+        private bool SceneExists(string sceneName) => SceneUtility.GetBuildIndexByScenePath(sceneName) != -1;
+    }
 }

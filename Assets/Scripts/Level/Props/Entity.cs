@@ -1,19 +1,21 @@
-using Assets.Scripts;
 using FMODUnity;
 using UnityEngine;
 
-public abstract class Entity : MonoBehaviour
+namespace Assets.Scripts.Level.Props
 {
-    [Header("Entity")]
-    public bool CanBeWalkedOn = false;
-    public bool CanBePushed = true;
-    public bool CanBeKilled = true;
-    [HideInInspector] public bool alreadyPushed = false;
+    public abstract class Entity : MonoBehaviour
+    {
+        [Header("Entity")]
+        public bool CanBeWalkedOn = false;
+        public bool CanBePushed = true;
+        public bool CanBeKilled = true;
+        [HideInInspector] public bool alreadyPushed = false;
 
-    [Header("Sound Events")]
-    [SerializeField] protected EventReference onKill;
-    [SerializeField] protected EventReference onMove;
+        [Header("Sound Events")]
+        [SerializeField] protected EventReference onKill;
+        [SerializeField] protected EventReference onMove;
 
-    public abstract void Move();
-    public abstract void Kill();
+        public abstract void Move();
+        public abstract void Kill();
+    }
 }

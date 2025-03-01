@@ -1,49 +1,52 @@
 using FMODUnity;
 using UnityEngine;
 
-public class OxygenTankFloor : MonoBehaviour
+namespace Assets.Scripts.Level.Props
 {
-    [Header("Properties")]
-    private bool isConsumed = false;
-    [HideInInspector]
-    public bool IsConsumed
+    public class OxygenTankFloor : MonoBehaviour
     {
-        get => isConsumed;
-        set
+        [Header("Properties")]
+        private bool isConsumed = false;
+        [HideInInspector]
+        public bool IsConsumed
         {
-            isConsumed = value;
-            if (isConsumed)
+            get => isConsumed;
+            set
             {
-                gameObject.SetActive(false);
+                isConsumed = value;
+                if (isConsumed)
+                {
+                    gameObject.SetActive(false);
+                }
             }
         }
-    }
 
-    [Tooltip("If true, the oxygen tank will be consumed on use.")]
-    public bool ConsumedOnUse = false;
-    [Tooltip("The amount of oxygen to refill.")]
-    [SerializeField] uint oxygenRefilled = 5;
-    [Tooltip("The maximum value that oxygen can be refilled up to.")]
-    [SerializeField] uint refillUpTo = 5;
+        [Tooltip("If true, the oxygen tank will be consumed on use.")]
+        public bool ConsumedOnUse = false;
+        [Tooltip("The amount of oxygen to refill.")]
+        [SerializeField] uint oxygenRefilled = 5;
+        [Tooltip("The maximum value that oxygen can be refilled up to.")]
+        [SerializeField] uint refillUpTo = 5;
 
-    [Header("Sound Events")]
-    [SerializeField] private EventReference onUse;
+        [Header("Sound Events")]
+        [SerializeField] private EventReference onUse;
 
-    LevelManager LevelManager
-    {
-        get => LevelManager.Instance;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (!IsConsumed && collider.TryGetComponent(out Player _))
+        LevelManager LevelManager
         {
-            AudioManager.Instance.PlayOneShot(onUse, $"OxygenTankFloor.{nameof(onUse)}");
-            LevelManager.RefillOxygen(oxygenRefilled, refillUpTo);
+            get => LevelManager.Instance;
+        }
 
-            if (ConsumedOnUse)
+        private void OnTriggerEnter2D(Collider2D collider)
+        {
+            if (!IsConsumed && collider.TryGetComponent(out Player _))
             {
-                IsConsumed = true;
+                AudioManager.Instance.PlayOneShot(onUse, $"OxygenTankFloor.{nameof(onUse)}");
+                LevelManager.RefillOxygen(oxygenRefilled, refillUpTo);
+
+                if (ConsumedOnUse)
+                {
+                    IsConsumed = true;
+                }
             }
         }
     }

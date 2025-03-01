@@ -1,7 +1,9 @@
-using Assets.Scripts;
 using UnityEngine;
 
-public class FloorTile : MonoBehaviour
+namespace Assets.Scripts.Level.Tile
 {
-    public FloorMaterial Material = FloorMaterial.Error;
+    public class FloorTile : MonoBehaviour
+    {
+        public FloorMaterial Material = FloorMaterial.Error;
+    }
 }

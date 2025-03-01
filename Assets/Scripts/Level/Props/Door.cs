@@ -1,34 +1,37 @@
 using FMODUnity;
 using UnityEngine;
 
-public class Door : MonoBehaviour
+namespace Assets.Scripts.Level.Props
 {
-    [SerializeField] bool isEntrance;
-    [Header("State")]
-    [SerializeField] bool startOpen;
-    [SerializeField] bool toggledByTrigger;
-    [SerializeField] uint triggerID;
-    [Header("Sound Events")]
-    [SerializeField] private EventReference onOpen;
-    [SerializeField] private EventReference onClose;
-    void Start()
+    public class Door : MonoBehaviour
     {
+        [SerializeField] public bool IsEntrance;
+        [Header("State")]
+        [SerializeField] bool startOpen;
+        [SerializeField] bool toggledByTrigger;
+        [SerializeField] uint triggerID;
+        [Header("Sound Events")]
+        [SerializeField] private EventReference onOpen;
+        [SerializeField] private EventReference onClose;
+        void Start()
+        {
 
-    }
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
+        // Update is called once per frame
+        void Update()
+        {
 
-    }
+        }
 
-    public void Open()
-    {
-        AudioManager.Instance.PlayOneShot(onOpen, $"Door.{nameof(onOpen)}");
-    }
+        public void Open()
+        {
+            AudioManager.Instance.PlayOneShot(onOpen, $"Door.{nameof(onOpen)}");
+        }
 
-    public void Close()
-    {
-        AudioManager.Instance.PlayOneShot(onClose, $"Door.{nameof(onClose)}");
+        public void Close()
+        {
+            AudioManager.Instance.PlayOneShot(onClose, $"Door.{nameof(onClose)}");
+        }
     }
 }

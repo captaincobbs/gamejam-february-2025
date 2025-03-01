@@ -1,10 +1,8 @@
-﻿namespace Assets.Scripts
+﻿namespace Assets.Scripts.Level.Props
 {
     public enum ButtonType
     {
-        Toggle = 0,
-        Trigger1 = 1,
-        Trigger5 = 5,
-        Trigger10 = 10
+        Toggle,
+        Timer
     }
 }

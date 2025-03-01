@@ -1,15 +1,15 @@
-using FMODUnity;
-using UnityEngine;
-
-public class WoodenBox : Entity
+namespace Assets.Scripts.Level.Props
 {
-    public override void Move()
+    public class WoodenBox : Entity
     {
-        AudioManager.Instance.PlayOneShot(onMove, $"WoodenBox.{nameof(onMove)}");
-    }
+        public override void Move()
+        {
+            AudioManager.Instance.PlayOneShot(onMove, $"WoodenBox.{nameof(onMove)}");
+        }
 
-    public override void Kill()
-    {
-        AudioManager.Instance.PlayOneShot(onKill, $"WoodenBox.{nameof(onKill)}");
+        public override void Kill()
+        {
+            AudioManager.Instance.PlayOneShot(onKill, $"WoodenBox.{nameof(onKill)}");
+        }
     }
 }

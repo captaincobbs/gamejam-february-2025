@@ -1,12 +1,15 @@
-public class MetalBox : Entity
+namespace Assets.Scripts.Level.Props
 {
-    public override void Move()
+    public class MetalBox : Entity
     {
-        AudioManager.Instance.PlayOneShot(onMove, $"MetalBox.{nameof(onMove)}");
-    }
+        public override void Move()
+        {
+            AudioManager.Instance.PlayOneShot(onMove, $"MetalBox.{nameof(onMove)}");
+        }
 
-    public override void Kill()
-    {
-        AudioManager.Instance.PlayOneShot(onKill, $"MetalBox.{nameof(onKill)}");
+        public override void Kill()
+        {
+            AudioManager.Instance.PlayOneShot(onKill, $"MetalBox.{nameof(onKill)}");
+        }
     }
 }
