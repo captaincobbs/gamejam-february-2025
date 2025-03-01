@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{ad877a06-994c-4f4f-a1a7-b898c24feea3}">
 		<property name="color">
-			<value>Red</value>
+			<value>Green</value>
 		</property>
 		<property name="name">
 			<value>PressurePlate_OnUnpress</value>

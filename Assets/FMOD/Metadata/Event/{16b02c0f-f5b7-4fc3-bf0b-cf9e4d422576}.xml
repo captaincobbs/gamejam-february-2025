@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{16b02c0f-f5b7-4fc3-bf0b-cf9e4d422576}">
-		<property name="color">
-			<value>Blue</value>
-		</property>
 		<property name="name">
 			<value>Player_OnMove</value>
 		</property>
@@ -264,6 +261,7 @@
 	<object class="MixerBusEffectChain" id="{890be60d-44a0-43bd-9f5b-96bddc33df56}">
 		<relationship name="effects">
 			<destination>{af6fe598-659b-4d4f-bb02-4b6ccbb643f2}</destination>
+			<destination>{553b7342-fc18-4c0f-9cd6-ed88ce93083c}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{63d858e2-9185-4567-9584-919f156567d8}" />
@@ -471,6 +469,14 @@
 	</object>
 	<object class="MixerBusPanner" id="{2566f385-c8cb-4a56-a6fe-936aef0d8900}" />
 	<object class="MixerBusFader" id="{af6fe598-659b-4d4f-bb02-4b6ccbb643f2}" />
+	<object class="ThreeEQEffect" id="{553b7342-fc18-4c0f-9cd6-ed88ce93083c}">
+		<property name="lowGain">
+			<value>3</value>
+		</property>
+		<property name="midGain">
+			<value>-7.5</value>
+		</property>
+	</object>
 	<object class="AutomationCurve" id="{173d8377-2619-48d7-b6e5-cbb3e946352c}">
 		<relationship name="parameter">
 			<destination>{fe6d2de7-5b25-4353-bc99-fc7d8daf04c5}</destination>

@@ -5,7 +5,7 @@
 			<value>Red</value>
 		</property>
 		<property name="name">
-			<value>Turret_OnDeath</value>
+			<value>Turret_OnKill</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>

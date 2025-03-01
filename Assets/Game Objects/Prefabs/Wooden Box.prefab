@@ -47,7 +47,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 877b35c1308d4be449828406d120bce6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanBeWalkedOn: 0
+  CanBePushed: 1
+  CanBeKilled: 1
   alreadyPushed: 0
+  onKill:
+    Guid:
+      Data1: 1901464027
+      Data2: 1252429092
+      Data3: 2024773297
+      Data4: -61432463
+    Path: event:/Props/Wooden Box/WoodenBox_OnKill
   onMove:
     Guid:
       Data1: 1799715976
@@ -55,13 +65,6 @@ MonoBehaviour:
       Data3: -1123841363
       Data4: 771984639
     Path: event:/Props/Wooden Box/WoodenBox_OnMove
-  onDeath:
-    Guid:
-      Data1: 1901464027
-      Data2: 1252429092
-      Data3: 2024773297
-      Data4: -61432463
-    Path: event:/Props/Wooden Box/WoodenBox_OnDeath
 --- !u!50 &9069197525004256969
 Rigidbody2D:
   serializedVersion: 5
