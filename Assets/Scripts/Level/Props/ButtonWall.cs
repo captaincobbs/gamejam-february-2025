@@ -31,7 +31,7 @@ namespace Assets.Scripts.Level.Props
         [SerializeField] private EventReference onTick;
 
         // References
-        SpriteRenderer buttonRenderer;
+        SpriteRenderer spriteRenderer;
         ButtonTimer timer;
 
         LevelManager LevelManager
@@ -41,7 +41,8 @@ namespace Assets.Scripts.Level.Props
 
         private void Start()
         {
-            buttonRenderer = GetComponent<SpriteRenderer>();
+            spriteRenderer = GetComponent<SpriteRenderer>();
+            spriteRenderer.sprite = Pressed ? whenPressed : whenUnpressed;
 
             Transform timerTransform = transform.GetChild(0);
             if (timerTransform.TryGetComponent(out ButtonTimer childTimer))
@@ -64,7 +65,7 @@ namespace Assets.Scripts.Level.Props
             if (!Pressed)
             {
                 AudioManager.Instance.PlayOneShot(onPress, $"ButtonWall.{nameof(onPress)}");
-                buttonRenderer.sprite = whenPressed;
+                spriteRenderer.sprite = whenPressed;
                 LevelManager.InvokeTrigger(TriggerID);
 
                 if (ButtonType == ButtonType.Timer)
@@ -75,7 +76,7 @@ namespace Assets.Scripts.Level.Props
             else
             {
                 AudioManager.Instance.PlayOneShot(onUnpress, $"ButtonWall.{nameof(onUnpress)}");
-                buttonRenderer.sprite = whenUnpressed;
+                spriteRenderer.sprite = whenUnpressed;
                 LevelManager.InvokeTrigger(TriggerID);
             }
 
