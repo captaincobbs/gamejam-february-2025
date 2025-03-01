@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{6b457c88-0bdb-4fa0-ad8a-03bdff8c032e}">
 		<property name="color">
-			<value>Green</value>
+			<value>Blue</value>
 		</property>
 		<property name="name">
 			<value>WoodenBox_OnMove</value>
