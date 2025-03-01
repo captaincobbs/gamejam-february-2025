@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{2ba1672c-618d-4dd6-9262-0d99637f48e0}">
 		<property name="color">
-			<value>Yellow</value>
+			<value>Blue</value>
 		</property>
 		<property name="name">
 			<value>Menu_OnLevelSelected</value>
@@ -56,7 +56,7 @@
 			<destination>{a3e27020-9d25-42ec-b9df-08e2e52b3cfd}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{78beedb9-4b69-4d21-a1ed-ff0442fe30fa}</destination>
+			<destination>{e19a6a19-1dc9-45ab-849d-4250c135576d}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{de73077b-1969-4fc2-8101-a18bd5633f6a}">

@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{042bacb9-4b54-4252-b2a0-46fb9e275a9f}">
 		<property name="color">
-			<value>Green</value>
+			<value>Blue</value>
 		</property>
 		<property name="name">
 			<value>ConveyorBelt_OnToggle</value>
@@ -57,7 +57,7 @@
 			<destination>{c2abd51d-826e-4144-aefb-875145597588}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{78beedb9-4b69-4d21-a1ed-ff0442fe30fa}</destination>
+			<destination>{e19a6a19-1dc9-45ab-849d-4250c135576d}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{68f3c0bc-472a-4a00-8ca1-711b0334be9d}">

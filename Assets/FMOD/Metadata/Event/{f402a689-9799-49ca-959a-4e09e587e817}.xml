@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{f402a689-9799-49ca-959a-4e09e587e817}">
+		<property name="color">
+			<value>Blue</value>
+		</property>
 		<property name="name">
 			<value>Player_OnWait</value>
 		</property>
@@ -53,7 +56,7 @@
 			<destination>{3ec972b2-7a78-4870-b0b9-ae35bd005e2a}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{78beedb9-4b69-4d21-a1ed-ff0442fe30fa}</destination>
+			<destination>{e19a6a19-1dc9-45ab-849d-4250c135576d}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{ab37d43c-6994-4577-a40e-f48c676b5928}">

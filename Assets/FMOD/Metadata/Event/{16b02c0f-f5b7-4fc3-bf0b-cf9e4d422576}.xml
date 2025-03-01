@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{16b02c0f-f5b7-4fc3-bf0b-cf9e4d422576}">
+		<property name="color">
+			<value>Blue</value>
+		</property>
 		<property name="name">
 			<value>Player_OnMove</value>
 		</property>
@@ -58,7 +61,7 @@
 			<destination>{1ac893bb-b187-43ce-ad7c-b3ebc7345680}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{78beedb9-4b69-4d21-a1ed-ff0442fe30fa}</destination>
+			<destination>{e19a6a19-1dc9-45ab-849d-4250c135576d}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{09d17b7e-80a4-44d2-877d-465fe7fb22f6}">

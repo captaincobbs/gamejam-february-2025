@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{26984da9-ccc5-4189-acd5-0ff81964ac70}">
+		<property name="assetPath">
+			<value>ConveyerBelt_OnReverse.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.27274376417233559</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{45494f83-cc69-4c50-a22a-eada1a2906ee}</destination>
+		</relationship>
+	</object>
+</objects>
