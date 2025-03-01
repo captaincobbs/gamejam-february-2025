@@ -1,4 +1,5 @@
 using FMODUnity;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts.Level.Props
@@ -18,5 +19,46 @@ namespace Assets.Scripts.Level.Props
 
         public abstract void Move();
         public abstract void Kill();
+
+        public static bool TryGetEntityAtPosition(Vector3 position, EntityFilterType filterType, out Entity entity)
+        {
+            entity = null;
+            Collider2D collider = Physics2D.OverlapPoint(position, LayerMask.GetMask("Entity"));
+
+            if (collider != null && collider.TryGetComponent(out Entity collisionEntity))
+            {
+                switch (filterType)
+                {
+                    case (EntityFilterType.Any):
+                        return true;
+                    case EntityFilterType.Player:
+                        if (GetPlayerFromEntity(collisionEntity, out _))
+                        {
+                            entity = collisionEntity;
+                            return true;
+                        }
+                        break;
+                    case EntityFilterType.Entity:
+                        if (!entity.CompareTag("Player"))
+                        {
+                            return true;
+                        }
+                        break;
+                }
+            }
+
+            return false;
+        }
+
+        public static bool GetPlayerFromEntity(Entity entity, out Player player)
+        {
+            player = null;
+            if (entity.CompareTag("Player"))
+            {
+                return entity.TryGetComponent(out player);
+            }
+
+            return false;
+        }
     }
 }

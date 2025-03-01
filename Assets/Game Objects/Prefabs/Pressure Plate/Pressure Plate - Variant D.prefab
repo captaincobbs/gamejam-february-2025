@@ -159,8 +159,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02bea04fe35ed5c42924709b8b658486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ButtonType: 1
-  PressurePlateType: 2
+  ButtonType: 0
+  EntityFilter: 0
   Pressed: 0
   TriggerID: 0
   TimerDuration: 5

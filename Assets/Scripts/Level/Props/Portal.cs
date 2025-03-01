@@ -38,8 +38,8 @@ namespace Assets.Scripts.Level.Props
 
         void Start()
         {
-            spriteRenderer.sprite = Enabled ? whenEnabled : whenDisabled;
             spriteRenderer = GetComponent<SpriteRenderer>();
+            spriteRenderer.sprite = Enabled ? whenEnabled : whenDisabled;
             portalCollider = GetComponent<BoxCollider2D>();
 
             if (!Portals.ContainsKey(PortalID))
@@ -94,10 +94,13 @@ namespace Assets.Scripts.Level.Props
 
             if (nextPortal != null && !entity.alreadyTeleported)
             {
-                Debug.Log("Teleported");
-                entity.alreadyTeleported = true;
-                entity.transform.position = nextPortal.transform.position;
-                AudioManager.Instance.PlayOneShot(onTeleport, $"Portal.{nameof(onTeleport)}");
+                if (Entity.TryGetEntityAtPosition(entity.transform.position, EntityFilter, out Entity filteredEntity)
+                    && filteredEntity != null)
+                {
+                    entity.alreadyTeleported = true;
+                    entity.transform.position = nextPortal.transform.position;
+                    AudioManager.Instance.PlayOneShot(onTeleport, $"Portal.{nameof(onTeleport)}");
+                }
             }
         }
 
