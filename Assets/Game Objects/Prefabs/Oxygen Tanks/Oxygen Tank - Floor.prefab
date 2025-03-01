@@ -55,7 +55,7 @@ MonoBehaviour:
       Data2: 1089184386
       Data3: 532062354
       Data4: 1029228088
-    Path: event:/Props/OxygenTank/OxygenTank_OnUse
+    Path: event:/Props/Oxygen Tank/OxygenTank_OnUse
 --- !u!212 &3858694041880866165
 SpriteRenderer:
   m_ObjectHideFlags: 0

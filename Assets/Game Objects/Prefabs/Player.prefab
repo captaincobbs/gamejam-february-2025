@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6959087856615514814}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3, y: -2, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -47,7 +47,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30aed4d0e3293084698065202b2977a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beenForciblyMoved: 1
+  CanBeWalkedOn: 0
+  CanBePushed: 1
+  CanBeKilled: 1
+  alreadyPushed: 0
+  onKill:
+    Guid:
+      Data1: -2103340203
+      Data2: 1113403420
+      Data3: -371710020
+      Data4: 752295131
+    Path: event:/Player/Player_OnKill
+  onMove:
+    Guid:
+      Data1: 380644367
+      Data2: 1338242487
+      Data3: -1630598209
+      Data4: 1982153293
+    Path: event:/Player/Player_OnMove
+  onOxygenUsed:
+    Guid:
+      Data1: -490655476
+      Data2: 1265594959
+      Data3: 462856121
+      Data4: -1463216869
+    Path: event:/Player/Player_OnOxygenUsed
+  onLift:
+    Guid:
+      Data1: 1783683887
+      Data2: 1256401575
+      Data3: -2059034443
+      Data4: -62335898
+    Path: event:/Player/Player_OnLift
+  onDrop:
+    Guid:
+      Data1: 1602622602
+      Data2: 1236261337
+      Data3: 1075279780
+      Data4: -1054371841
+    Path: event:/Player/Player_OnDrop
+  onInteract:
+    Guid:
+      Data1: -1746317116
+      Data2: 1302426419
+      Data3: -1832720984
+      Data4: -1648943524
+    Path: event:/Player/Player_OnInteract
+  onWait:
+    Guid:
+      Data1: -201152887
+      Data2: 1238013849
+      Data3: 156146325
+      Data4: 401115109
+    Path: event:/Player/Player_OnWait
+  onSlide:
+    Guid:
+      Data1: -1118994464
+      Data2: 1333015251
+      Data3: 2021075366
+      Data4: -2130595665
+    Path: event:/Player/Player_OnSlide
+  Direction: 1
 --- !u!50 &991017507925672464
 Rigidbody2D:
   serializedVersion: 5

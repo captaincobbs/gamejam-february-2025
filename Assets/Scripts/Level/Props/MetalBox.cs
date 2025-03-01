@@ -1,13 +1,12 @@
-using Assets.Scripts;
-using FMODUnity;
-using UnityEngine;
-
-public class MetalBox : Killable
+public class MetalBox : Entity
 {
-    [SerializeField] private EventReference onDeath;
-
-    public override void Death()
+    public override void Move()
     {
-        AudioManager.Instance.PlayOneShot(onDeath, $"MetalBox.{nameof(onDeath)}");
+        AudioManager.Instance.PlayOneShot(onMove, $"MetalBox.{nameof(onMove)}");
+    }
+
+    public override void Kill()
+    {
+        AudioManager.Instance.PlayOneShot(onKill, $"MetalBox.{nameof(onKill)}");
     }
 }

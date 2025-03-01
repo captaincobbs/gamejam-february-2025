@@ -2,7 +2,7 @@ using Assets.Scripts;
 using FMODUnity;
 using UnityEngine;
 
-public class OxygenTankWall : Interactable
+public class OxygenTankWall : MonoBehaviour, IInteractable
 {
     [Header("Properties")]
     private bool isConsumed = false;
@@ -35,7 +35,7 @@ public class OxygenTankWall : Interactable
         get => LevelManager.Instance;
     }
 
-    public override void Interact()
+    public void Interact()
     {
         if (!IsConsumed)
         {

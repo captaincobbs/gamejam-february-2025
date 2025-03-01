@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Player : Entity
 {
-    [Header("Sound Events")]
-    [SerializeField] private EventReference onMove;
-    [SerializeField] private EventReference onDeath;
     [SerializeField] private EventReference onOxygenUsed;
     [SerializeField] private EventReference onLift;
     [SerializeField] private EventReference onDrop;
@@ -26,14 +23,14 @@ public class Player : Entity
         AudioManager.Instance.PlayOneShot(onMove, $"Player.{nameof(onMove)}");
     }
 
-    public override void Death()
+    public override void Kill()
     {
-        AudioManager.Instance.PlayOneShot(onDeath, $"Player.{nameof(onLift)}");
+        AudioManager.Instance.PlayOneShot(onKill, $"Player.{nameof(onKill)}");
     }
 
     public void OxygenUsed()
     {
-        AudioManager.Instance.PlayOneShot(onOxygenUsed, $"Player.{nameof(onLift)}");
+        AudioManager.Instance.PlayOneShot(onOxygenUsed, $"Player.{nameof(onOxygenUsed)}");
     }
 
     public void Lift()

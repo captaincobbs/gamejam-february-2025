@@ -4,7 +4,7 @@ using FMODUnity;
 using System.Threading;
 using UnityEngine;
 
-public class ButtonWall : Interactable
+public class ButtonWall : MonoBehaviour, IInteractable
 {
     public ButtonType ButtonType;
     public bool Pressed;
@@ -50,7 +50,7 @@ public class ButtonWall : Interactable
         }
     }
 
-    public override void Interact()
+    public void Interact()
     {
         Toggle();
     }

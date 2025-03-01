@@ -47,13 +47,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01ed8a5f2e3e22848a14e4ee4d0b18a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onDeath:
+  CanBeWalkedOn: 0
+  CanBePushed: 0
+  CanBeKilled: 1
+  alreadyPushed: 0
+  onKill:
     Guid:
       Data1: -572644475
       Data2: 1166321572
       Data3: -810754932
       Data4: 1914360378
-    Path: event:/Props/Metal Box/MetalBox_OnDeath
+    Path: event:/Props/Metal Box/MetalBox_OnKill
+  onMove:
+    Guid:
+      Data1: -1578011377
+      Data2: 1224950853
+      Data3: -305190249
+      Data4: 152759937
+    Path: event:/Props/Metal Box/MetalBox_OnMove
 --- !u!50 &3685447519153725943
 Rigidbody2D:
   serializedVersion: 5

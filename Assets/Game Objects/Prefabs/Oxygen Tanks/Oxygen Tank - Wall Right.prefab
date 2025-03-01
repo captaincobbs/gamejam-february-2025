@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2226487877901565487}
   - component: {fileID: 7913519137489121577}
   m_Layer: 8
-  m_Name: Oxygen Tank - Wall
+  m_Name: Oxygen Tank - Wall Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 4853718726172775320}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -55,7 +55,7 @@ MonoBehaviour:
       Data2: 1089184386
       Data3: 532062354
       Data4: 1029228088
-    Path: event:/Props/OxygenTank/OxygenTank_OnUse
+    Path: event:/Props/Oxygen Tank/OxygenTank_OnUse
 --- !u!212 &2226487877901565487
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -100,9 +100,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300192, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}
+  m_Sprite: {fileID: 21300206, guid: ab0dd53b1e5f5b64f865dc7b773caf43, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}

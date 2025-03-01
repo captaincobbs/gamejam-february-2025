@@ -239,7 +239,7 @@ public class LevelManager : MonoBehaviour
         Collider2D hit = Physics2D.OverlapPoint(player.transform.position + offset, LayerMask.GetMask("Interaction"));
         if (hit != null)
         {
-            if (hit.TryGetComponent(out Interactable hitInteractable))
+            if (hit.TryGetComponent(out IInteractable hitInteractable))
             {
                 hitInteractable.Interact();
             }
@@ -271,11 +271,14 @@ public class LevelManager : MonoBehaviour
 
         if (isEntity)
         {
-            if (canPush && !MoveEntity(entityInFront, direction))
+            if (entityInFront.CanBePushed)
             {
-                return false;
+                if (!MoveEntity(entityInFront, direction))
+                {
+                    return false;
+                }
             }
-            else if (!canPush)
+            else if (!entityInFront.CanBeWalkedOn || !entityInFront.CanBePushed)
             {
                 return false;
             }
@@ -296,7 +299,10 @@ public class LevelManager : MonoBehaviour
 
     public void KillEntity(Entity entity)
     {
-        entity.Death();
+        if (entity.CanBeKilled)
+        {
+            entity.Kill();
+        }
     }
 
     public bool TryGetEntityAt(Vector3 position, Entity exclude, out Entity entity)

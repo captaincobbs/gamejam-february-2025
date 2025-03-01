@@ -1,10 +1,19 @@
 using Assets.Scripts;
+using FMODUnity;
 using UnityEngine;
 
-public abstract class Entity : Killable
+public abstract class Entity : MonoBehaviour
 {
+    [Header("Entity")]
+    public bool CanBeWalkedOn = false;
+    public bool CanBePushed = true;
+    public bool CanBeKilled = true;
     [HideInInspector] public bool alreadyPushed = false;
 
+    [Header("Sound Events")]
+    [SerializeField] protected EventReference onKill;
+    [SerializeField] protected EventReference onMove;
+
     public abstract void Move();
-    public override abstract void Death();
+    public abstract void Kill();
 }
