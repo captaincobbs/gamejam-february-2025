@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{82a19355-301c-425d-bc27-d8e9db1cd72c}">
+		<property name="color">
+			<value>Green</value>
+		</property>
 		<property name="name">
 			<value>Player_OnKill</value>
 		</property>
@@ -53,7 +56,7 @@
 			<destination>{09a2085b-427d-4612-96bf-e541ffb25e70}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{78beedb9-4b69-4d21-a1ed-ff0442fe30fa}</destination>
+			<destination>{e19a6a19-1dc9-45ab-849d-4250c135576d}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{3cad50a9-8661-4582-b6b7-4f48566343ca}">

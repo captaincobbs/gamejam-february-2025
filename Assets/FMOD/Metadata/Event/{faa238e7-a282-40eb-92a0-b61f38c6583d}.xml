@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{faa238e7-a282-40eb-92a0-b61f38c6583d}">
+		<property name="color">
+			<value>Green</value>
+		</property>
 		<property name="name">
 			<value>OxygenTank_OnUse</value>
 		</property>
@@ -53,7 +56,7 @@
 			<destination>{a13bd647-b058-4218-baa7-5d34a960fc4f}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{78beedb9-4b69-4d21-a1ed-ff0442fe30fa}</destination>
+			<destination>{e19a6a19-1dc9-45ab-849d-4250c135576d}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{cdd0ba2d-e471-4c2f-ac6e-39c97db418e9}">
