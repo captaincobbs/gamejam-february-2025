@@ -1,6 +1,6 @@
 ﻿namespace Assets.Scripts.Level.Props
 {
-    public enum PressurePlateType
+    public enum EntityFilterType
     {
         Any,
         Player,

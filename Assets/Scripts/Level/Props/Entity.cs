@@ -10,6 +10,7 @@ namespace Assets.Scripts.Level.Props
         public bool CanBePushed = true;
         public bool CanBeKilled = true;
         [HideInInspector] public bool alreadyPushed = false;
+        [HideInInspector] public bool alreadyTeleported = false;
 
         [Header("Sound Events")]
         [SerializeField] protected EventReference onKill;

@@ -11,10 +11,10 @@ namespace Assets.Scripts.Level.Props
         [Tooltip("Whether the pressure plate holds its state or loses it after a few turns")]
         public ButtonType ButtonType;
         [Tooltip("The type of entity that can trigger the pressure plate")]
-        public PressurePlateType PressurePlateType;
+        public EntityFilterType EntityFilter;
         [Tooltip("Whether the button is currently pressed")]
         public bool Pressed;
-        [Tooltip("The ID of the trigger to invoke when the button is pressed")]
+        [Tooltip("The ID of the trigger to invoke when the pressure plate is pressed")]
         public uint TriggerID;
         [Tooltip("The duration of the timer in turns")]
         public int TimerDuration;
@@ -116,14 +116,14 @@ namespace Assets.Scripts.Level.Props
         {
             if (collision.CompareTag("Player") && !BeingPressed)
             {
-                if (PressurePlateType == PressurePlateType.Player || PressurePlateType == PressurePlateType.Any)
+                if (EntityFilter == EntityFilterType.Player || EntityFilter == EntityFilterType.Any)
                 {
                     Press();
                 }
             }
             else
             {
-                if (PressurePlateType == PressurePlateType.Entity || PressurePlateType == PressurePlateType.Any)
+                if (EntityFilter == EntityFilterType.Entity || EntityFilter == EntityFilterType.Any)
                 {
                     Press();
                 }
@@ -134,14 +134,14 @@ namespace Assets.Scripts.Level.Props
         {
             if (collision.TryGetComponent(out Player _))
             {
-                if (PressurePlateType == PressurePlateType.Player || PressurePlateType == PressurePlateType.Any)
+                if (EntityFilter == EntityFilterType.Player || EntityFilter == EntityFilterType.Any)
                 {
                     Unpress();
                 }
             }
             else
             {
-                if (PressurePlateType == PressurePlateType.Entity || PressurePlateType == PressurePlateType.Any)
+                if (EntityFilter == EntityFilterType.Entity || EntityFilter == EntityFilterType.Any)
                 {
                     Unpress();
                 }

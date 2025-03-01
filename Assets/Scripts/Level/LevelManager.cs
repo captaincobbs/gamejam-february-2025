@@ -155,6 +155,7 @@ namespace Assets.Scripts.Level
             foreach (Entity entity in entities)
             {
                 entity.alreadyPushed = false;
+                entity.alreadyTeleported = false;
             }
 
             yield return new WaitForSeconds(DelayBetweenMovement);
