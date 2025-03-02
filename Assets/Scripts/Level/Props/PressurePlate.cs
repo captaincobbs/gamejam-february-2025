@@ -48,7 +48,6 @@ namespace Assets.Scripts.Level.Props
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
             spriteRenderer.sprite = Pressed ? whenPressed : whenUnpressed;
-            LevelManager.Instance.AsTurnEnd += OnTurn;
             Transform timerTransform = transform.GetChild(0);
 
             if (timerTransform.TryGetComponent(out ButtonTimer childTimer))
@@ -181,14 +180,6 @@ namespace Assets.Scripts.Level.Props
                 {
                     Toggle();
                 }
-            }
-        }
-
-        void OnTurn()
-        {
-            if (!BeingPressed && !InTimer && Pressed)
-            {
-                Unpress();
             }
         }
 

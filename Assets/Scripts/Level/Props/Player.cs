@@ -1,4 +1,3 @@
-using Assets.Scripts;
 using FMODUnity;
 using UnityEngine;
 
@@ -11,7 +10,6 @@ namespace Assets.Scripts.Level.Props
         [SerializeField] private EventReference onDrop;
         [SerializeField] private EventReference onInteract;
         [SerializeField] private EventReference onWait;
-        [SerializeField] private EventReference onSlide;
 
         [HideInInspector] public MovementDirection Direction = MovementDirection.Down;
 
@@ -53,11 +51,6 @@ namespace Assets.Scripts.Level.Props
         public void Wait()
         {
             AudioManager.Instance.PlayOneShot(onWait, $"Player.{nameof(onWait)}");
-        }
-
-        public void Slide()
-        {
-            AudioManager.Instance.PlayOneShot(onSlide, $"Player.{nameof(onSlide)}");
         }
     }
 }

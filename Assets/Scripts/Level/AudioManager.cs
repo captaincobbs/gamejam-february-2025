@@ -8,9 +8,12 @@ namespace Assets.Scripts.Level
     {
         private void Start()
         {
-            if (IsFMODInitialized())
+            if (Application.isPlaying)
             {
-                LogEvents = true;
+                if (IsFMODInitialized())
+                {
+                    LogEvents = true;
+                }
             }
         }
 
@@ -97,14 +100,6 @@ namespace Assets.Scripts.Level
             else
             {
                 instance = this;
-            }
-        }
-
-        void OnDestroy()
-        {
-            if (instance == this)
-            {
-                instance = null;
             }
         }
         #endregion

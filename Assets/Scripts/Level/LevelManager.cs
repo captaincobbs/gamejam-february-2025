@@ -7,6 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 
 namespace Assets.Scripts.Level
@@ -58,11 +59,6 @@ namespace Assets.Scripts.Level
         public Player player;
         public Tilemap floorTilemap;
 
-        [Header("UI")]
-        [Tooltip("A reference to the OxygenDisplay object in this level")]
-        public OxygenDisplay OxygenDisplay;
-        public PlayerFaceDisplay PlayerFaceDisplay;
-
         [Header("Sound Events")]
         [SerializeField] private EventReference onLoad;
         [SerializeField] private EventReference onUndo;
@@ -72,16 +68,24 @@ namespace Assets.Scripts.Level
         [SerializeField] private EventReference onSlide;
         [SerializeField] private EventReference onLose;
         [SerializeField] private EventReference onWin;
+
         // Events
         public event Action AsTurnEnd;
         public event Action OnTurnEnd;
-        private Dictionary<uint, Trigger> Triggers = new();
+        private readonly Dictionary<uint, Trigger> Triggers = new();
 
         // Turn Processing
         private bool isTurnProcessing = false;
-        private bool canPlayerMove = true;
+        private bool processPlayerInput = true;
         private int turnNumber = 0;
+
         private List<Entity> entities = new();
+
+        // References
+        private OxygenDisplay oxygenDisplay;
+        private PlayerFaceDisplay playerFaceDisplay;
+        private WinScreen winScreen;
+        private LoseScreen loseScreen;
 
         void Start()
         {
@@ -90,18 +94,18 @@ namespace Assets.Scripts.Level
 
             if (UseOxygen)
             {
-                if (OxygenDisplay != null)
+                if (oxygenDisplay != null)
                 {
-                    OxygenDisplay.SetDisplayLevel(CurrentOxygen);
-                    PlayerFaceDisplay.SetDisplayLevel(CurrentOxygen);
+                    oxygenDisplay.SetDisplayLevel(CurrentOxygen);
+                    playerFaceDisplay.SetDisplayLevel(CurrentOxygen);
                 }
             }
             else
             {
-                if (OxygenDisplay != null)
+                if (oxygenDisplay != null)
                 {
-                    OxygenDisplay.SetDisplay(false);
-                    PlayerFaceDisplay.SetDisplay(false);
+                    oxygenDisplay.SetDisplay(false);
+                    playerFaceDisplay.SetDisplay(false);
                 }
             }
 
@@ -115,11 +119,16 @@ namespace Assets.Scripts.Level
             }
 
             entities = FindObjectsByType<Entity>(FindObjectsSortMode.InstanceID).ToList();
+
+            oxygenDisplay = FindFirstObjectByType<OxygenDisplay>();
+            playerFaceDisplay = FindFirstObjectByType<PlayerFaceDisplay>();
+            winScreen = FindFirstObjectByType<WinScreen>(FindObjectsInactive.Include);
+            loseScreen = FindFirstObjectByType<LoseScreen>(FindObjectsInactive.Include);
         }
 
         void Update()
         {
-            if (!isTurnProcessing && canPlayerMove)
+            if (!isTurnProcessing && processPlayerInput)
             {
                 ProcessPlayerInput();
             }
@@ -143,8 +152,8 @@ namespace Assets.Scripts.Level
                 {
                     CurrentOxygen--;
                     player.OxygenUsed();
-                    OxygenDisplay.SetDisplayLevel(CurrentOxygen);
-                    PlayerFaceDisplay.SetDisplayLevel(CurrentOxygen);
+                    oxygenDisplay.SetDisplayLevel(CurrentOxygen);
+                    playerFaceDisplay.SetDisplayLevel(CurrentOxygen);
                 }
                 else
                 {
@@ -172,6 +181,13 @@ namespace Assets.Scripts.Level
             bool moved = false;
             bool turnPassed = false;
             MovementDirection? actualDirection = null;
+
+            if (Input.GetKeyUp(KeyCode.R))
+            {
+                AudioManager.Instance.PlayOneShot(onRestart, $"Level.{nameof(onRestart)}");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                return;
+            }
 
             if (rawDirection.x == -1)
             {
@@ -222,8 +238,8 @@ namespace Assets.Scripts.Level
         public void RefillOxygen(uint amount, uint refillUpTo)
         {
             CurrentOxygen = Math.Min(Math.Max(MaximumOxygen, CurrentOxygen + amount), refillUpTo);
-            OxygenDisplay.SetDisplayLevel(CurrentOxygen);
-            PlayerFaceDisplay.SetDisplayLevel(CurrentOxygen);
+            oxygenDisplay.SetDisplayLevel(CurrentOxygen);
+            playerFaceDisplay.SetDisplayLevel(CurrentOxygen);
         }
 
         public void InteractWith(MovementDirection direction)
@@ -258,13 +274,16 @@ namespace Assets.Scripts.Level
 
         public void LoseLevel()
         {
-            KillEntity(player);
-
+            processPlayerInput = false;
+            AudioManager.Instance.PlayOneShot(onLose, $"Level.{nameof(onLose)}");
+            loseScreen.gameObject.SetActive(true);
         }
 
         public void WinLevel()
         {
-
+            processPlayerInput = false;
+            AudioManager.Instance.PlayOneShot(onWin, $"Level.{nameof(onWin)}");
+            winScreen.gameObject.SetActive(true);
         }
 
         FloorMaterial CheckPlayerFloor() => GetFloorMaterialAtPosition(player.transform.position);
