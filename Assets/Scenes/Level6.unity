@@ -344,6 +344,7 @@ Transform:
   - {fileID: 1881563122}
   - {fileID: 2021312656}
   - {fileID: 1456163054}
+  - {fileID: 1638634216}
   - {fileID: 1203561257}
   - {fileID: 120372669}
   - {fileID: 354983325}
@@ -1126,7 +1127,7 @@ PrefabInstance:
     - target: {fileID: 2137102949823922973, guid: 66ae3ec058db1364cb655da7ab4e8a96,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5656849768328634626, guid: 66ae3ec058db1364cb655da7ab4e8a96,
         type: 3}
@@ -1389,6 +1390,74 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d7d92681d6d2714f962bf2a839317f4, type: 3}
+--- !u!1001 &1067820884
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 293905364}
+    m_Modifications:
+    - target: {fileID: 4851314332554030263, guid: c90ded0278d6e5c41a04e174dc63d942,
+        type: 3}
+      propertyPath: m_Name
+      value: Oxygen Tank - Floor (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8569268236965867932, guid: c90ded0278d6e5c41a04e174dc63d942,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8569268236965867932, guid: c90ded0278d6e5c41a04e174dc63d942,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8569268236965867932, guid: c90ded0278d6e5c41a04e174dc63d942,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8569268236965867932, guid: c90ded0278d6e5c41a04e174dc63d942,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8569268236965867932, guid: c90ded0278d6e5c41a04e174dc63d942,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8569268236965867932, guid: c90ded0278d6e5c41a04e174dc63d942,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8569268236965867932, guid: c90ded0278d6e5c41a04e174dc63d942,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8569268236965867932, guid: c90ded0278d6e5c41a04e174dc63d942,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8569268236965867932, guid: c90ded0278d6e5c41a04e174dc63d942,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8569268236965867932, guid: c90ded0278d6e5c41a04e174dc63d942,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c90ded0278d6e5c41a04e174dc63d942, type: 3}
 --- !u!4 &1097305467 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5906795505621311896, guid: 23337ea1a859add4fa0b156949f33eb1,
@@ -2469,7 +2538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a049ab11bcb95c4a8e9fe7a1c751030, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LogEvents: 0
+  LogEvents: 1
 --- !u!1001 &1404733498
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3202,6 +3271,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5906795505621311896, guid: daf4340f4bcc3f24eac9c71276985857,
     type: 3}
   m_PrefabInstance: {fileID: 1632148910}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1638634216 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8569268236965867932, guid: c90ded0278d6e5c41a04e174dc63d942,
+    type: 3}
+  m_PrefabInstance: {fileID: 1067820884}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1640687110
 PrefabInstance:

@@ -446,80 +446,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1001 &371466233
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1200337986}
-    m_Modifications:
-    - target: {fileID: 4851314332554030263, guid: c90ded0278d6e5c41a04e174dc63d942,
-        type: 3}
-      propertyPath: m_Name
-      value: Oxygen Tank - Floor (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8569268236965867932, guid: c90ded0278d6e5c41a04e174dc63d942,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8569268236965867932, guid: c90ded0278d6e5c41a04e174dc63d942,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8569268236965867932, guid: c90ded0278d6e5c41a04e174dc63d942,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8569268236965867932, guid: c90ded0278d6e5c41a04e174dc63d942,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8569268236965867932, guid: c90ded0278d6e5c41a04e174dc63d942,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8569268236965867932, guid: c90ded0278d6e5c41a04e174dc63d942,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8569268236965867932, guid: c90ded0278d6e5c41a04e174dc63d942,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8569268236965867932, guid: c90ded0278d6e5c41a04e174dc63d942,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8569268236965867932, guid: c90ded0278d6e5c41a04e174dc63d942,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8569268236965867932, guid: c90ded0278d6e5c41a04e174dc63d942,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c90ded0278d6e5c41a04e174dc63d942, type: 3}
---- !u!4 &371466234 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8569268236965867932, guid: c90ded0278d6e5c41a04e174dc63d942,
-    type: 3}
-  m_PrefabInstance: {fileID: 371466233}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &425927921
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1090,80 +1016,6 @@ Sprite:
   m_Bones: []
   m_ScriptableObjects: []
   m_SpriteID: 
---- !u!1001 &1199560637
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1200337986}
-    m_Modifications:
-    - target: {fileID: 4851314332554030263, guid: c90ded0278d6e5c41a04e174dc63d942,
-        type: 3}
-      propertyPath: m_Name
-      value: Oxygen Tank - Floor (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8569268236965867932, guid: c90ded0278d6e5c41a04e174dc63d942,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8569268236965867932, guid: c90ded0278d6e5c41a04e174dc63d942,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8569268236965867932, guid: c90ded0278d6e5c41a04e174dc63d942,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8569268236965867932, guid: c90ded0278d6e5c41a04e174dc63d942,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8569268236965867932, guid: c90ded0278d6e5c41a04e174dc63d942,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8569268236965867932, guid: c90ded0278d6e5c41a04e174dc63d942,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8569268236965867932, guid: c90ded0278d6e5c41a04e174dc63d942,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8569268236965867932, guid: c90ded0278d6e5c41a04e174dc63d942,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8569268236965867932, guid: c90ded0278d6e5c41a04e174dc63d942,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8569268236965867932, guid: c90ded0278d6e5c41a04e174dc63d942,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c90ded0278d6e5c41a04e174dc63d942, type: 3}
---- !u!4 &1199560638 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8569268236965867932, guid: c90ded0278d6e5c41a04e174dc63d942,
-    type: 3}
-  m_PrefabInstance: {fileID: 1199560637}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1200337985
 GameObject:
   m_ObjectHideFlags: 0
@@ -1198,10 +1050,8 @@ Transform:
   - {fileID: 1503705068}
   - {fileID: 1901475092}
   - {fileID: 1905443709}
-  - {fileID: 1199560638}
   - {fileID: 2051691137}
   - {fileID: 425927922}
-  - {fileID: 371466234}
   - {fileID: 1612427895}
   - {fileID: 1245003763}
   - {fileID: 117512510}
@@ -2089,7 +1939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a049ab11bcb95c4a8e9fe7a1c751030, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LogEvents: 0
+  LogEvents: 1
 --- !u!1001 &1503705067
 PrefabInstance:
   m_ObjectHideFlags: 0
