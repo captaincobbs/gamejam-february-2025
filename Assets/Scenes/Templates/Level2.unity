@@ -2011,8 +2011,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseOxygen: 0
-  InitialOxygen: 10
-  MaximumOxygen: 10
+  InitialOxygen: 5
+  MaximumOxygen: 5
   MinimumOxygen: 0
   DelayBetweenMovement: 0.15
   player: {fileID: 8923763466277554918}
