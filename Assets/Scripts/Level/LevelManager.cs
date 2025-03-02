@@ -27,7 +27,7 @@ namespace Assets.Scripts.Level
         [Tooltip("The player's current oxygen value")]
 
         private uint currentOxygen;
-        [HideInNormalInspector]
+        [HideInInspector]
         public uint CurrentOxygen
         {
             get => currentOxygen;

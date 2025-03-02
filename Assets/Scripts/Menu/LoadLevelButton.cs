@@ -1,14 +1,19 @@
+using Assets.Scripts.Level;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Assets.Scripts.Menu
 {
-    public class NewMonoBehaviourScript : MonoBehaviour
+    public class LoadLevelButton : MonoBehaviour
     {
         [SerializeField] private string levelName;
+
+        public static MainMenuManager MainMenu;
         void Start()
         {
+            MainMenu = FindFirstObjectByType<MainMenuManager>();
+
             if (TryGetComponent(out Button button))
             {
                 button.onClick.AddListener(LoadLevel);
@@ -19,6 +24,7 @@ namespace Assets.Scripts.Menu
         {
             if (SceneExists(levelName))
             {
+                AudioManager.Instance.PlayOneShot(MainMenu.OnLevelSelected, levelName);
                 SceneManager.LoadScene(levelName);
             }
             else

@@ -134,6 +134,7 @@ namespace Assets.Scripts.Level.Props
         }
 
         #region Editor Scripts
+#if UNITY_EDITOR
         public void OnValidate()
         {
             if (spriteRenderer == null)
@@ -143,6 +144,7 @@ namespace Assets.Scripts.Level.Props
 
             EditorApplication.delayCall += UpdateSprite;
         }
-        #endregion
+#endif
+#endregion
     }
 }

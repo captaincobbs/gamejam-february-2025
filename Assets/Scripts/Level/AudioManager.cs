@@ -25,7 +25,7 @@ namespace Assets.Scripts.Level
             {
                 if (LogEvents)
                 {
-                    Debug.Log($"Event Played: {sound.Path}");
+                    Debug.Log($"Event Played: {sound}");
                 }
 
                 if (Application.isPlaying)
