@@ -2472,7 +2472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a049ab11bcb95c4a8e9fe7a1c751030, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LogEvents: 0
+  LogEvents: 1
 --- !u!4 &1447409061 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7339519631864381941, guid: 7b1dcc2663002a74bb8234860a35228b,
@@ -3831,7 +3831,7 @@ GameObject:
   - component: {fileID: 2103374075}
   - component: {fileID: 2103374074}
   - component: {fileID: 2103374073}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Door - Side - Horizontal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3866,7 +3866,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -3943,7 +3943,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1356912781, guid: f68855b019847c642b5f948e16661eb7, type: 3}
+  m_Sprite: {fileID: -520954191, guid: f68855b019847c642b5f948e16661eb7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3966,10 +3966,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c02277459d847343b82d07aa0bc9e2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsEntrance: 0
-  IsOpen: 0
-  toggledByTrigger: 0
-  triggerID: 0
+  EnterToWin: 1
+  IsOpen: 1
+  ToggledByTrigger: 0
+  ToggleTriggerID: 0
   whenOpen: {fileID: -520954191, guid: f68855b019847c642b5f948e16661eb7, type: 3}
   whenClosed: {fileID: 1356912781, guid: f68855b019847c642b5f948e16661eb7, type: 3}
   onOpen:
@@ -4917,17 +4917,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: OxygenDisplay
       objectReference: {fileID: 0}
-    - target: {fileID: 5867286556260646117, guid: 8d32769a92e52e347b07fed5bfade218,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8044857432546515625, guid: 8d32769a92e52e347b07fed5bfade218,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 1396370662, guid: 45376b37bd430c9428809e1a19ead4ae,
-        type: 3}
     - target: {fileID: 8044857432546515625, guid: 8d32769a92e52e347b07fed5bfade218,
         type: 3}
       propertyPath: m_Enabled
@@ -5118,11 +5107,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerFace
-      objectReference: {fileID: 0}
-    - target: {fileID: 6313800262679238555, guid: 00054b7745f40fa47a01ce82820c1e78,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6988567094988121975, guid: 00054b7745f40fa47a01ce82820c1e78,
         type: 3}

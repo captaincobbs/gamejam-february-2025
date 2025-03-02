@@ -70,7 +70,8 @@ namespace Assets.Scripts.Level
         [SerializeField] private EventReference onRestart;
         [SerializeField] private EventReference onUnload;
         [SerializeField] private EventReference onSlide;
-
+        [SerializeField] private EventReference onLose;
+        [SerializeField] private EventReference onWin;
         // Events
         public event Action AsTurnEnd;
         public event Action OnTurnEnd;
@@ -257,12 +258,13 @@ namespace Assets.Scripts.Level
             }
         }
 
-        void LoseLevel()
+        public void LoseLevel()
         {
             KillEntity(player);
+
         }
 
-        void WinLevel()
+        public void WinLevel()
         {
 
         }
@@ -316,6 +318,7 @@ namespace Assets.Scripts.Level
             if (entity.CanBeKilled)
             {
                 entity.Kill();
+                entity.enabled = false;
             }
         }
 
@@ -365,7 +368,7 @@ namespace Assets.Scripts.Level
         #endregion
 
         #region Trigger Management
-        public void SubscribeTrigger(uint triggerID, Action action, TriggerEvent @event)
+        public void SubscribeTrigger(uint triggerID, Action action, TriggerEvent @event = null)
         {
             if (!Triggers.ContainsKey(triggerID))
             {

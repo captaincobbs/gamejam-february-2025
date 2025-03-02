@@ -7,12 +7,12 @@ namespace Assets.Scripts.Level.Props
     [ExecuteInEditMode]
     public class Door : MonoBehaviour
     {
-        [SerializeField] public bool IsEntrance;
+        [SerializeField] public bool EnterToWin;
 
         [Header("State")]
         [SerializeField] public bool IsOpen;
-        [SerializeField] bool toggledByTrigger;
-        [SerializeField] uint triggerID;
+        [SerializeField] public bool ToggledByTrigger;
+        [SerializeField] public uint ToggleTriggerID;
 
         [Header("Sprite")]
         [SerializeField] private Sprite whenOpen;
@@ -23,21 +23,69 @@ namespace Assets.Scripts.Level.Props
         [SerializeField] private EventReference onClose;
 
         // References
+        LevelManager LevelManager
+        {
+            get => LevelManager.Instance;
+        }
         private SpriteRenderer spriteRenderer;
 
         void Start()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
             UpdateSprite();
+
+            if (IsOpen)
+            {
+                Open();
+            }
+            else
+            {
+                Close();
+            }
+
+            if (LevelManager != null && ToggledByTrigger)
+            {
+                LevelManager.SubscribeTrigger(
+                    ToggleTriggerID,
+                    Toggle
+                );
+            }
         }
 
-        public void Open()
+        void OnCollisionEnter2D(Collision2D collision)
         {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                if (EnterToWin)
+                {
+                    LevelManager.WinLevel();
+                }
+            }
+        }
+
+        public void Toggle()
+        {
+            IsOpen = !IsOpen;
+            UpdateSprite();
+            if (IsOpen)
+            {
+                Open();
+            }
+            else
+            {
+                Close();
+            }
+        }
+
+        void Open()
+        {
+            gameObject.layer = LayerMask.NameToLayer("Default");
             AudioManager.Instance.PlayOneShot(onOpen, $"Door.{nameof(onOpen)}");
         }
 
-        public void Close()
+        void Close()
         {
+            gameObject.layer = LayerMask.NameToLayer("Static");
             AudioManager.Instance.PlayOneShot(onClose, $"Door.{nameof(onClose)}");
         }
 
