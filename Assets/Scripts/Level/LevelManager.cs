@@ -90,6 +90,12 @@ namespace Assets.Scripts.Level
         void Start()
         {
             AudioManager.Instance.PlayOneShot(onLoad, $"Level.{nameof(onLoad)}");
+            entities = FindObjectsByType<Entity>(FindObjectsSortMode.InstanceID).ToList();
+            oxygenDisplay = FindFirstObjectByType<OxygenDisplay>();
+            playerFaceDisplay = FindFirstObjectByType<PlayerFaceDisplay>();
+            winScreen = FindFirstObjectByType<WinScreen>(FindObjectsInactive.Include);
+            loseScreen = FindFirstObjectByType<LoseScreen>(FindObjectsInactive.Include);
+
             CurrentOxygen = InitialOxygen;
 
             if (UseOxygen)
@@ -117,13 +123,6 @@ namespace Assets.Scripts.Level
             {
                 PlayerFloorMaterial = CheckPlayerFloor();
             }
-
-            entities = FindObjectsByType<Entity>(FindObjectsSortMode.InstanceID).ToList();
-
-            oxygenDisplay = FindFirstObjectByType<OxygenDisplay>();
-            playerFaceDisplay = FindFirstObjectByType<PlayerFaceDisplay>();
-            winScreen = FindFirstObjectByType<WinScreen>(FindObjectsInactive.Include);
-            loseScreen = FindFirstObjectByType<LoseScreen>(FindObjectsInactive.Include);
         }
 
         void Update()
@@ -148,9 +147,14 @@ namespace Assets.Scripts.Level
 
             if (UseOxygen)
             {
-                if (CurrentOxygen <= MinimumOxygen)
+                if (CurrentOxygen <= MinimumOxygen + 1)
                 {
-                    LoseLevel();
+                    bool isOnOxygenTank = Physics2D.OverlapPointAll(player.transform.position, LayerMask.GetMask("Entity")).Any(collider => collider.CompareTag("OxygenTank"));
+
+                    if (!isOnOxygenTank)
+                    {
+                        LoseLevel();
+                    }
                 }
                 else
                 {
@@ -299,7 +303,7 @@ namespace Assets.Scripts.Level
 
             bool isEntity = TryGetEntityAt(entity.transform.position + direction, entity, out Entity entityInFront);
 
-            if (isEntity)
+            if (isEntity && !entityInFront.CanBeWalkedOn)
             {
                 if (entityInFront.CanBePushed)
                 {
@@ -308,7 +312,7 @@ namespace Assets.Scripts.Level
                         return false;
                     }
                 }
-                else if (!entityInFront.CanBeWalkedOn || !entityInFront.CanBePushed)
+                else
                 {
                     return false;
                 }

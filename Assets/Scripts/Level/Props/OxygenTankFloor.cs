@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Level.Props
 {
-    public class OxygenTankFloor : MonoBehaviour
+    public class OxygenTankFloor : Entity
     {
         [Header("Properties")]
         private bool isConsumed = false;
@@ -49,5 +49,9 @@ namespace Assets.Scripts.Level.Props
                 }
             }
         }
+
+        public override void Move() { }
+
+        public override void Kill() { }
     }
 }

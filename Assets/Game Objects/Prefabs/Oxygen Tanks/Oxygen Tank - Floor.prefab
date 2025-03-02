@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 1786991420485615040}
   - component: {fileID: 3858694041880866165}
   - component: {fileID: 1355951631120935028}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Oxygen Tank - Floor
-  m_TagString: Untagged
+  m_TagString: OxygenTank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,6 +46,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77c2a0b8d5ae73a428001e7d9cfb02a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanBeWalkedOn: 1
+  CanBePushed: 0
+  CanBeKilled: 0
+  alreadyPushed: 0
+  alreadyTeleported: 0
+  onKill:
+    Guid:
+      Data1: 2055897863
+      Data2: 1189514538
+      Data3: 1810667693
+      Data4: 40193200
+    Path: event:/FakeReference
+  onMove:
+    Guid:
+      Data1: 2055897863
+      Data2: 1189514538
+      Data3: 1810667693
+      Data4: 40193200
+    Path: event:/FakeReference
   ConsumedOnUse: 1
   oxygenRefilled: 5
   refillUpTo: 5
