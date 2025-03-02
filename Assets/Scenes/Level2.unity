@@ -2010,7 +2010,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58379f5c9cd5d864284f49200ed048de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UseOxygen: 0
+  UseOxygen: 1
   InitialOxygen: 5
   MaximumOxygen: 5
   MinimumOxygen: 0
