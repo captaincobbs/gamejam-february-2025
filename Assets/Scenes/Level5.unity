@@ -699,6 +699,12 @@ PrefabInstance:
       propertyPath: ToggledOnTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4394810181078046502, guid: f26c8f96fef9d3d4ca0ccebeef610e7b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300034, guid: ab0dd53b1e5f5b64f865dc7b773caf43,
+        type: 3}
     - target: {fileID: 6018477345242788638, guid: f26c8f96fef9d3d4ca0ccebeef610e7b,
         type: 3}
       propertyPath: m_Name
@@ -991,6 +997,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Conveyor Belt - Horizontal Right
       objectReference: {fileID: 0}
+    - target: {fileID: 5279695850372621870, guid: 23337ea1a859add4fa0b156949f33eb1,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300174, guid: ab0dd53b1e5f5b64f865dc7b773caf43,
+        type: 3}
     - target: {fileID: 5906795505621311896, guid: 23337ea1a859add4fa0b156949f33eb1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1548,6 +1560,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Conveyor Belt - Horizontal Left
       objectReference: {fileID: 0}
+    - target: {fileID: 5279695850372621870, guid: 60526e275ff835047a915e9f7119df86,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300174, guid: ab0dd53b1e5f5b64f865dc7b773caf43,
+        type: 3}
     - target: {fileID: 5906795505621311896, guid: 60526e275ff835047a915e9f7119df86,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2526,6 +2544,20 @@ MonoBehaviour:
       Data3: 2021075366
       Data4: -2130595665
     Path: event:/Level/Level_OnSlide
+  onLose:
+    Guid:
+      Data1: 895432750
+      Data2: 1210543351
+      Data3: 426392721
+      Data4: -1424570512
+    Path: event:/Level/Level_OnLose
+  onWin:
+    Guid:
+      Data1: -273224465
+      Data2: 1219091998
+      Data3: 1942019745
+      Data4: -176364867
+    Path: event:/Level/Level_OnWin
 --- !u!114 &1387460847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2576,6 +2608,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Conveyor Belt - Vertical Top
       objectReference: {fileID: 0}
+    - target: {fileID: 5279695850372621870, guid: 2d7d92681d6d2714f962bf2a839317f4,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300086, guid: ab0dd53b1e5f5b64f865dc7b773caf43,
+        type: 3}
     - target: {fileID: 5906795505621311896, guid: 2d7d92681d6d2714f962bf2a839317f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2930,6 +2968,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 672463406}
     m_Modifications:
+    - target: {fileID: 555952805368858399, guid: 19a2797ffcd196842adf882d8f0ad408,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300086, guid: ab0dd53b1e5f5b64f865dc7b773caf43,
+        type: 3}
     - target: {fileID: 1213666050494459821, guid: 19a2797ffcd196842adf882d8f0ad408,
         type: 3}
       propertyPath: Direction
@@ -3126,6 +3170,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8525671373245881869, guid: 71d4f9b3b071b2147ace0131168feb64,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300032, guid: ab0dd53b1e5f5b64f865dc7b773caf43,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
