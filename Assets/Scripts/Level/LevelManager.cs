@@ -85,9 +85,7 @@ namespace Assets.Scripts.Level
 
         void Start()
         {
-#if !UNITY_EDITOR
             AudioManager.Instance.PlayOneShot(onLoad, $"Level.{nameof(onLoad)}");
-#endif
             CurrentOxygen = InitialOxygen;
 
             if (UseOxygen)
@@ -471,9 +469,8 @@ namespace Assets.Scripts.Level
                 Debug.LogWarning("OnUnload is null");
             }
 
-#if !UNITY_EDITOR
             AudioManager.Instance.PlayOneShot(onUnload, $"Level.{nameof(onUnload)}");
-#endif
+
             if (instance == this)
             {
                 instance = null;

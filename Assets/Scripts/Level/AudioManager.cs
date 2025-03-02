@@ -25,7 +25,9 @@ namespace Assets.Scripts.Level
                     Debug.Log($"Event Played: {sound.Path}");
                 }
 
+#if !UNITY_EDITOR
                 RuntimeManager.PlayOneShot(sound, Vector3.zero);
+#endif
             }
             else
             {
@@ -40,7 +42,9 @@ namespace Assets.Scripts.Level
                 Debug.Log($"Parameter Updated: {name} to {value}");
             }
 
+#if !UNITY_EDITOR
             RuntimeManager.StudioSystem.setParameterByName(name, value);
+#endif
         }
 
         public void SetParameterWithLabel(string name, string label)
@@ -50,7 +54,9 @@ namespace Assets.Scripts.Level
                 Debug.Log($"Parameter Updated: {name} to {label}");
             }
 
+#if !UNITY_EDITOR
             RuntimeManager.StudioSystem.setParameterByNameWithLabel(name, label);
+#endif
         }
 
         bool IsFMODInitialized() => RuntimeManager.StudioSystem.isValid();
