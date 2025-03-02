@@ -94,8 +94,7 @@ namespace Assets.Scripts.Level.Props
 
             if (nextPortal != null && !entity.alreadyTeleported)
             {
-                if (Entity.TryGetEntityAtPosition(entity.transform.position, EntityFilter, out Entity filteredEntity)
-                    && filteredEntity != null)
+                if (Entity.TryGetEntityAtPosition(entity.transform.position, EntityFilter, out Entity filteredEntity) && filteredEntity != null)
                 {
                     entity.alreadyTeleported = true;
                     entity.transform.position = nextPortal.transform.position;

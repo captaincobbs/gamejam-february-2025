@@ -68,6 +68,7 @@ namespace Assets.Scripts.Level
         [SerializeField] private EventReference onTurn;
         [SerializeField] private EventReference onRestart;
         [SerializeField] private EventReference onUnload;
+        [SerializeField] private EventReference onSlide;
 
         // Events
         public event Action AsTurnEnd;
@@ -82,7 +83,7 @@ namespace Assets.Scripts.Level
 
         void Start()
         {
-            AudioManager.Instance.PlayOneShot(onLoad, nameof(onLoad));
+            AudioManager.Instance.PlayOneShot(onLoad, $"Level.{nameof(onLoad)}");
             CurrentOxygen = InitialOxygen;
 
             if (UseOxygen)
@@ -132,7 +133,7 @@ namespace Assets.Scripts.Level
                 Debug.LogWarning("OnTurn is null");
             }
 
-            AudioManager.Instance.PlayOneShot(onTurn, nameof(onTurn));
+            AudioManager.Instance.PlayOneShot(onTurn, $"Level.{nameof(onTurn)}");
 
             if (UseOxygen)
             {
@@ -298,7 +299,10 @@ namespace Assets.Scripts.Level
 
             if (GetFloorMaterialAtPosition(entity.transform.position) == FloorMaterial.Ice)
             {
-                MoveEntity(entity, direction, false, false);
+                if(MoveEntity(entity, direction, false, false))
+                {
+                    AudioManager.Instance.PlayOneShot(onSlide, $"Level.{nameof(onSlide)}");
+                }
             }
 
             return true;
@@ -402,7 +406,7 @@ namespace Assets.Scripts.Level
 
                 foreach (EventReference soundEvent in trigger.EventReferences.Values)
                 {
-                    AudioManager.Instance.PlayOneShot(soundEvent, $"TriggerInvoke");
+                    AudioManager.Instance.PlayOneShot(soundEvent, $"Level.TriggerInvoke");
                 }
             }
         }
@@ -444,7 +448,7 @@ namespace Assets.Scripts.Level
                 Debug.LogWarning("OnUnload is null");
             }
 
-            AudioManager.Instance.PlayOneShot(onUnload, nameof(onUnload));
+            AudioManager.Instance.PlayOneShot(onUnload, $"Level.{nameof(onUnload)}");
 
             if (instance == this)
             {

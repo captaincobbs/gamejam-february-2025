@@ -27,14 +27,15 @@ namespace Assets.Scripts.Level.Props
 
             if (collider != null && collider.TryGetComponent(out Entity collisionEntity))
             {
+                entity = collisionEntity;
+
                 switch (filterType)
                 {
                     case (EntityFilterType.Any):
                         return true;
                     case EntityFilterType.Player:
-                        if (GetPlayerFromEntity(collisionEntity, out _))
+                        if (entity.CompareTag("Player"))
                         {
-                            entity = collisionEntity;
                             return true;
                         }
                         break;
