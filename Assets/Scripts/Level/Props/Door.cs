@@ -36,11 +36,11 @@ namespace Assets.Scripts.Level.Props
 
             if (IsOpen)
             {
-                Open();
+                gameObject.layer = LayerMask.NameToLayer("Default");
             }
             else
             {
-                Close();
+                gameObject.layer = LayerMask.NameToLayer("Static");
             }
 
             if (LevelManager != null && ToggledByTrigger)
