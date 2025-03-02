@@ -1704,6 +1704,13 @@ MonoBehaviour:
       Data3: -1808233539
       Data4: 2144847292
     Path: event:/Level/Level_OnUnload
+  onSlide:
+    Guid:
+      Data1: -1118994464
+      Data2: 1333015251
+      Data3: 2021075366
+      Data4: -2130595665
+    Path: event:/Player/Player_OnSlide
 --- !u!114 &1387460847
 MonoBehaviour:
   m_ObjectHideFlags: 0
