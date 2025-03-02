@@ -265,6 +265,7 @@
 		<relationship name="effects">
 			<destination>{af6fe598-659b-4d4f-bb02-4b6ccbb643f2}</destination>
 			<destination>{553b7342-fc18-4c0f-9cd6-ed88ce93083c}</destination>
+			<destination>{4d292d75-462d-425f-8b89-f9f2f9c70e8a}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{63d858e2-9185-4567-9584-919f156567d8}" />
@@ -479,6 +480,17 @@
 		<property name="midGain">
 			<value>-7.5</value>
 		</property>
+	</object>
+	<object class="CompressorEffect" id="{4d292d75-462d-425f-8b89-f9f2f9c70e8a}">
+		<property name="threshold">
+			<value>-20.5</value>
+		</property>
+		<property name="attackTime">
+			<value>0.100000001</value>
+		</property>
+		<relationship name="sidechains">
+			<destination>{a19eb93d-d4f3-4842-9a17-15748366579b}</destination>
+		</relationship>
 	</object>
 	<object class="AutomationCurve" id="{173d8377-2619-48d7-b6e5-cbb3e946352c}">
 		<relationship name="parameter">
