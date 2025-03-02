@@ -6,7 +6,15 @@ namespace Assets.Scripts.Level
     [ExecuteInEditMode]
     public class AudioManager : MonoBehaviour
     {
-        public bool LogEvents = true;
+        private void Start()
+        {
+            if (IsFMODInitialized())
+            {
+                LogEvents = true;
+            }
+        }
+
+        public bool LogEvents = false;
 
         public void PlayOneShot(EventReference sound, string varName)
         {
@@ -44,6 +52,8 @@ namespace Assets.Scripts.Level
 
             RuntimeManager.StudioSystem.setParameterByNameWithLabel(name, label);
         }
+
+        bool IsFMODInitialized() => RuntimeManager.StudioSystem.isValid();
 
         #region Singleton
         private static AudioManager instance;

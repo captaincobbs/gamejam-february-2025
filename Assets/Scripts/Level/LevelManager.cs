@@ -84,7 +84,9 @@ namespace Assets.Scripts.Level
 
         void Start()
         {
+#if !UNITY_EDITOR
             AudioManager.Instance.PlayOneShot(onLoad, $"Level.{nameof(onLoad)}");
+#endif
             CurrentOxygen = InitialOxygen;
 
             if (UseOxygen)
@@ -370,6 +372,7 @@ namespace Assets.Scripts.Level
                 Triggers[triggerID] = new()
                 {
                     Action = action,
+                    EventReferences = new()
                 };
 
                 if (@event != null)
@@ -381,7 +384,7 @@ namespace Assets.Scripts.Level
             {
                 Triggers[triggerID].Action += action;
 
-                if (@event != null && Triggers[triggerID].EventReferences.ContainsKey(@event.Type))
+                if (@event != null && !Triggers[triggerID].EventReferences.ContainsKey(@event.Type))
                 {
                     Triggers[triggerID].EventReferences.Add(@event.Type, @event.SoundEvent);
                 }

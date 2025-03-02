@@ -41,7 +41,7 @@ namespace Assets.Scripts.Level.Props
             get => LevelManager.Instance;
         }
 
-        private void Start()
+        void Start()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
             UpdateSprite();
@@ -64,27 +64,35 @@ namespace Assets.Scripts.Level.Props
 
         public void Toggle()
         {
-            if (!Pressed)
+            if (!InTimer)
             {
-                AudioManager.Instance.PlayOneShot(onPress, $"ButtonWall.{nameof(onPress)}");
-                LevelManager.InvokeTrigger(TriggerID);
-
-                if (ButtonType == ButtonType.Timer)
+                if (!Pressed)
                 {
-                    StartTimer(TimerDuration);
+                    if (ButtonType == ButtonType.Timer)
+                    {
+                        StartTimer(TimerDuration);
+                    }
+
+                    AudioManager.Instance.PlayOneShot(onPress, $"ButtonWall.{nameof(onPress)}");
+                    LevelManager.InvokeTrigger(TriggerID);
                 }
+                else
+                {
+                    AudioManager.Instance.PlayOneShot(onUnpress, $"ButtonWall.{nameof(onUnpress)}");
+                    LevelManager.InvokeTrigger(TriggerID);
+                }
+
+                Pressed = !Pressed;
+                UpdateSprite();
             }
             else
             {
-                AudioManager.Instance.PlayOneShot(onUnpress, $"ButtonWall.{nameof(onUnpress)}");
-                LevelManager.InvokeTrigger(TriggerID);
+                AudioManager.Instance.PlayOneShot(onPress, $"ButtonWall.{nameof(onPress)}");
+                StartTimer(TimerDuration);
             }
-
-            UpdateSprite();
-            Pressed = !Pressed;
         }
 
-        private void TimerTick()
+        void TimerTick()
         {
             if (TurnsRemaining > 0)
             {
@@ -102,9 +110,12 @@ namespace Assets.Scripts.Level.Props
 
         public void StartTimer(int turns)
         {
+            if (!InTimer)
+            {
+                LevelManager.OnTurnEnd += TimerTick;
+            }
             InTimer = true;
             TurnsRemaining = turns - 1;
-            LevelManager.OnTurnEnd += TimerTick;
             ToggleTimer(true);
         }
 
