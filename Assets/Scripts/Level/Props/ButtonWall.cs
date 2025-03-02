@@ -1,8 +1,10 @@
 using FMODUnity;
+using UnityEditor;
 using UnityEngine;
 
 namespace Assets.Scripts.Level.Props
 {
+    [ExecuteInEditMode]
     public class ButtonWall : MonoBehaviour, IInteractable
     {
         [Header("State")]
@@ -42,7 +44,7 @@ namespace Assets.Scripts.Level.Props
         private void Start()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
-            spriteRenderer.sprite = Pressed ? whenPressed : whenUnpressed;
+            UpdateSprite();
 
             Transform timerTransform = transform.GetChild(0);
             if (timerTransform.TryGetComponent(out ButtonTimer childTimer))
@@ -65,7 +67,6 @@ namespace Assets.Scripts.Level.Props
             if (!Pressed)
             {
                 AudioManager.Instance.PlayOneShot(onPress, $"ButtonWall.{nameof(onPress)}");
-                spriteRenderer.sprite = whenPressed;
                 LevelManager.InvokeTrigger(TriggerID);
 
                 if (ButtonType == ButtonType.Timer)
@@ -76,10 +77,10 @@ namespace Assets.Scripts.Level.Props
             else
             {
                 AudioManager.Instance.PlayOneShot(onUnpress, $"ButtonWall.{nameof(onUnpress)}");
-                spriteRenderer.sprite = whenUnpressed;
                 LevelManager.InvokeTrigger(TriggerID);
             }
 
+            UpdateSprite();
             Pressed = !Pressed;
         }
 
@@ -111,6 +112,26 @@ namespace Assets.Scripts.Level.Props
         {
             timer.gameObject.SetActive(enabled);
         }
+
+        void UpdateSprite()
+        {
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.sprite = Pressed ? whenPressed : whenUnpressed;
+            }
+        }
+
+        #region Editor Scripts
+        public void OnValidate()
+        {
+            if (spriteRenderer == null)
+            {
+                spriteRenderer = GetComponent<SpriteRenderer>();
+            }
+
+            EditorApplication.delayCall += UpdateSprite;
+        }
+        #endregion
     }
 
 }

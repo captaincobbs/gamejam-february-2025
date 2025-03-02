@@ -1,8 +1,10 @@
 using FMODUnity;
+using UnityEditor;
 using UnityEngine;
 
 namespace Assets.Scripts.Level.Props
 {
+    [ExecuteInEditMode]
     public class Door : MonoBehaviour
     {
         [SerializeField] public bool IsEntrance;
@@ -22,10 +24,11 @@ namespace Assets.Scripts.Level.Props
 
         // References
         private SpriteRenderer spriteRenderer;
+
         void Start()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
-            spriteRenderer.sprite = IsOpen ? whenOpen : whenClosed;
+            UpdateSprite();
         }
 
         public void Open()
@@ -37,5 +40,25 @@ namespace Assets.Scripts.Level.Props
         {
             AudioManager.Instance.PlayOneShot(onClose, $"Door.{nameof(onClose)}");
         }
+
+        private void UpdateSprite()
+        {
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.sprite = IsOpen ? whenOpen : whenClosed;
+            }
+        }
+
+        #region Editor Scripts
+        public void OnValidate()
+        {
+            if (spriteRenderer == null)
+            {
+                spriteRenderer = GetComponent<SpriteRenderer>();
+            }
+
+            EditorApplication.delayCall += UpdateSprite;
+        }
+        #endregion
     }
 }

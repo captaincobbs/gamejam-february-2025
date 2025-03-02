@@ -3,23 +3,10 @@ using UnityEngine;
 
 namespace Assets.Scripts.Level
 {
+    [ExecuteInEditMode]
     public class AudioManager : MonoBehaviour
     {
         public bool LogEvents = true;
-
-        private static AudioManager instance;
-        public static AudioManager Instance
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    Debug.LogError("This Scene does not have an AudioManager");
-                }
-
-                return instance;
-            }
-        }
 
         public void PlayOneShot(EventReference sound, string varName)
         {
@@ -58,7 +45,31 @@ namespace Assets.Scripts.Level
             RuntimeManager.StudioSystem.setParameterByNameWithLabel(name, label);
         }
 
-        private void Awake()
+        #region Singleton
+        private static AudioManager instance;
+        public static AudioManager Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    AudioManager found = FindFirstObjectByType<AudioManager>();
+
+                    if (found != null)
+                    {
+                        instance = found;
+                    }
+                    else
+                    {
+                        Debug.LogError("This Scene does not have an AudioManager");
+                    }
+                }
+
+                return instance;
+            }
+        }
+
+        void Awake()
         {
             if (instance != null && instance != this)
             {
@@ -69,5 +80,14 @@ namespace Assets.Scripts.Level
                 instance = this;
             }
         }
+
+        void OnDestroy()
+        {
+            if (instance == this)
+            {
+                instance = null;
+            }
+        }
+        #endregion
     }
 }

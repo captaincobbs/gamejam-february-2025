@@ -1,10 +1,12 @@
 using FMODUnity;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 namespace Assets.Scripts.Level.Props
 {
+    [ExecuteInEditMode]
     public class Portal : MonoBehaviour
     {
         [Header("State")]
@@ -39,7 +41,7 @@ namespace Assets.Scripts.Level.Props
         void Start()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
-            spriteRenderer.sprite = Enabled ? whenEnabled : whenDisabled;
+            UpdateSprite();
             portalCollider = GetComponent<BoxCollider2D>();
 
             if (!Portals.ContainsKey(PortalID))
@@ -67,7 +69,7 @@ namespace Assets.Scripts.Level.Props
         void Toggle()
         {
             Enabled = !Enabled;
-            spriteRenderer.sprite = Enabled ? whenEnabled : whenDisabled;
+            UpdateSprite();
             AudioManager.Instance.PlayOneShot(onToggle, $"Portal.{nameof(onToggle)}");
         }
 
@@ -125,5 +127,22 @@ namespace Assets.Scripts.Level.Props
             }
             return null;
         }
+
+        void UpdateSprite()
+        {
+            spriteRenderer.sprite = Enabled ? whenEnabled : whenDisabled;
+        }
+
+        #region Editor Scripts
+        public void OnValidate()
+        {
+            if (spriteRenderer == null)
+            {
+                spriteRenderer = GetComponent<SpriteRenderer>();
+            }
+
+            EditorApplication.delayCall += UpdateSprite;
+        }
+        #endregion
     }
 }

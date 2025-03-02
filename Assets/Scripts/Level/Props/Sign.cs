@@ -1,19 +1,34 @@
+using UnityEditor;
 using UnityEngine;
 
 namespace Assets.Scripts.Level.Props
 {
     public class Sign : MonoBehaviour
     {
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
+        [SerializeField] string text;
+
+        // References
+        SpriteRenderer spriteRenderer;
         void Start()
         {
-
+            spriteRenderer = GetComponent<SpriteRenderer>();
         }
 
-        // Update is called once per frame
-        void Update()
+        void UpdateSprite()
         {
 
         }
+
+        #region Editor Scripts
+        public void OnValidate()
+        {
+            if (spriteRenderer == null)
+            {
+                spriteRenderer = GetComponent<SpriteRenderer>();
+            }
+
+            EditorApplication.delayCall += UpdateSprite;
+        }
+        #endregion
     }
 }

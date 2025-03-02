@@ -1,8 +1,10 @@
 using FMODUnity;
+using UnityEditor;
 using UnityEngine;
 
 namespace Assets.Scripts.Level.Props
 {
+    [ExecuteInEditMode]
     public class PressurePlate : MonoBehaviour
     {
         [Header("State")]
@@ -77,7 +79,7 @@ namespace Assets.Scripts.Level.Props
             Pressed = !Pressed;
         }
 
-        private void TimerTick()
+        void TimerTick()
         {
             if (TurnsRemaining > 0)
             {
@@ -111,7 +113,7 @@ namespace Assets.Scripts.Level.Props
             timer.gameObject.SetActive(enabled);
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
+        void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.CompareTag("Player") && !BeingPressed)
             {
@@ -129,7 +131,7 @@ namespace Assets.Scripts.Level.Props
             }
         }
 
-        private void OnTriggerExit2D(Collider2D collision)
+        void OnTriggerExit2D(Collider2D collision)
         {
             if (collision.TryGetComponent(out Player _))
             {
@@ -147,7 +149,7 @@ namespace Assets.Scripts.Level.Props
             }
         }
 
-        private void Press()
+        void Press()
         {
             if (!BeingPressed)
             {
@@ -165,7 +167,7 @@ namespace Assets.Scripts.Level.Props
             }
         }
 
-        private void Unpress()
+        void Unpress()
         {
             if (BeingPressed)
             {
@@ -182,12 +184,29 @@ namespace Assets.Scripts.Level.Props
             }
         }
 
-        private void OnTurn()
+        void OnTurn()
         {
             if (!BeingPressed && !InTimer && Pressed)
             {
                 Unpress();
             }
         }
+
+        void UpdateSprite()
+        {
+            spriteRenderer.sprite = Pressed ? whenPressed : whenUnpressed;
+        }
+
+        #region Editor Scripts
+        public void OnValidate()
+        {
+            if (spriteRenderer == null)
+            {
+                spriteRenderer = GetComponent<SpriteRenderer>();
+            }
+
+            EditorApplication.delayCall += UpdateSprite;
+        }
+        #endregion
     }
 }

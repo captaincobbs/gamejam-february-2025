@@ -8,7 +8,7 @@ namespace Assets.Scripts.Level.Props
         [Header("Sprite")]
         public List<Sprite> Sprites;
 
-        private int timeRemaining;
+        int timeRemaining;
         public int TurnsRemaining
         {
             get => timeRemaining;

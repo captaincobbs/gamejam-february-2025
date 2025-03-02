@@ -1,11 +1,11 @@
 using System.Collections.Generic;
-using Assets.Scripts;
-using Assets.Scripts.Level;
 using FMODUnity;
+using UnityEditor;
 using UnityEngine;
 
 namespace Assets.Scripts.Level.Props
 {
+    [ExecuteInEditMode]
     public class ConveyorBelt : MonoBehaviour
     {
         [Header("Direction")]
@@ -46,6 +46,7 @@ namespace Assets.Scripts.Level.Props
         void Start()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
+            UpdateSprite();
             conveyorCollider = GetComponent<BoxCollider2D>();
 
             if (LevelManager != null)
@@ -71,7 +72,7 @@ namespace Assets.Scripts.Level.Props
             }
             else
             {
-                Debug.LogError("Conveyor Belt can't find a parent TurnManager");
+                Debug.LogError("Conveyor Belt can't find a parent Levelmanager");
             }
 
             if (Sprites == null || Sprites.Count == 0)
@@ -144,7 +145,7 @@ namespace Assets.Scripts.Level.Props
             {
                 currentFrame = (currentFrame - 1 + Sprites.Count) % Sprites.Count;
             }
-            spriteRenderer.sprite = Sprites[currentFrame];
+            UpdateSprite();
         }
 
         public Vector2 GetDirectionalValue()
@@ -188,6 +189,26 @@ namespace Assets.Scripts.Level.Props
 
             return false;
         }
+
+        void UpdateSprite()
+        {
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.sprite = Sprites[currentFrame];
+            }
+        }
+
+        #region Editor Scripts
+        public void OnValidate()
+        {
+            if (spriteRenderer == null)
+            {
+                spriteRenderer = GetComponent<SpriteRenderer>();
+            }
+
+            EditorApplication.delayCall += UpdateSprite;
+        }
+        #endregion
 
         #region Static Members
         public static ConveyorBelt GetAtPosition(Vector3 position)

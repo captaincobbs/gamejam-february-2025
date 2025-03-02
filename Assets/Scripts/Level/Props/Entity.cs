@@ -20,6 +20,7 @@ namespace Assets.Scripts.Level.Props
         public abstract void Move();
         public abstract void Kill();
 
+        #region Static Members
         public static bool TryGetEntityAtPosition(Vector3 position, EntityFilterType filterType, out Entity entity)
         {
             entity = null;
@@ -61,5 +62,6 @@ namespace Assets.Scripts.Level.Props
 
             return false;
         }
+        #endregion
     }
 }

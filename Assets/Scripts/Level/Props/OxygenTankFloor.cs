@@ -36,7 +36,7 @@ namespace Assets.Scripts.Level.Props
             get => LevelManager.Instance;
         }
 
-        private void OnTriggerEnter2D(Collider2D collider)
+        void OnTriggerEnter2D(Collider2D collider)
         {
             if (!IsConsumed && collider.TryGetComponent(out Player _))
             {

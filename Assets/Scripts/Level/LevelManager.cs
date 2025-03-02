@@ -11,6 +11,7 @@ using UnityEngine.Tilemaps;
 
 namespace Assets.Scripts.Level
 {
+    [ExecuteInEditMode]
     public class LevelManager : MonoBehaviour
     {
         [Header("Oxygen")]
@@ -412,6 +413,13 @@ namespace Assets.Scripts.Level
         }
         #endregion
 
+        #region Editor Scripts
+        public void OnValidate()
+        {
+
+        }
+        #endregion
+
         #region Singleton
         private static LevelManager instance;
         public static LevelManager Instance
@@ -420,7 +428,16 @@ namespace Assets.Scripts.Level
             {
                 if (instance == null)
                 {
-                    Debug.LogError("This Scene does not have a TurnManager");
+                    LevelManager found = FindFirstObjectByType<LevelManager>();
+
+                    if (found != null)
+                    {
+                        instance = found;
+                    }
+                    else
+                    {
+                        Debug.LogError("This Scene does not have a TurnManager");
+                    }
                 }
 
                 return instance;
@@ -441,20 +458,21 @@ namespace Assets.Scripts.Level
         }
 
         // Destroy static instance when scene is unloaded
-        private void OnDestroy()
+        void OnDestroy()
         {
             if (onUnload.IsNull)
             {
                 Debug.LogWarning("OnUnload is null");
             }
 
+#if !UNITY_EDITOR
             AudioManager.Instance.PlayOneShot(onUnload, $"Level.{nameof(onUnload)}");
-
+#endif
             if (instance == this)
             {
                 instance = null;
             }
         }
-        #endregion
+#endregion
     }
 }
