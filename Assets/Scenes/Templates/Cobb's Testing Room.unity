@@ -2567,17 +2567,17 @@ MonoBehaviour:
     Path: event:/Level/Level_OnSlide
   onLose:
     Guid:
-      Data1: -2077271305
-      Data2: 1240501894
-      Data3: 752619905
-      Data4: -1170432039
+      Data1: 895432750
+      Data2: 1210543351
+      Data3: 426392721
+      Data4: -1424570512
     Path: event:/Level/Level_OnLose
   onWin:
     Guid:
-      Data1: 1570080968
-      Data2: 1314701587
-      Data3: -1942658681
-      Data4: 1923414658
+      Data1: -273224465
+      Data2: 1219091998
+      Data3: 1942019745
+      Data4: -176364867
     Path: event:/Level/Level_OnWin
 --- !u!114 &1387460847
 MonoBehaviour:
@@ -3604,7 +3604,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.1
+  orthographic size: 7
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2

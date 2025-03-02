@@ -148,16 +148,16 @@ namespace Assets.Scripts.Level
 
             if (UseOxygen)
             {
-                if (CurrentOxygen > MinimumOxygen)
+                if (CurrentOxygen <= MinimumOxygen)
+                {
+                    LoseLevel();
+                }
+                else
                 {
                     CurrentOxygen--;
                     player.OxygenUsed();
                     oxygenDisplay.SetDisplayLevel(CurrentOxygen);
                     playerFaceDisplay.SetDisplayLevel(CurrentOxygen);
-                }
-                else
-                {
-                    LoseLevel();
                 }
             }
 
