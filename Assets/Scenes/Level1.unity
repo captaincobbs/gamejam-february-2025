@@ -4574,11 +4574,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerFace
       objectReference: {fileID: 0}
-    - target: {fileID: 6988567094988121975, guid: 00054b7745f40fa47a01ce82820c1e78,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

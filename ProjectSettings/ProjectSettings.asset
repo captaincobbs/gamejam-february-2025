@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: Game Jam February 2025
+  companyName: HCGG
+  productName: SuperCold
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -607,7 +607,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: Game Jam February 2025
   wsaImages: {}
-  metroTileShortName: Game Jam February 2025
+  metroTileShortName: Super Cold
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
