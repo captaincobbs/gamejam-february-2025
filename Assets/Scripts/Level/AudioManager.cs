@@ -23,11 +23,12 @@ namespace Assets.Scripts.Level
         {
             if (!sound.IsNull)
             {
+#if UNITY_EDITOR
                 if (LogEvents)
                 {
-                    Debug.Log($"Event Played: {sound}");
+                    Debug.Log($"Event Played: {sound.Path}");
                 }
-
+#endif
                 if (Application.isPlaying)
                 {
                     RuntimeManager.PlayOneShot(sound, Vector3.zero);

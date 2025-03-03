@@ -20,9 +20,7 @@ namespace Assets.Scripts.Level.UI
 
         void ReturnToMainMenu()
         {
-            Debug.Log("Return to menu");
             SceneManager.LoadScene("MainScene");
-            SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
         }
     }
 }

@@ -79,9 +79,12 @@ namespace Assets.Scripts.Level
         private bool processPlayerInput = true;
         private int turnNumber = 0;
 
-        private List<Entity> entities = new();
+        // States
+        bool isLosing;
+        bool isWinning;
 
         // References
+        private List<Entity> entities = new();
         private OxygenDisplay oxygenDisplay;
         private PlayerFaceDisplay playerFaceDisplay;
         private WinScreen winScreen;
@@ -91,8 +94,8 @@ namespace Assets.Scripts.Level
         {
             AudioManager.Instance.PlayOneShot(onLoad, $"Level.{nameof(onLoad)}");
             entities = FindObjectsByType<Entity>(FindObjectsSortMode.InstanceID).ToList();
-            oxygenDisplay = FindFirstObjectByType<OxygenDisplay>();
-            playerFaceDisplay = FindFirstObjectByType<PlayerFaceDisplay>();
+            oxygenDisplay = FindFirstObjectByType<OxygenDisplay>(FindObjectsInactive.Include);
+            playerFaceDisplay = FindFirstObjectByType<PlayerFaceDisplay>(FindObjectsInactive.Include);
             winScreen = FindFirstObjectByType<WinScreen>(FindObjectsInactive.Include);
             loseScreen = FindFirstObjectByType<LoseScreen>(FindObjectsInactive.Include);
 
@@ -102,6 +105,8 @@ namespace Assets.Scripts.Level
             {
                 if (oxygenDisplay != null)
                 {
+                    oxygenDisplay.SetDisplay(true);
+                    playerFaceDisplay.SetDisplay(true);
                     oxygenDisplay.SetDisplayLevel(CurrentOxygen);
                     playerFaceDisplay.SetDisplayLevel(CurrentOxygen);
                 }
@@ -112,6 +117,8 @@ namespace Assets.Scripts.Level
                 {
                     oxygenDisplay.SetDisplay(false);
                     playerFaceDisplay.SetDisplay(false);
+                    oxygenDisplay.SetDisplayLevel(CurrentOxygen);
+                    playerFaceDisplay.SetDisplayLevel(CurrentOxygen);
                 }
             }
 
@@ -266,28 +273,35 @@ namespace Assets.Scripts.Level
                     break;
             }
 
-            Collider2D hit = Physics2D.OverlapPoint(player.transform.position + offset, LayerMask.GetMask("Interaction"));
-            if (hit != null)
+            foreach (Collider2D hit in Physics2D.OverlapPointAll(player.transform.position + offset))
             {
-                if (hit.TryGetComponent(out IInteractable hitInteractable))
+                if (hit.TryGetComponent(out IInteractable interactable))
                 {
-                    hitInteractable.Interact();
+                    interactable.Interact();
                 }
             }
         }
 
         public void LoseLevel()
         {
-            processPlayerInput = false;
-            AudioManager.Instance.PlayOneShot(onLose, $"Level.{nameof(onLose)}");
-            loseScreen.gameObject.SetActive(true);
+            if (!isWinning)
+            {
+                isLosing = true;
+                processPlayerInput = false;
+                AudioManager.Instance.PlayOneShot(onLose, $"Level.{nameof(onLose)}");
+                loseScreen.gameObject.SetActive(true);
+            }
         }
 
         public void WinLevel()
         {
-            processPlayerInput = false;
-            AudioManager.Instance.PlayOneShot(onWin, $"Level.{nameof(onWin)}");
-            winScreen.gameObject.SetActive(true);
+            if (!isLosing)
+            {
+                isWinning = true;
+                processPlayerInput = false;
+                AudioManager.Instance.PlayOneShot(onWin, $"Level.{nameof(onWin)}");
+                winScreen.gameObject.SetActive(true);
+            }
         }
 
         FloorMaterial CheckPlayerFloor() => GetFloorMaterialAtPosition(player.transform.position);

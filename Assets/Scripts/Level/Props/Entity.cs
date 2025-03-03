@@ -10,6 +10,7 @@ namespace Assets.Scripts.Level.Props
         public bool CanBeWalkedOn = false;
         public bool CanBePushed = true;
         public bool CanBeKilled = true;
+        public bool CanBeTeleported = true;
         [HideInInspector] public bool alreadyPushed = false;
         [HideInInspector] public bool alreadyTeleported = false;
 

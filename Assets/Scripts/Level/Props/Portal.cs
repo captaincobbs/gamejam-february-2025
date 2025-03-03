@@ -70,7 +70,6 @@ namespace Assets.Scripts.Level.Props
         {
             Enabled = !Enabled;
             UpdateSprite();
-            AudioManager.Instance.PlayOneShot(onToggle, $"Portal.{nameof(onToggle)}");
         }
 
         void OnTurn()
@@ -92,15 +91,18 @@ namespace Assets.Scripts.Level.Props
 
         void Teleport(Entity entity)
         {
-            Portal nextPortal = FindNextPortal();
-
-            if (nextPortal != null && !entity.alreadyTeleported)
+            if (entity.CanBeTeleported)
             {
-                if (Entity.TryGetEntityAtPosition(entity.transform.position, EntityFilter, out Entity filteredEntity) && filteredEntity != null)
+                Portal nextPortal = FindNextPortal();
+
+                if (nextPortal != null && !entity.alreadyTeleported)
                 {
-                    entity.alreadyTeleported = true;
-                    entity.transform.position = nextPortal.transform.position;
-                    AudioManager.Instance.PlayOneShot(onTeleport, $"Portal.{nameof(onTeleport)}");
+                    if (Entity.TryGetEntityAtPosition(entity.transform.position, EntityFilter, out Entity filteredEntity) && filteredEntity != null)
+                    {
+                        entity.alreadyTeleported = true;
+                        entity.transform.position = nextPortal.transform.position;
+                        AudioManager.Instance.PlayOneShot(onTeleport, $"Portal.{nameof(onTeleport)}");
+                    }
                 }
             }
         }

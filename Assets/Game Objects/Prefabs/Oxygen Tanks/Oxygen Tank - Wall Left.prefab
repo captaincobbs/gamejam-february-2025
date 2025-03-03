@@ -49,6 +49,7 @@ MonoBehaviour:
   CanBeWalkedOn: 1
   CanBePushed: 0
   CanBeKilled: 0
+  CanBeTeleported: 0
   alreadyPushed: 0
   alreadyTeleported: 0
   onKill:
