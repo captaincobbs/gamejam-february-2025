@@ -9,12 +9,16 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
+using UnityEngine.UIElements;
 
 namespace Assets.Scripts.Level
 {
     [ExecuteInEditMode]
     public class LevelManager : MonoBehaviour
     {
+        public bool CameraFollowPlayer;
+        public float FollowSpeed = 5f;
+
         [Header("Oxygen")]
         [Tooltip("Whether oxygen will be used in this level, also toggles the visibility of the oxygen display")]
         public bool UseOxygen = true;
@@ -84,6 +88,7 @@ namespace Assets.Scripts.Level
         bool isWinning;
 
         // References
+        private Camera mainCamera;
         private List<Entity> entities = new();
         private OxygenDisplay oxygenDisplay;
         private PlayerFaceDisplay playerFaceDisplay;
@@ -94,6 +99,7 @@ namespace Assets.Scripts.Level
         {
             AudioManager.Instance.PlayOneShot(onLoad, $"Level.{nameof(onLoad)}");
             entities = FindObjectsByType<Entity>(FindObjectsSortMode.InstanceID).ToList();
+            mainCamera = Camera.main;
             oxygenDisplay = FindFirstObjectByType<OxygenDisplay>(FindObjectsInactive.Include);
             playerFaceDisplay = FindFirstObjectByType<PlayerFaceDisplay>(FindObjectsInactive.Include);
             winScreen = FindFirstObjectByType<WinScreen>(FindObjectsInactive.Include);
@@ -134,6 +140,12 @@ namespace Assets.Scripts.Level
 
         void Update()
         {
+            if (CameraFollowPlayer && player != null)
+            {
+                Vector3 targetPosition = new(player.transform.position.x, player.transform.position.y, mainCamera.transform.position.z);
+                mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, targetPosition, FollowSpeed * Time.deltaTime);
+            }
+
             if (!isTurnProcessing && processPlayerInput)
             {
                 ProcessPlayerInput();

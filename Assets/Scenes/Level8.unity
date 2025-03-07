@@ -1923,6 +1923,16 @@ PrefabInstance:
       propertyPath: m_AllowDynamicResolution
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2973987282008905208, guid: dc54c163ffaea7a43aa7fe7e0fea9332,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.975
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973987282008905208, guid: dc54c163ffaea7a43aa7fe7e0fea9332,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.165
+      objectReference: {fileID: 0}
     - target: {fileID: 3285455619428307077, guid: dc54c163ffaea7a43aa7fe7e0fea9332,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1977,6 +1987,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Core
+      objectReference: {fileID: 0}
+    - target: {fileID: 7573922040935211649, guid: dc54c163ffaea7a43aa7fe7e0fea9332,
+        type: 3}
+      propertyPath: m_TagString
+      value: MainCamera
       objectReference: {fileID: 0}
     - target: {fileID: 7884076343412363689, guid: dc54c163ffaea7a43aa7fe7e0fea9332,
         type: 3}
@@ -3194,6 +3209,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58379f5c9cd5d864284f49200ed048de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraFollowPlayer: 1
+  FollowSpeed: 5
   UseOxygen: 1
   InitialOxygen: 5
   MaximumOxygen: 10
