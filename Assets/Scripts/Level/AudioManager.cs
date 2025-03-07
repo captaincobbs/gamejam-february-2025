@@ -82,10 +82,6 @@ namespace Assets.Scripts.Level
                     {
                         instance = found;
                     }
-                    else
-                    {
-                        Debug.LogError("This Scene does not have an AudioManager");
-                    }
                 }
 
                 return instance;

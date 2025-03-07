@@ -1903,6 +1903,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1387460845}
     m_Modifications:
+    - target: {fileID: 2362422348199860713, guid: dc54c163ffaea7a43aa7fe7e0fea9332,
+        type: 3}
+      propertyPath: m_HDR
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2362422348199860713, guid: dc54c163ffaea7a43aa7fe7e0fea9332,
+        type: 3}
+      propertyPath: m_AllowMSAA
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2362422348199860713, guid: dc54c163ffaea7a43aa7fe7e0fea9332,
+        type: 3}
+      propertyPath: m_OcclusionCulling
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2362422348199860713, guid: dc54c163ffaea7a43aa7fe7e0fea9332,
+        type: 3}
+      propertyPath: m_AllowDynamicResolution
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3285455619428307077, guid: dc54c163ffaea7a43aa7fe7e0fea9332,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1957,6 +1977,56 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Core
+      objectReference: {fileID: 0}
+    - target: {fileID: 7884076343412363689, guid: dc54c163ffaea7a43aa7fe7e0fea9332,
+        type: 3}
+      propertyPath: m_StopNaN
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7884076343412363689, guid: dc54c163ffaea7a43aa7fe7e0fea9332,
+        type: 3}
+      propertyPath: m_Dithering
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7884076343412363689, guid: dc54c163ffaea7a43aa7fe7e0fea9332,
+        type: 3}
+      propertyPath: m_Antialiasing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7884076343412363689, guid: dc54c163ffaea7a43aa7fe7e0fea9332,
+        type: 3}
+      propertyPath: m_RenderShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7884076343412363689, guid: dc54c163ffaea7a43aa7fe7e0fea9332,
+        type: 3}
+      propertyPath: m_RendererIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7884076343412363689, guid: dc54c163ffaea7a43aa7fe7e0fea9332,
+        type: 3}
+      propertyPath: m_AllowXRRendering
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7884076343412363689, guid: dc54c163ffaea7a43aa7fe7e0fea9332,
+        type: 3}
+      propertyPath: m_AntialiasingQuality
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7884076343412363689, guid: dc54c163ffaea7a43aa7fe7e0fea9332,
+        type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7884076343412363689, guid: dc54c163ffaea7a43aa7fe7e0fea9332,
+        type: 3}
+      propertyPath: m_TaaSettings.m_Quality
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7884076343412363689, guid: dc54c163ffaea7a43aa7fe7e0fea9332,
+        type: 3}
+      propertyPath: m_TaaSettings.m_ContrastAdaptiveSharpening
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

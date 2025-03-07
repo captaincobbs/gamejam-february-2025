@@ -72,7 +72,7 @@ namespace Assets.Scripts.Level.Props
             }
             else
             {
-                Debug.LogError("Conveyor Belt can't find a parent Levelmanager");
+                Debug.LogError("Conveyor Belt can't find a parent LevelManager");
             }
 
             if (Sprites == null || Sprites.Count == 0)

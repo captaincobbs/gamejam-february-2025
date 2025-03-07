@@ -124,7 +124,7 @@ namespace Assets.Scripts.Level
 
             if (player == null)
             {
-                Debug.LogError("No Player object was associated with the TurnManager");
+                Debug.LogError("No Player object was associated with the LevelManager");
             }
             else
             {
@@ -477,7 +477,7 @@ namespace Assets.Scripts.Level
                     }
                     else
                     {
-                        Debug.LogError("This Scene does not have a TurnManager");
+                        Debug.LogError("This Scene does not have a LevelManager");
                     }
                 }
 
@@ -506,7 +506,10 @@ namespace Assets.Scripts.Level
                 Debug.LogWarning("OnUnload is null");
             }
 
-            AudioManager.Instance.PlayOneShot(onUnload, $"Level.{nameof(onUnload)}");
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayOneShot(onUnload, $"Level.{nameof(onUnload)}");
+            }
 
             if (instance == this)
             {
