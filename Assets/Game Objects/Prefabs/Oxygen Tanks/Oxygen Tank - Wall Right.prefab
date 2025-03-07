@@ -66,7 +66,7 @@ MonoBehaviour:
       Data3: 1810667693
       Data4: 40193200
     Path: event:/FakeReference
-  ConsumedOnUse: 1
+  ConsumedOnUse: 0
   oxygenRefilled: 5
   refillUpTo: 5
   onUse:
